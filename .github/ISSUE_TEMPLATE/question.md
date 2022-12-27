@@ -1,7 +1,7 @@
 ---
 name: Question
 about: 질문 템플릿
-title: Q. 간단 명료한 제목 작성
+title: "\U0001F6CE️ 간단 명료한 제목 작성"
 labels: 질문있어요!
 assignees: yamoo9
 
