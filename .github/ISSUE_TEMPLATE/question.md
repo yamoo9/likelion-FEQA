@@ -1,13 +1,11 @@
 ---
 name: Question
 about: 질문 템플릿
-title: Q. 질문 있어요!
+title: Q. 간단 명료한 제목 작성
 labels: 질문있어요!
 assignees: yamoo9
 
 ---
-
-# 간단 명료한 제목 작성
 
 질문 내용을 자세하고 명확하게 풀어 작성합니다.
 
