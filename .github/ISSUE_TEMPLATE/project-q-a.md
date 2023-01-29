@@ -14,6 +14,10 @@ assignees: yamoo9, seulbinim, simseonbeom
 
 💡 이미지, GIF, 비디오 파일을 입력 필드로 끌어 옮기면 자동 삽입됩니다. 
 
+## 질문 작성자
+
+GitHub 아이디로 질문자를 유추하기 어렵습니다. 질문 작성자의 실명을 입력해주세요.
+
 ## 프로젝트 저장소 URL
 
 GitHub 학습 저장소 URL을 여기에 남깁니다. (참고용)
