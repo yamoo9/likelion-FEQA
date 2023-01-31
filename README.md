@@ -1,6 +1,8 @@
-# QA：Likelion
+###### EUID ╳ Likelion
 
-질문/답변 ← 프론트엔드 스쿨, 멋쟁이 사자처럼
+# Q/A
+
+프론트엔드 스쿨 질문/답변, 멋쟁이 사자처럼
 
 - [질문 검색](https://github.com/yamoo9/likelion-FEQA/issues)
 - [질문 작성](https://github.com/yamoo9/likelion-FEQA/issues/new/choose)
