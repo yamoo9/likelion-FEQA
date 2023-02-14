@@ -1,6 +1,6 @@
 ---
-name: HTML CSS JavaScript Q/A
-about: 질문 템플릿
+name: Web Tech. Q/A
+about: HTML, CSS, JavaScript 질문/답변 템플릿
 title: "[LAB-번호] 간단 명료한 제목 작성"
 labels: ''
 assignees: ''
