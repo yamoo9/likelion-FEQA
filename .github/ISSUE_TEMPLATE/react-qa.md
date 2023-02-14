@@ -1,11 +1,13 @@
 ---
 name: React QA
 about: React 질문/답변 템플릿
-title: 간단명료한 제목 작성
+title: [LAB-0] 간단명료한 제목 작성
 labels: 정규수업 Q/A, React
 assignees: shoveller, yamoo9
 
 ---
+## 질문자
+김멋사  
 
 ## 문제 상황
 
