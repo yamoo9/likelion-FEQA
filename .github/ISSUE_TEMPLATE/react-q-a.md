@@ -1,5 +1,5 @@
 ---
-name: React QA
+name: React Q/A
 about: React 질문/답변 템플릿
 title: "[LAB-번호] 간단 명료한 제목 작성"
 labels: 정규수업 Q/A, React
