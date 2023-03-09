@@ -2,8 +2,8 @@
 name: Project Q/A
 about: 프로젝트 질문/답변 템플릿
 title: "[LAB-번호] 간단 명료한 제목 작성"
-labels: 프로젝트 Q/A
-assignees: yamoo9, seulbinim, simseonbeom
+labels: 프로젝트 Q/A, React
+assignees: yamoo9
 
 ---
 
@@ -13,18 +13,18 @@ assignees: yamoo9, seulbinim, simseonbeom
 
 ## 문제 상황
 
-- 질문 내용을 자세하고 명확하게 풀어 작성합니다.
+- 질문 내용을 자세하고 명확하게 풀어 이해할 수 있도록 작성합니다.
 - 상황 이해를 돕기 위한 이미지 첨부가 필요한 경우 작성합니다. (권장)
 - 이미지, GIF, 비디오 파일을 입력 필드로 끌어 옮기면 자동 삽입됩니다. 
 
 ## 프로젝트 저장소 URL
 
-- GitHub 학습 저장소 URL을 여기에 남깁니다. (참고용)
+- 공개된 GitHub 프로젝트 저장소 URL을 여기에 남깁니다.
 - main 브랜치가 아닐 경우, 확인해야 할 브랜치 이름도 함께 작성합니다.
+- 트러블 슈팅을 위해 `node_modules` 폴더를 제외한 나머지를 압축해 이 곳에 첨부하세요.
 
-## 환경 정보 (Optional)
+## 환경 정보
 
-환경과 관련된 문제가 의심될 경우 작성합니다.
-
-- 운영체제 종류 (예: Windows, macOS)
-- Node.js 버전 (예: v16.14.0)
+- 운영체제 정보 (예: Windows, macOS)
+- Node.js 정보 (예: v16.14.0)
+- 라이브러리 정보 (예: React v18.0.2)
