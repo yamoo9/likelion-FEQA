@@ -1,5 +1,5 @@
 ---
-name: React Project Q/A
+name: Project React Q/A
 about: React 프로젝트 질문/답변 템플릿
 title: "[LAB-번호] 간단 명료한 제목 작성"
 labels: 프로젝트 Q/A
