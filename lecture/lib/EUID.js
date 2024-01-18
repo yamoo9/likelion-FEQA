@@ -24,9 +24,22 @@ export function createElement(type, props = {}, ...children) {
 }
 
 // createRoot 함수
-// 객체 : { render, unmount }
+// 반환 객체 : { render, unmount }
 export function createRoot(domNode /* container */) {
 
+    // DOM에 렌더링 하는 함수
+    const render = (element) => {
+        domNode.append(element);
+    };
+
+    // DOM에 렌더링된 루트 요소를 제거
+    const unmount = () => {};
+
+    // 객체 반환
+    return {
+        render,
+        unmount
+    }
 }
 
 // EUID 객체의 멤버로 내보내기
