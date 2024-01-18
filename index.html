@@ -39,7 +39,11 @@
                 document.getElementById('root')
             );
 
-            console.log(reactDomRoot); // 리액트 DOM 루트 객체 생성
+            // console.log(reactDomRoot); 
+            // 리액트 DOM 루트 객체 생성 { render, unmount }
+
+            // 리액트 엘리먼트를 리액트 돔의 렌더 능력으로 화면(DOM)에 그린다.
+            reactDomRoot.render(h1Element);
 
         </script>
     </head>
