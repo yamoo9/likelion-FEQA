@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta content="charset=UTF-8" />
+        <title>리액트 펀더멘탈</title>
+        <link rel="icon" href="assets/favicon.svg" />
+        <script type="module">
+            // JavaScript 실습
+            // 1. 데이터 분리 후 선언
+            const appData = {
+                headline: '리액트',
+                paragraph: '리액트는 사용자 인터페이스 구축을 위한 JavaScript 오픈소스 라이브러리입니다.'
+            };
+
+            // 문서(DOM)에서 대상(요소) 찾기
+            const appElement = document.getElementById('app');
+            // console.log(appElement); // null | HTMLElement
+
+            // 2. 동적 렌더링
+            function render() {
+                // HTML 요소 동적 생성
+                // const h1Element = appElement.querySelector('h1');
+                const h1Element = document.createElement('h1');
+                // const pElement = appElement.querySelector('p');
+                const pElement = document.createElement('p');
+                
+                // 데이터 바인딩
+                h1Element.textContent = appData.headline;
+                pElement.textContent = appData.paragraph;
+                
+                // 출력
+                // console.log(h1Element);
+                // console.log(pElement);
+
+                // 화면에 렌더링
+                appElement.append(h1Element, pElement);
+            }
+
+            render();
+        </script>
+    </head>
+    <body>
+
+        <div id="app">
+            <!-- <h1></h1> -->
+            <!-- <p></p> -->
+        </div>
+        
+    </body>
+</html>

@@ -5,45 +5,55 @@
         <title>리액트 펀더멘탈</title>
         <link rel="icon" href="assets/favicon.svg" />
         <script type="module">
-            // JavaScript 실습
-            // 1. 데이터 분리 후 선언
-            const appData = {
-                headline: '리액트',
-                paragraph: '리액트는 사용자 인터페이스 구축을 위한 JavaScript 오픈소스 라이브러리입니다.'
-            };
+            // React 모듈 불러오기
+            import React from 'https://esm.sh/react';
+            // console.log(React);
 
-            // 문서(DOM)에서 대상(요소) 찾기
-            const appElement = document.getElementById('app');
-            // console.log(appElement); // null | HTMLElement
+            // 리액트 요소 생성
+            // <h1>리액트</h1>
+            // <p>리액트는 가장 인기있는 프론트엔드 개발 도구입니다.</p>
+            // React API
+            const h1Element = React.createElement(
+                // type, // 요소 이름(문자)
+                'h1',
+                // props, // 속성 집합(객체)
+                {},
+                // ...children // 중첩된 요소 또는 텍스트
+                '리액트'
+            );
+            
+            const pElement = React.createElement(
+                'p',
+                {},
+                '리액트는 UI 구축을 위한 자바스크립트 라이브러리입니다.'
+            );
 
-            // 2. 동적 렌더링
-            function render() {
-                // HTML 요소 동적 생성
-                // const h1Element = appElement.querySelector('h1');
-                const h1Element = document.createElement('h1');
-                // const pElement = appElement.querySelector('p');
-                const pElement = document.createElement('p');
-                
-                // 데이터 바인딩
-                h1Element.textContent = appData.headline;
-                pElement.textContent = appData.paragraph;
-                
-                // 출력
-                // console.log(h1Element);
-                // console.log(pElement);
+            // console.log(pElement);
 
-                // 화면에 렌더링
-                appElement.append(h1Element, pElement);
+            // 나도 리액트처럼!!
+            function createElement(type, props, ...children) {
+                return { 
+                    // 리액트를 만드는 개발자용
+                    $$typeof: Symbol('euid.element'), 
+                    // 리액트를 사용하는 개발자용
+                    type, 
+                    props: { ...props, children } 
+                };
             }
 
-            render();
+            // 리액트 요소 === 객체 → { $$typeof: 'Symbol(euid.element)', type, props: { children } }
+            const myElement = createElement('div', { id: 'app', 'data-type': 'HTMLDivElement' }, 
+                createElement('span', {}, 'Hello React')
+            );
+
+            console.log(myElement);
         </script>
     </head>
     <body>
+        <noscript>이 앱을 사용하려면 자바스크립트 활성화가 필요합니다.</noscript>
 
-        <div id="app">
-            <!-- <h1></h1> -->
-            <!-- <p></p> -->
+        <div id="root">
+            
         </div>
         
     </body>
