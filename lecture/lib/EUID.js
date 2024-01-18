@@ -33,7 +33,10 @@ export function createRoot(domNode /* container */) {
     };
 
     // DOM에 렌더링된 루트 요소를 제거
-    const unmount = () => {};
+    const unmount = () => {
+        domNode.firstElementChild.remove();
+        // domNode.innerHTML = '';
+    };
 
     // 객체 반환
     return {
