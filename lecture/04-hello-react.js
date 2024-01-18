@@ -36,5 +36,16 @@ const appElement = h(
 // console.log(appElement);
 
 // 리액트 돔 객체의 렌더 메서드로 리액트 엘리먼트 DOM에 렌더링하기
-createRoot(document.getElementById('root'))
-    .render(appElement);
+const root = createRoot(document.getElementById('root'))
+    
+root.render(appElement);
+
+
+
+// getOutReact__button 버튼 클릭 이벤트 핸들링
+
+document.querySelector('.getOutReact__button')
+    .addEventListener('click', () => {
+        // 리액트 나가~
+        root.unmount()
+    })
