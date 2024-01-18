@@ -7,7 +7,9 @@
         <script type="module">
             // React 모듈 불러오기
             import React from 'https://esm.sh/react';
-            // console.log(React);
+            // ReactDOM 모듈 불러오기
+            import ReactDOM from 'https://esm.sh/react-dom';
+            
 
             // 리액트 요소 생성
             // <h1>리액트</h1>
@@ -28,33 +30,23 @@
                 '리액트는 UI 구축을 위한 자바스크립트 라이브러리입니다.'
             );
 
-            // console.log(pElement);
+            // 리액트가 하는 일은 리액트 엘리먼트를 생성하는 것이다.
+            // 리액트 엘리먼트를 화면(DOM)에 렌더링하려면 "리액트 DOM"이 필요하다.
 
-            // 나도 리액트처럼!!
-            function createElement(type, props, ...children) {
-                return { 
-                    // 리액트를 만드는 개발자용
-                    $$typeof: Symbol('euid.element'), 
-                    // 리액트를 사용하는 개발자용
-                    type, 
-                    props: { ...props, children } 
-                };
-            }
-
-            // 리액트 요소 === 객체 → { $$typeof: 'Symbol(euid.element)', type, props: { children } }
-            const myElement = createElement('div', { id: 'app', 'data-type': 'HTMLDivElement' }, 
-                createElement('span', {}, 'Hello React')
+            // ReactDOM API
+            // ReactDOM.createRoot(domNode) // 실제 DOM에 위치한 #root 요소
+            const reactDomRoot = ReactDOM.createRoot(
+                document.getElementById('root')
             );
 
-            console.log(myElement);
+            console.log(reactDomRoot); // 리액트 DOM 루트 객체 생성
+
         </script>
     </head>
     <body>
         <noscript>이 앱을 사용하려면 자바스크립트 활성화가 필요합니다.</noscript>
 
-        <div id="root">
-            
-        </div>
+        <div id="root"></div>
         
     </body>
 </html>
