@@ -1,0 +1,16 @@
+:root {
+    --primary: #2731f4;
+}
+
+body {
+    font: 1rem / 1.5 "SUIT Variable", "Helvetica Neue", Arial, sans-serif;
+    background: var(--primary, #2731f4);
+    color: var(--white, #fff);
+}
+
+#app {
+    strong {
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+}
