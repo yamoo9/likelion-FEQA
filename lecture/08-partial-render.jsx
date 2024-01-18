@@ -1,7 +1,6 @@
 import React from 'https://esm.sh/react';
 import { createRoot } from 'https://esm.sh/react-dom';
 
-
 const app = (
     <div id="app">
         <h1>안녕!<br />리액트.</h1>
@@ -11,5 +10,13 @@ const app = (
 
 const rootElement = document.getElementById('root');
 const reactDomRoot = createRoot(rootElement);
-
 reactDomRoot.render(app);
+
+// ----------------------------------------------------------
+
+const partialElement = document.createElement('div');
+partialElement.setAttribute('id', 'partialRoot');
+document.body.append(partialElement);
+const partialRoot = createRoot(partialElement);
+
+partialRoot.render(app);
