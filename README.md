@@ -4,14 +4,9 @@
 
 리액트 도구 사용법을 학습합니다.
 
-## 학습 주제
+## 학습 목차
 
-- [React.createElement](https://react.dev/reference/react/createElement)
-- [ReactDOM.createRoot](https://react.dev/reference/react-dom/client/createRoot)
-- [JSX](https://facebook.github.io/jsx/) (JavaScript 확장 구문, XML 문법)
-- JSX 컴파일러 ([Babel](https://babeljs.io/docs/babel-plugin-transform-react-jsx), [TypeScript](https://www.typescriptlang.org/ko/docs/handbook/jsx.html), [Vite](https://ko.vitejs.dev/guide/features.html#jsx))
+일자별 학습 내용을 요약합니다.
 
-## 코드 정리
-
-- index.html : 모바일 퍼스트(Mobile First)
-- main.jsx : app 요소를 반환하는 createApp 함수
+1. [React, ReactDOM API 이해하기 & JSX 컴파일](./summary/01.md)
+1. [JSX → 슬롯, HTML과 차이점, 공백 문제](./summary/02.md)
