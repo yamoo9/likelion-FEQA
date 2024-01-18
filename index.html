@@ -18,11 +18,22 @@
 
             // 2. 동적 렌더링
             function render() {
-                // 데이터 → 렌더링
-                const h1Element = appElement.querySelector('h1');
-                const pElement = appElement.querySelector('p');
+                // HTML 요소 동적 생성
+                // const h1Element = appElement.querySelector('h1');
+                const h1Element = document.createElement('h1');
+                // const pElement = appElement.querySelector('p');
+                const pElement = document.createElement('p');
+                
+                // 데이터 바인딩
                 h1Element.textContent = appData.headline;
                 pElement.textContent = appData.paragraph;
+                
+                // 출력
+                // console.log(h1Element);
+                // console.log(pElement);
+
+                // 화면에 렌더링
+                appElement.append(h1Element, pElement);
             }
 
             render();
@@ -31,8 +42,8 @@
     <body>
 
         <div id="app">
-            <h1></h1>
-            <p></p>
+            <!-- <h1></h1> -->
+            <!-- <p></p> -->
         </div>
         
     </body>
