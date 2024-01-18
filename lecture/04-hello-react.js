@@ -47,5 +47,5 @@ root.render(appElement);
 document.querySelector('.getOutReact__button')
     .addEventListener('click', () => {
         // 리액트 나가~
-        root.unmount()
+        root.unmount();
     })
