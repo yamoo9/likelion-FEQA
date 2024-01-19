@@ -1,4 +1,4 @@
-import { createElement as h, createRoot } from "./lib/EUID.js";
+import { createElement as h, createRoot } from "../library/EUID.js";
 
 const appElement = h(
     'div', 
