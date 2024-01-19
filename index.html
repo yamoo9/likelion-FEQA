@@ -15,13 +15,18 @@
 
         <div id="root"></div>
 
-        <!-- web publisher html markup code -> react + jsx -->
-        <!-- <form> -->
-            <!-- <label for="searchKeyword" class="sr-only">검색</label> -->
-            <!-- self closing element -->
-            <!-- HTML -->
-            <!-- <input id="searchKeyword" type="search" placeholder="검색"> -->
-        <!-- </form> -->
+        <!-- HTML은 대소문자를 구분하지 않는다. -->
+        <!-- HTML에서 인라인 스타일은 CSS 선언을 문자 값으로 연이어 설정합니다. -->
+        <FORM style="margin-block: 8px; border-radius: 4px; padding: 16px; background-color: #f0f6f8">
+            <label for="searchKeyword" class="sr-only">검색</label>
+            <input 
+                style="padding: 4px 6px; color: #3d3b3f" 
+                data-identity="searchKeyword" 
+                type="search" 
+                aria-label="키워드 검색"
+                placeholder="검색" 
+            >
+        </FORM>
         
     </body>
 </html>
