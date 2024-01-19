@@ -27,9 +27,9 @@ const createApp = (
             </h1>
             <p>{data.message}</p>
             <form>
-                {/* ❌ */}
+                {/* ❌ 유효하지 않음 (invalid) */}
                 {/* <input aria-label="중요도" type="range" disabled="options.isDisabled" /> */}
-                {/* ✅ */}
+                {/* ✅ 유효함 (valid) */}
                 {/* props 또한 {} 안에 값을 끼워넣을 수 있음 */}
                 <input
                     type="range"
