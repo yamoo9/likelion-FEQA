@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <title>타입스크립트 컴파일 데모 - 리액트 펀더멘탈</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.svg" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css" />
+        <link rel="stylesheet" href="./src/styles/main.css" />
+        <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://klesun-misc.github.io/TypeScript/lib/typescriptServices.js" crossorigin></script>
+        <script type="module">
+            import { loadModule } from 'https://klesun.github.io/ts-browser/src/ts-browser.js';
+            loadModule(
+                './src/lecture/09-typescript-browser.tsx', 
+                {
+                    jsx: ts.JsxEmit.React
+                }
+            );
+        </script>
+    </head>
+    <body>
+        
+        <noscript>이 앱을 사용하려면 자바스크립트 활성화가 필요합니다.</noscript>
+
+        <div id="root"></div>
+        
+    </body>
+</html>
