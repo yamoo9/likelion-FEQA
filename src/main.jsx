@@ -12,26 +12,14 @@ const createApp = (data) => {
         <div id="app">
             <h1>
                 {data.greetingMessage[0].toUpperCase()}
-                <br />
+                {/* 해킹이 아니라, 명시적으로 JSX 구문에서 공백을 설정하는 방법 */}
+                {' '}
+                {/* <br /> */}
                 {data.greetingMessage[1].toUpperCase()}
             </h1>
             <p>{data.message}</p>
         </div>
     );
-};
-
-// JSX에서 style 속성을 설정할 때는 JavaScript 객체로 설정해야 한다.
-const styles = {
-    form: {
-        'margin-block': '8px', 
-        'border-radius': '4px', 
-        'padding': '16px', 
-        'background-color': '#f0f6f8',
-    },
-    input: {
-        'padding': '4px 6px', 
-        'color': '#3d3b3f',
-    },
 };
 
 const rootElement = document.getElementById('root');
