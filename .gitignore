@@ -1,4 +1,5 @@
+.vscode
 .DS_Store
+.exercises
 node_modules
-__exercises__
 template.md
