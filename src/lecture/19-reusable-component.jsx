@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 
 // [학습 주제]
 // 컴포넌트 재사용
+// 컴포넌트 변형
 
 // .formControl>label+input
 function FormControl() {
