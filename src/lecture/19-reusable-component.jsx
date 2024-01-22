@@ -2,8 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 // [학습 주제]
-// 컴포넌트 재사용
-// 컴포넌트 변형
+// - 재사용을 위한 컴포넌트 설계
 
 // .formControl>label+input
 function FormControl() {
