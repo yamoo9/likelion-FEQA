@@ -1,7 +1,7 @@
 // no module (without from)
 import './01-searchbar.css';
 
-// module
+// module (with from)
 import React from 'https://esm.sh/react';
 import { createRoot } from 'https://esm.sh/react-dom';
 
