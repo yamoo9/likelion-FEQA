@@ -4,16 +4,15 @@
   --gray--100: #bcc3c7;
   --gray--500: #6d7478;
   --gray--950: #040404;
-  --green--100: #03cc5c;
-  --green-100: #cdf5de;
-  --green-200: #9aebbe;
-  --green-300: #68e09d;
-  --green-400: #35d67d;
-  --green-500: #03cc5c;
-  --green-600: #02a34a;
-  --green-700: #027a37;
-  --green-800: #015225;
-  --green-900: #012912;
+  --green--100: #cdf5de;
+  --green--200: #9aebbe;
+  --green--300: #68e09d;
+  --green--400: #35d67d;
+  --green--500: #03cc5c;
+  --green--600: #02a34a;
+  --green--700: #027a37;
+  --green--800: #015225;
+  --green--900: #012912;
   --blue--100: #01a9ff;
   --blue--200: #4284f7;
 
@@ -81,7 +80,7 @@
     }
 
     &:focus-visible {
-      outline: 2px solid var(--green--500);
+      outline: 4px solid var(--green--100);
       border-radius: 50%;
     }
 
