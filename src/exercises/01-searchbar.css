@@ -24,6 +24,7 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
+  min-width: 192px;
   border: 1px solid var(--green-500, #03CC5C);
   padding: 12px 12px 12px 20px;
   background: var(--white, #FFF);
