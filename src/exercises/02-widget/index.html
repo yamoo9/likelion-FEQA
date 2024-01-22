@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <title>위젯(Widget) - 날씨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="위젯 컴포넌트 작성을 위한 마크업" />
+  <meta name="theme-color" content="#006eb4" />
+  <link rel="stylesheet" href="../../styles/main.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/pretendard/dist/web/static/pretendard.css" as="style" crossorigin />
+  <link rel="icon" href="https://vectorlogo.zone/logos/reactjs/reactjs-icon.svg" />
+</head>
+<body>
+  
+  <article class="widget widget__weather">
+    <h2 class="sr-only">날씨</h2>
+    <img src="/images/weather-partly-cloudy.svg" alt="맑고 구름 조금" title="맑고 구름 조금" />
+    <div class="weather__info" role="group">
+      <span class="weather__info--template">-0.9°</span>
+      <span class="weather__info--description">어제보다 1.3° 낮아요</span>
+    </div>
+  </article>
+
+</body>
+</html>
