@@ -84,8 +84,8 @@ const renderFormControl = () => (
 );
 
 const renderSearchBar = () => (
-  <form className="searchBar">
-    <div role="group">
+  <form className="searchBar" onSubmit={(e) => e.preventDefault()}>
+    <div className="searchBarGroup" role="group">
       {renderIconNaver()}
       {renderFormControl()}
     </div>
