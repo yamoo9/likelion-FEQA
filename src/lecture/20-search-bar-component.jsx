@@ -2,9 +2,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import SearchBar from '../exercises/01-searchbar/component/SearchBar';
-import SearchButton from '../exercises/01-searchbar/component/SearchButton';
-import IconCircle from '../exercises/01-searchbar/component/IconCircle';
-import IconNaver from '../exercises/01-searchbar/component/IconNaver';
 
 // h('div', { id: 'app' }, [h('span', {}, 'hi'), ' ', h('span', {}, 'react')])
 
@@ -16,14 +13,16 @@ import IconNaver from '../exercises/01-searchbar/component/IconNaver';
 
 function App() {
   return (
-    <div id="app">
+    <div
+      id="app"
+      style={{
+        display: 'flex',
+        flexFlow: 'column',
+        gap: 20,
+      }}
+    >
       {/* 인스턴스, 엘리먼트, 객체 */}
-      <SearchBar>
-        <SearchButton>
-          <IconCircle />
-          <IconNaver />
-        </SearchButton>
-      </SearchBar>
+      <SearchBar />
     </div>
   );
 }
