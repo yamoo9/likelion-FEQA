@@ -1,0 +1,103 @@
+:root {
+  --gray-50: #f0fefe;
+  --gray-100: #a5acb9;
+  --gray-200: #8c929d;
+  --gray-300: #747982;
+  --gray-400: #5c6068;
+  --gray-500: #484b52;
+  --gray-600: #313338;
+  --gray-700: #1d1e21;
+  --gray-800: #111213;
+  --gray-900: #141517;
+}
+
+body {
+  --bg: var(--gray-600);
+  --fg: var(--gray-50);
+
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1rem/1.5 "SUIT Variable", sans-serif;
+}
+
+.back__link {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  display: grid;
+  place-content: center;
+  inline-size: 40px;
+  block-size: 40px;
+  border: 1px solid currentColor;
+  color: var(--gray-300, #747982);
+  text-decoration: none;
+  font-size: 20px;
+
+  &:hover {
+    color: var(--gray-100, #a5acb9);
+  }
+}
+
+.ContactCard {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  gap: 40px;
+
+  margin: 40px;
+  padding-left: 0;
+  list-style-type: '';
+
+  .ContactCardItem {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--gray-700);
+    border: .5px solid var(--gray-500);
+    border-radius: 8px;
+    padding: 20px;
+
+    img {
+      border-radius: 50%;
+      box-shadow: 0 4px 4px rgba(0 0 0 / 20%);
+      border: 1px solid var(--gray-500);
+    }
+
+    strong {
+      color: var(--gray-100);
+      font-weight: 200;
+      letter-spacing: 0.24em;
+    }
+
+    dl {
+      display: flex;
+      flex-flow: column;
+      gap: 4px;
+      margin: 0;
+      padding-top: 12px;
+      border-top: .1px solid var(--gray-600);
+      font-size: 12px;
+    }
+
+    dt {
+      font-size: 11px;
+      color: var(--gray-400);
+    }
+
+    dd {
+      margin: 0;
+      color: var(--gray-200);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        color: var(--gray-100);
+      }
+    }
+  }
+
+}
