@@ -5,9 +5,9 @@ module.exports = {
     node: true,
   },
   extends: [
-    'eslint:recommended', 
+    'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:react/jsx-runtime'
+    'plugin:react/jsx-runtime',
   ],
   overrides: [],
   parserOptions: {
@@ -16,6 +16,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'react/prop-types': 'off',
     // "react/jsx-uses-react": "off",
     // "react/react-in-jsx-scope": "off"
   },
