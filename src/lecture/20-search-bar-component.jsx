@@ -13,14 +13,7 @@ import SearchBar from '../exercises/01-searchbar/component/SearchBar';
 
 function App() {
   return (
-    <div
-      id="app"
-      style={{
-        display: 'flex',
-        flexFlow: 'column',
-        gap: 20,
-      }}
-    >
+    <div id="app">
       {/* 인스턴스, 엘리먼트, 객체 */}
       <SearchBar />
     </div>

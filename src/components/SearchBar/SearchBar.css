@@ -1,0 +1,92 @@
+:root {
+  /* Color styles */
+  --white: #ffffff;
+  --gray--100: #bcc3c7;
+  --gray--500: #6d7478;
+  --gray--950: #040404;
+  --green--100: #cdf5de;
+  --green--200: #9aebbe;
+  --green--300: #68e09d;
+  --green--400: #35d67d;
+  --green--500: #03cc5c;
+  --green--600: #02a34a;
+  --green--700: #027a37;
+  --green--800: #015225;
+  --green--900: #012912;
+  --blue--100: #01a9ff;
+  --blue--200: #4284f7;
+
+  /* effect styles */
+  --shadow--100: 0px 4px 4px rgba(68, 131, 63, 0.15);
+}
+
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 192px;
+  border: 1px solid var(--green-500, #03CC5C);
+  padding: 12px 12px 12px 20px;
+  background: var(--white, #FFF);
+  border-radius: 50px;
+  
+  &:focus-within {
+    box-shadow: var(--shadow--100);
+  }
+  
+  /* container */
+  [role="group"] {
+    flex: 1;
+    display: flex;
+    gap: 12px;
+  }
+
+  input[type="search"] {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 0;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--gray--500);
+
+    &:focus {
+      outline: none;
+    }
+
+    /* &:focus-visible { */
+      /* outline: 2px solid var(--green--500); */
+      /* border-radius: 4px; */
+    /* } */
+
+    &::placeholder {
+      color: var(--gray-100, #BCC3C7);      
+    }
+  }
+
+  button[type="submit"] {
+    --size: 24px;
+
+    cursor: pointer;
+    inline-size: var(--size);
+    block-size: var(--size);
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 4px solid var(--green--100);
+      border-radius: 50%;
+    }
+
+    &:active {
+      scale: 0.9;
+    }
+  }
+}
