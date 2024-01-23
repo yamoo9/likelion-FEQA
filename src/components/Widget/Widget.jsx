@@ -10,8 +10,8 @@ function Widget(props) {
         title="맑고 구름 조금"
       />
       <div className="weather__info" role="group">
-        <span className="weather__info--template">-0.9°</span>
-        <span className="weather__info--description">어제보다 1.3° 낮아요</span>
+        <span className="weather__info--template">{props.temperature}</span>
+        <span className="weather__info--description">{props.summary}</span>
       </div>
     </article>
   );
