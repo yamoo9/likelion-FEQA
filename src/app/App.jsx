@@ -12,11 +12,13 @@ function App() {
   return (
     <div className="app" /*  style={styles.app} */>
       <Widget
+        type="partly cloudy"
         temperature={-0.9}
         summary="어제보다 1.3° 낮아요"
         location="서울"
       />
       <Widget
+        type="rainy"
         temperature={-0.7}
         summary="어제보다 0.1° 높아요"
         location="도쿄"
