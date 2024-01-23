@@ -2,6 +2,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import SearchBar from '../exercises/01-searchbar/component/SearchBar';
+import SearchButton from '../exercises/01-searchbar/component/SearchButton';
+import IconCircle from '../exercises/01-searchbar/component/IconCircle';
 
 // h('div', { id: 'app' }, [h('span', {}, 'hi'), ' ', h('span', {}, 'react')])
 
@@ -20,7 +22,11 @@ function App() {
         student="김용범"
         violinist="김다영"
         isPureComponent={false}
-      />
+      >
+        <SearchButton>
+          <IconCircle />
+        </SearchButton>
+      </SearchBar>
     </div>
   );
 }
