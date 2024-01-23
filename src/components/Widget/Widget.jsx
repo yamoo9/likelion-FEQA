@@ -1,9 +1,9 @@
 import './Widget.css';
 
-function Widget() {
+function Widget(props) {
   return (
     <article className="widget widget__weather">
-      <h2 className="sr-only">날씨</h2>
+      <h2 className="sr-only">{props.location} 날씨</h2>
       <img
         src="/images/weather-partly-cloudy.svg"
         alt="맑고 구름 조금"
