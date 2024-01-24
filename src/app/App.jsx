@@ -1,5 +1,5 @@
 import './App.css';
-import Exercise from '../lecture/23-contact-card';
+import Exercise from '../lecture/24-fragment';
 
 function App() {
   return (
