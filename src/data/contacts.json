@@ -26,14 +26,6 @@
       "name": "최하영",
       "job": "웹 기획자",
       "email": "choi-ha@dev.io"
-    },
-    {
-      "id": "contact-zksd",
-      "gender": "man",
-      "face": 1,
-      "name": "김종덕",
-      "job": "프론트엔드 개발자",
-      "email": "jongdeok-kim@dev.io"
     }
   ]
 }
