@@ -1,19 +1,30 @@
-import { createElement as h } from 'react';
+/* eslint-disable react/jsx-key */
+
+// import { createElement as h } from 'react';
 import './25-mapping-over-data.css';
 import contactData from '../data/contacts.json';
 import { ContactCard, ContactCardList } from './23-contact-card';
 
+function ListItem({ item }) {
+  return <li>{item.name}</li>;
+}
+
 export default function Exercise() {
   return (
     <ContactCardList>
-      {contactData.items.map(
-        (item) =>
-          // JSX
-          // <ContactCard key={item.id} {...item} />
+      {
+        /* <ul> */ contactData.items.map(
+          (item) => (
+            // JSX
+            // <ContactCard key={item.id} {...item} />
+            <ListItem key={item.id} item={item} />
+            // <li key={item.id}>{item.name}</li>
+          )
           // React API
-          h(ContactCard, /* props */ { key: item.id, ...item })
-        // React.createElement(type, props)  // props = { key, ... }
-      )}
+          // h(ContactCard, /* props */ { key: item.id, ...item })
+          // React.createElement(type, props)  // props = { key, ... }
+        )
+      }
     </ContactCardList>
   );
 }
