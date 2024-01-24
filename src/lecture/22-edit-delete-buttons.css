@@ -1,0 +1,7 @@
+.exercise {
+  display: flex;
+  flex-flow: column;
+  gap: 4px;
+  inline-size: 120px;
+  margin: 20px;
+}
