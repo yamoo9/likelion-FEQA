@@ -33,18 +33,11 @@ function Exercise() {
   return (
     <ContactCardList>
       <ContactCard
-        gender="man"
-        face={1}
-        name="최신기"
-        job="디자인팀 이사"
-        email="choishi@dev.io"
-      />
-      <ContactCard
         gender="woman"
         face={2}
-        name="박연주"
+        name="하연주"
         job="웹 디자이너"
-        email="ayounju@dev.io"
+        email="hayounju@dev.io"
       />
       <ContactCard
         gender="man"

@@ -1,0 +1,31 @@
+{
+  "name": "contacts.json",
+  "version": "0.0.1",
+  "author": "yamoo9@naver.com",
+  "items": [
+    {
+      "id": "contact-cksd",
+      "gender": "woman",
+      "face": 2,
+      "name": "하연주",
+      "job": "웹 디자이너",
+      "email": "hayounju@dev.io"
+    },
+    {
+      "id": "contact-zids",
+      "gender": "man",
+      "face": 2,
+      "name": "박선호",
+      "job": "웹 개발자",
+      "email": "parksh@dev.io"
+    },
+    {
+      "id": "contact-woxs",
+      "gender": "woman",
+      "face": 5,
+      "name": "최하영",
+      "job": "웹 기획자",
+      "email": "choi-ha@dev.io"
+    }
+  ]
+}
