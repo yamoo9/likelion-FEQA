@@ -1,0 +1,39 @@
+.Grid {
+  --spacing: 8px;
+  
+  --grid-max-width: 960px;
+  --grid-padding: 8px;
+  --grid-background-color: #fff;
+  --grid-radius: 8px;
+  
+  --cell-radius: 4px;
+  --cell-thickness: 1px;
+  --cell-ratio: 1 / 1;
+  --cell-background-color: #cdc9c3;
+  --cell-hover-color: #fef8ed;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  padding: var(--grid-padding);
+  background: var(--grid-background-color);
+  border-radius: var(--grid-radius);
+  max-inline-size: var(--grid-max-width);
+  margin-inline: auto;
+}
+
+.Row {
+  display: flex;
+  gap: var(--spacing);
+}
+
+.Cell {
+  flex: 1;
+  aspect-ratio: var(--cell-ratio);
+  border: var(--cell-thickness) solid var(--cell-background-color);
+  border-radius: var(--cell-radius);
+  
+  &:hover {
+    background: var(--cell-hover-color);
+  }
+}

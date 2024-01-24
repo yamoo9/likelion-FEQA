@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>폭탄을 피하라! - 미니 게임</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="폭탄을 피해 공을 클릭하면 승리!" />
+    <meta name="theme-color" content="#006eb4" />
+    <link rel="icon" href="https://vectorlogo.zone/logos/reactjs/reactjs-icon.svg" />
+    <link rel="stylesheet" href="../../styles/exercies.css" />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+
+  <body>
+
+    <a
+      href="/"
+      class="back__link"
+      aria-label="이전 페이지로 이동"
+      style="background-color: transparent;">
+      ←
+    </a>
+
+    <div id="root">
+      <div class="game">
+        <button class="ball" aria-label="공(ball)"></button>
+        <button class="bomb" aria-label="폭탄(bomb)">
+          <span role="img">💣</span>
+        </button>
+      </div>
+      <div class="gameControls" role="group">
+        <button type="button" aria-label="게임 시작" disabled>start</button>
+        <button type="button" aria-label="게임 일시정지">pause</button>
+      </div>
+    </div>
+
+  </body>
+
+</html>

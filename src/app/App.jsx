@@ -1,5 +1,5 @@
 import './App.css';
-import Exercise from '../lecture/25-mapping-over-data-v0.4';
+import Exercise from '../lecture/25-mapping-over-data-v0.5';
 
 function App() {
   return (

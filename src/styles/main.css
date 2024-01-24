@@ -1,3 +1,5 @@
+@import url("./exercies.css");
+
 :root {
   --primary: #2731f4;
   --secondary: #f4f5f9;
@@ -14,51 +16,6 @@ body {
   strong {
     text-transform: uppercase;
     font-size: 12px;
-  }
-}
-
-#root {
-  padding: 80px 20px;
-}
-
-.exercises__navigation {
-  overflow-x: auto;
-  position: fixed;
-  inline-size: 100dvw;
-  top: 20px;
-  display: flex;
-  gap: 4px;
-  padding-inline-start: 20px;
-  padding-block: 4px;
-
-  a {
-    padding: 8px;
-    text-decoration: none;
-    color: #9da1b3;
-    font-size: 12px;
-
-    &:hover {
-      color: #656977;
-    }
-  }
-}
-
-.back__link {
-  position: fixed;
-  left: 20px;
-  top: 20px;
-  display: grid;
-  place-content: center;
-  inline-size: 40px;
-  block-size: 40px;
-  border: 1px solid currentColor;
-  color: var(--gray-300, #747982);
-  background: #fff;
-  text-decoration: none;
-  font-size: 20px;
-
-  &:hover {
-    color: var(--gray-100, #a5acb9);
   }
 }
 

@@ -1,0 +1,202 @@
+body {
+  background-color: #181717;
+}
+
+#root {
+  --size: 300px;
+
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  padding: 0;
+  width: var(--size);
+  height: var(--size);
+  outline: 2px solid #ffffff80;
+}
+
+.game {
+  inline-size: var(--size);
+  block-size: var(--size);
+
+  &.stop {
+    .ball, .bomb {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.gameControls {
+  display: flex;
+  justify-content: center;
+  margin-block-start: 8px;
+  margin-inline: -2px;
+
+  button {
+    cursor: pointer;
+    flex: 1;
+    display: grid;
+    place-content: center;
+    border: 2px solid currentColor;
+    padding: 12px;
+    background-color: transparent;
+    color: #ffffff80;
+
+    &:hover:not(:disabled) {
+      color: #fff;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: #535353;
+    }
+  }
+}
+
+.ball, 
+.bomb {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  will-change: transform;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+}
+
+.ball {
+  left: 0;
+  background: #ffb61a;
+  animation-name: moveBall ;
+  animation-duration: 9876ms;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 40%;
+    height: 15%;
+    border-radius: 50%;
+    background: #ffffffe6;
+    mix-blend-mode: overlay;
+    filter: blur(3px);
+    transform: rotate(-30deg);
+  }
+}
+
+.bomb {
+  left: 50px;
+  background: transparent;
+  font-size: 3rem;
+  animation-name: moveBomb;
+  animation-duration: 7654ms;
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ball {
+    animation-play-state: running;
+  }
+  .bomb {
+    animation-play-state: running;
+  }
+}
+
+@keyframes moveBall {
+  0% {
+    transform: translate(150px, 40px);
+  }
+  10% {
+    transform: translate(10px, 230px);
+  }
+  16% {
+    transform: translate(50px, 130px);
+  }
+  25% {
+    transform: translate(250px, 20px);
+  }
+  30% {
+    transform: translate(210px, 0px);
+  }
+  39% {
+    transform: translate(20px, 250px);
+  }
+  50% {
+    transform: translate(150px, 150px);
+  }
+  60% {
+    transform: translate(234px, 160px);
+  }
+  62% {
+    transform: translate(250px, 150px);
+  }
+  64.5% {
+    transform: translate(240px, 135px);
+  }
+  70% {
+    transform: translate(0px, 0px);
+  }
+  76% {
+    transform: translate(100px, 100px);
+  }
+  82% {
+    transform: translate(200px, 0px);
+  }
+  90% {
+    transform: translate(100px, 250px);
+  }
+  100% {
+    transform: translate(150px, 40px);
+  }
+}
+
+@keyframes moveBomb {
+  0% {
+    transform: translate(0px, 140px);
+  }
+  5% {
+    transform: translate(160px, 30px);
+  }
+  12% {
+    transform: translate(180px, 130px);
+  }
+  25% {
+    transform: translate(0px, 40px);
+  }
+  28% {
+    transform: translate(20px, 20px);
+  }
+  40% {
+    transform: translate(200px, 240px);
+  }
+  47% {
+    transform: translate(100px, 200px);
+  }
+  50% {
+    transform: translate(50px, 230px);
+  }
+  64% {
+    transform: translate(-50px, 0px);
+  }
+  68% {
+    transform: translate(40px, 35px);
+  }
+  76% {
+    transform: translate(-31px, 200px);
+  }
+  84.5% {
+    transform: translate(150px, 120px);
+  }
+  93% {
+    transform: translate(30px, 240px);
+  }
+  100% {
+    transform: translate(0px, 140px);
+  }
+}
