@@ -15,8 +15,22 @@ export default function Exercise() {
       </li>
     );
   });
+  // return <ul>{children}</ul>;
 
-  return <ul>{children}</ul>;
+  // x = 3
+  // y = x + 7
+
+  return (
+    <ul>
+      {items.map(({ id, name, email }) => (
+        <li style={listStyle}>
+          <span>{id}</span>
+          <span>{name}</span>
+          <span>{email}</span>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 const listStyle = {
