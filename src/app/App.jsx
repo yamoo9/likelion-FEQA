@@ -1,5 +1,5 @@
 import './App.css';
-import Exercise from '../lecture/22-edit-delete-buttons';
+import Exercise from '../lecture/23-contact-card';
 
 function App() {
   return (
