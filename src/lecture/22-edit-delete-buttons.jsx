@@ -61,10 +61,18 @@ const Button = ({ color, backgroundColor, children }) => (
   </button>
 );
 
-const EditButton = ({ color, backgroundColor, children }) => {
+const EditButton = ({
+  color = '#2b2828',
+  backgroundColor = '#fff',
+  icon = null,
+  // <slot></slot>
+  children,
+}) => {
   return (
     <Button color={color} backgroundColor={backgroundColor}>
       {children}
+      {/* <slot name="icon"></slot> */}
+      {icon}
     </Button>
   );
 };
@@ -72,11 +80,13 @@ const EditButton = ({ color, backgroundColor, children }) => {
 const DeleteButton = ({
   color = '#f53535',
   backgroundColor = '#fff',
+  icon = null,
   children,
 }) => {
   return (
     <Button color={color} backgroundColor={backgroundColor}>
       {children}
+      {icon}
     </Button>
   );
 };
@@ -84,14 +94,8 @@ const DeleteButton = ({
 export default function Exercise() {
   return (
     <div role="group" className="exercise">
-      <EditButton>
-        수정하기
-        <IconEdit />
-      </EditButton>
-      <DeleteButton>
-        삭제하기
-        <IconTrash />
-      </DeleteButton>
+      <EditButton icon={<IconEdit />}>수정하기</EditButton>
+      <DeleteButton icon={<IconTrash />}>삭제하기</DeleteButton>
     </div>
   );
 }
