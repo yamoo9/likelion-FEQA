@@ -1,5 +1,45 @@
-/* eslint-disable */
-export default function Exercise() {
+export default function Exercise2({ isShowLink = false }) {
+  // 조건부 표시 (display : show or hide)
+  // 강사는 왜 조건부 표시를 다루는가?
+  // 뷰는?
+  // 리액트 공식 문서는 조건부 렌더링만 다룹니다.
+  return (
+    <div>
+      <span className="message one">리액트</span>
+      {isShowLink ? '' : '('}
+      <a
+        // v-show 디렉티브처럼 (수시로 전환(toggle)할 경우 더 나음)
+        // hidden={isShowLink}
+        style={{ display: isShowLink ? 'inline' : 'none' }}
+        href="https://react.dev"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        https://react.dev
+      </a>
+      {isShowLink ? '' : ')'}
+    </div>
+  );
+
+  // 조건부 렌더링 (rendering)
+  // return (
+  //   <div>
+  //     <span className="message one">리액트</span>
+  //     {isShowLink && (
+  //       <>
+  //         (
+  //         <a href="https://react.dev" target="_blank" rel="noreferrer noopener">
+  //           https://react.dev
+  //         </a>
+  //         )
+  //       </>
+  //     )}
+  //   </div>
+  // );
+}
+
+// eslint-disable-next-line no-unused-vars
+function Exercise1() {
   // return (
   //   <>
   //     <DashboardPage />

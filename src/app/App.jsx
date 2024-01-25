@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="app">
       <Exercise />
+      <Exercise isShowLink />
     </div>
   );
 }
