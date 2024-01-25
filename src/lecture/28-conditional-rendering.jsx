@@ -6,7 +6,7 @@ export default function Exercise2({ isShowLink = false }) {
   return (
     <div>
       <span className="message one">리액트</span>
-      {isShowLink ? '' : '('}
+      {isShowLink ? ' (' : ''}
       <a
         // v-show 디렉티브처럼 (수시로 전환(toggle)할 경우 더 나음)
         // hidden={isShowLink}
@@ -17,7 +17,7 @@ export default function Exercise2({ isShowLink = false }) {
       >
         https://react.dev
       </a>
-      {isShowLink ? '' : ')'}
+      {isShowLink ? ')' : ''}
     </div>
   );
 
