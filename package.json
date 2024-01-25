@@ -2,6 +2,8 @@
   "type": "module",
 	"scripts": {
 		"dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
 		"compile:ts": "tsc ./src/lecture/10-typescript-compiler.ts --target es6",
 		"compile:tsx": "tsc ./src/lecture/11-typescript-jsx.tsx --jsx react --target esnext --moduleResolution bundler --module esnext"
 	},

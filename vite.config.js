@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(
   /* vite configuration option object */
   {
+    // base: '/likilion-FEQA/', // '/'
     plugins: [react()],
     server: {
       // host: 'localhost', // default: 'localhost'
