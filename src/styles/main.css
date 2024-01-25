@@ -52,3 +52,18 @@ body {
   border: 0;
   white-space: nowrap;
 }
+
+body .group {
+  position: relative;
+  overflow: auto;
+  width: initial;
+  height: initial;
+  clip: auto;
+  clip-path: none;
+  white-space: wrap;
+  margin: 20px;
+  display: flex;
+  border: 10px solid currentColor;
+  padding: 20px;
+  background: red;
+}

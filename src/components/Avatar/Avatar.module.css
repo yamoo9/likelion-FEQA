@@ -1,0 +1,35 @@
+.Avatar {
+  --size: 64px;
+  --shadow--200: 0px 0px 2px rgba(114, 119, 124, 0.2);
+
+  position: relative;
+  inline-size: var(--size);
+  block-size: var(--size);
+  margin: 0;
+
+  /* nesting */
+  img {
+    inline-size: var(--size);
+    block-size: var(--size);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+  }
+
+  figcaption {
+    --size: 16px;
+
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    inline-size: var(--size);
+    block-size: var(--size);
+    border: 1px solid #fff;
+    background-color: #dbdbdb;
+    border-radius: 50%;
+    box-shadow: var(--shadow--200);
+
+    &.online {
+      background-color: #4BFE88;
+    }
+  }
+}
