@@ -1,11 +1,10 @@
 import './App.css';
-import Exercise from '../lecture/28-conditional-rendering.jsx';
+import Exercise from '../lecture/29-a11y-hidden-component';
 
 function App() {
   return (
     <div className="app">
       <Exercise />
-      <Exercise isShowLink />
     </div>
   );
 }
