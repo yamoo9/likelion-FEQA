@@ -42,7 +42,6 @@ body {
 
 .sr-only {
   overflow: hidden;
-  visibility: hidden;
   position: absolute;
   clip: rect(0, 0, 0, 0);
   clip-path: circle(0);
