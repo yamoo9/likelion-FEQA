@@ -3,6 +3,27 @@
 :root {
   --primary: #2731f4;
   --secondary: #f4f5f9;
+  
+  /* Color styles */
+  --white: #ffffff;
+  --gray--100: #bcc3c7;
+  --gray--500: #6d7478;
+  --gray--950: #040404;
+  --green--100: #cdf5de;
+  --green--200: #9aebbe;
+  --green--300: #68e09d;
+  --green--400: #35d67d;
+  --green--500: #03cc5c;
+  --green--600: #02a34a;
+  --green--700: #027a37;
+  --green--800: #015225;
+  --green--900: #012912;
+  --blue--100: #01a9ff;
+  --blue--200: #4284f7;
+
+  /* effect styles */
+  --shadow--100: 0px 4px 4px rgba(68, 131, 63, 0.15);
+  --shadow--200: 0px 0px 2px rgba(114, 119, 124, 0.2);
 }
 
 body {
