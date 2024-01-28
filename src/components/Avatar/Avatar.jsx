@@ -5,7 +5,7 @@ function Avatar({ photo, name = '', isOnline = false }) {
 
   return (
     <figure className={classes.Avatar}>
-      <img src={photo} alt={name} />
+      <img src={photo} alt={name} title={name} />
       <figcaption
         className={isOnline ? classes.online : ''}
         aria-label={status}
@@ -14,8 +14,5 @@ function Avatar({ photo, name = '', isOnline = false }) {
     </figure>
   );
 }
-
-// HTML -> JSX -> DATA
-// Markup -> Component Design (props)
 
 export default Avatar;
