@@ -23,6 +23,24 @@ function Exercise() {
     console.log(`count = ${++count}`);
   };
 
+  const handleCountDown = (e) => {
+    e.stopPropagation();
+    console.log(`count = ${--count}`);
+    // return undefined;
+  };
+
+  const actionOne = () => console.log('one');
+  const actionTwo = () => console.log('two');
+  const actionThree = () => console.log('three');
+
+  const handleMultiEvents = (e) => {
+    e.stopPropagation();
+
+    actionOne();
+    actionTwo();
+    actionThree();
+  };
+
   return (
     <div lang="en" style={styles.div} onClick={handleClick}>
       <strong style={styles.strong} onClick={handleClick}>
@@ -31,21 +49,20 @@ function Exercise() {
       <em style={styles.em} onClick={handleClick}>
         emphasize element
       </em>
-      <button
-        type="button"
-        // inline arrow function
-        onClick={
-          /* handleCountDown */
-          (e) => {
-            e.stopPropagation();
-            console.log(`count = ${--count}`);
-          }
-        }
-      >
+      <button type="button" onClick={handleCountDown}>
         count down
       </button>
+      {/* {
+        React.createElement('button', {
+          type: 'button',
+          onClick: handleCountDown() // undefined
+        })
+      } */}
       <button type="button" onClick={handleCountUp}>
         count up
+      </button>
+      <button type="button" onClick={handleMultiEvents}>
+        multi event handling
       </button>
     </div>
   );
