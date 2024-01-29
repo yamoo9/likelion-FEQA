@@ -5,6 +5,9 @@ function Exercise() {
     // Event 객체 (브라우저 실제 이벤트)
     // console.log(e.nativeEvent);
 
+    // 이벤트 전파 중지
+    e.stopPropagation();
+
     console.log('------------------------------------');
     console.log(`e.target = ${e.target.nodeName}`); // 클릭한 요소(이벤트가 전파된 요소)
     console.log(`e.currentTarget = ${e.currentTarget.nodeName}`);
