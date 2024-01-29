@@ -1,0 +1,9 @@
+.demo {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &.border {
+    border: 4px solid #dbbf05;
+  }
+}
