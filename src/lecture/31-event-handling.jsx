@@ -43,7 +43,27 @@ function Exercise({ message }) {
     actionThree();
   };
 
-  const handleOthers = (message) => () => {
+  // ES 5
+  // function handleOthers(message) {
+  //   // 함수 내보내기
+  //   // 이벤트 핸들러
+  //   return function eventHander(e) {
+  //     e.stopPropagation();
+  //     console.log(e);
+  //     // 스코프 영역의 매개변수 참조
+  //     alert(message);
+  //   };
+  // }
+
+  // vs.
+
+  // Redux, Zustand(독일어: 츄스탄트) 상태 관리 라이브러리
+  // 미들웨어 구현
+
+  // ES Next (6+)
+  // React.useCallback() ✨
+  const handleOthers = (message) => (e) => {
+    e.stopPropagation();
     alert(message);
   };
 
