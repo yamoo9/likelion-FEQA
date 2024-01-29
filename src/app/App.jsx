@@ -1,5 +1,5 @@
 import './App.css';
-import Exercise from '../lecture/29-a11y-hidden-component-v3';
+import Exercise from '../lecture/30-badge-component';
 
 function App() {
   return (
