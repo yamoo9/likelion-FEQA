@@ -3,5 +3,6 @@
 .exercises
 .utils
 node_modules
+REQUIREMENTS.md
 template.md
 dist
