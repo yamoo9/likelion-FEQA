@@ -1,0 +1,54 @@
+.Graph {
+  --thickness: 2px;
+  --expand: -12px;
+  --color: #111010;
+  --font-size: 14px;
+  --font-weight: 500;
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 var(--expand);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--thickness));
+    left: 24px;
+    right: 24px;
+    height: var(--thickness);
+    background: var(--color, #111010);
+    border-radius: 3px 3px 0 0;
+  }
+
+  .peg {
+    position: relative;
+    padding-top: 8px;
+    width: 24px;
+    text-align: center;
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    color: var(--color);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: var(--thickness);
+      height: 8px;
+      background-color: var(--color, #111010);
+      border-radius: 100px;
+    }
+
+    &:first-child {
+      translate: 12px 0;
+    }
+
+    &:last-child {
+      translate: -12px 0;
+    }
+  }
+}
