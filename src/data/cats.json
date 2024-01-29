@@ -1,0 +1,48 @@
+[
+  {
+    "id": "penelope-june-p1oer6",
+    "imageSrc": "cat-penelope.png",
+    "imageAlt": "멋진 안경과 반짝임/무지개 그림이 있는 고양이",
+    "name": "페넬로페 준",
+    "birthday": "2022-1-21",
+    "badges": [
+      {
+        "slug": "ping-pong",
+        "label": "🏓 운동"
+      },
+      {
+        "slug": "photographer",
+        "label": "📸 포토그래퍼"
+      },
+      {
+        "slug": "olympic-medalist",
+        "label": "🏅 올림픽 메달리스트"
+      }
+    ]
+  },
+  {
+    "id": "baron-montgomerie-9si39d",
+    "imageSrc": "cat-baron.png",
+    "imageAlt": "모자와 단안경 그리고 콧수염이 멋진 신사 고양이",
+    "name": "에글링턴의 남작 몽고메리",
+    "birthday": "1974-8-3",
+    "badges": []
+  },
+  {
+    "id": "joan-clawmaker-5xch41",
+    "imageSrc": "cat-clawmaker.png",
+    "imageAlt": "귀걸이와 핑크색 모히칸 모자를 쓴 펑크 록 고양이",
+    "name": "조안 클로메이커",
+    "birthday": "2019-10-15",
+    "badges": [
+      {
+        "slug": "lock-star",
+        "label": "⭐️ 록스타"
+      },
+      {
+        "slug": "musician",
+        "label": "🎸 뮤지션"
+      }
+    ]
+  }
+]

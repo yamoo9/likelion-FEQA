@@ -1,0 +1,17 @@
+.component {
+  display: grid;
+  justify-items: center;
+  gap: 60px;
+  width: 80dvw;
+  margin-inline: auto;
+
+  @media (min-width: 760px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  @media (min-width: 1060px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
