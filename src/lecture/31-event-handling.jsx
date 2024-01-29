@@ -2,7 +2,7 @@ let count = 100;
 
 console.log(`count = ${count}`);
 
-function Exercise() {
+function Exercise({ message }) {
   const handleClick = (e) => {
     // Event 객체 (합성 이벤트)
     // console.log(e);
@@ -33,12 +33,18 @@ function Exercise() {
   const actionTwo = () => console.log('two');
   const actionThree = () => console.log('three');
 
-  const handleMultiEvents = (e) => {
+  const handleMultiEvents = (message, e) => {
     e.stopPropagation();
+
+    console.log(`message prop value is ${message}`);
 
     actionOne();
     actionTwo();
     actionThree();
+  };
+
+  const handleOthers = (message) => () => {
+    alert(message);
   };
 
   return (
@@ -52,17 +58,22 @@ function Exercise() {
       <button type="button" onClick={handleCountDown}>
         count down
       </button>
-      {/* {
-        React.createElement('button', {
-          type: 'button',
-          onClick: handleCountDown() // undefined
-        })
-      } */}
       <button type="button" onClick={handleCountUp}>
         count up
       </button>
-      <button type="button" onClick={handleMultiEvents}>
+      <button
+        type="button"
+        // 인라인 화살표 함수 활용
+        onClick={(e) => handleMultiEvents(message, e)}
+      >
         multi event handling
+      </button>
+      <button
+        type="button"
+        // 클로저 활용
+        onClick={handleOthers(message)}
+      >
+        using closure
       </button>
     </div>
   );
