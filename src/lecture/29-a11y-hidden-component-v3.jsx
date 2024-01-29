@@ -11,19 +11,28 @@ const bannerInfo =
 // - className (문자 결합: 템플릿 리터럴 활용)
 // - style (객체 결합: { key: value, ... })
 
+// - [x] 상태가 없는(Stateless) 컴포넌트 (마크업, 스타일링 중심)
+// - [ ] 상태를 가진(Stateful) 컴포넌트
+
 function Exercise() {
   return (
     <figure>
       {/* [1] 스타일 확장 시, props 합성 주의! */}
       <DemoImg
+        // 컴포넌트 작성자가 설계한 속성
+        imageSource={bannerImage}
+        width={840}
+        height={320}
+        ratio={4}
+        // [사용자 확장되는 경우] 컴포넌트 사용자가 스타일 확장하는 경우
+        // className="one two three"
+        // style={{
+        //   filter: 'blur(4px)',
+        // }}
+        // [사용자 확장되는 경우] 개발자가 설계한 속성이 아닌 경우(restProps)
         data-testid="demo image"
         aria-label="좋은 세상 만들기"
-        className="one two three"
-        imageSource={bannerImage}
-        ratio={4}
-        style={{
-          filter: 'blur(4px)',
-        }}
+        role="group"
       >
         {/* [2] Skip to Content (Links) */}
         <A11yHidden as="a" href="/demo" focusable>
@@ -40,8 +49,8 @@ function DemoImg(
   /* props 객체 */
   {
     imageSource,
-    className,
-    style,
+    style: customStyles,
+    className = '',
     width = 1280,
     height = 790,
     ratio = 1,
@@ -49,7 +58,8 @@ function DemoImg(
     ...restProps
   }
 ) {
-  const classNames = `${classes.demo} ${className}`;
+  const classNames = `${classes.demo} ${className}`.trim();
+
   const defaultStyles = {
     backgroundImage: `url(${imageSource})`,
     width: width ? width / ratio : undefined,
@@ -57,20 +67,15 @@ function DemoImg(
     filter: 'blur(0px)',
   };
 
-  console.log(restProps);
+  const styles = {
+    // 컴포넌트 개발자가 설정한 기본 스타일 객체
+    ...defaultStyles,
+    // 컴포넌트 사용자가 설정한 스타일 객체
+    ...customStyles,
+  };
 
   return (
-    <div
-      {...restProps}
-      role="img"
-      className={classNames}
-      style={{
-        // 컴포넌트 개발자가 설정한 기본 스타일 객체
-        ...defaultStyles,
-        // 컴포넌트 사용자가 설정한 스타일 객체
-        ...style,
-      }}
-    >
+    <div role="img" className={classNames} style={styles} {...restProps}>
       {children}
     </div>
   );
