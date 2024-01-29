@@ -3,9 +3,9 @@ import './Button.css';
 // props: { loading, disable, disabled, mode, type, state, ... }
 
 function Button(props) {
-  let buttonLabel = props.children;
+  let buttonLabel = props.children; // *
 
-  if (props.loading) {
+  if (props.loading /* undefined ? */) {
     buttonLabel = '⏳ 로딩 중...';
   }
 

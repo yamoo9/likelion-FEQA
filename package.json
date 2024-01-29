@@ -1,23 +1,35 @@
 {
   "type": "module",
-	"scripts": {
-		"dev": "vite --host",
+  "scripts": {
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-		"compile:ts": "tsc ./src/lecture/10-typescript-compiler.ts --target es6",
-		"compile:tsx": "tsc ./src/lecture/11-typescript-jsx.tsx --jsx react --target esnext --moduleResolution bundler --module esnext"
-	},
-	"devDependencies": {
-		"@types/react": "18.2.48",
-		"@types/react-dom": "18.2.18",
-		"@vitejs/plugin-react": "4.2.1",
-		"eslint": "8.56.0",
-		"eslint-plugin-react": "7.33.2",
-		"typescript": "5.3.3",
-		"vite": "5.0.11"
-	},
-	"dependencies": {
-		"react": "18.2.0",
-		"react-dom": "18.2.0"
-	}
+    "compile:ts": "tsc ./src/lecture/10-typescript-compiler.ts --target es6",
+    "compile:tsx": "tsc ./src/lecture/11-typescript-jsx.tsx --jsx react --target esnext --moduleResolution bundler --module esnext",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "7.6.10",
+    "@storybook/addon-interactions": "7.6.10",
+    "@storybook/addon-links": "7.6.10",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "7.6.10",
+    "@storybook/react": "7.6.10",
+    "@storybook/react-vite": "7.6.10",
+    "@storybook/test": "7.6.10",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "@vitejs/plugin-react": "4.2.1",
+    "eslint": "8.56.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-storybook": "0.6.15",
+    "storybook": "7.6.10",
+    "typescript": "5.3.3",
+    "vite": "5.0.11"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
 }
