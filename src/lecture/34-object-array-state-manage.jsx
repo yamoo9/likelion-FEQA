@@ -4,17 +4,32 @@ import { useState } from 'react';
 import catsData from '../data/cats.json';
 import { getStaticImage } from '../utils';
 
+// function callBook() {
+//   console.log('call book')
+// }
+
+// function run() {
+//   callBook(); // 바로 실행??? 이벤트 의해 실행
+//   globalThis.addEventListener('click', callBook); // 바로 실행? 이벤트에 의해 실행
+//   globalThis.addEventListener('click', callBook()); // 바로 실행? 이벤트에 의해 실행
+//   globalThis.addEventListener('click', () => callBook()); // 바로 실행? 이벤트에 의해 실행
+// }
+
+// run();
+
 function CatsList() {
   // 어떤 상태 ?
   // 고양이 집합(catsData) : Array
   const [cats, setCats] = useState(catsData);
 
-  const handleDeleteCat = () => {
+  const handleDeleteCat = (deleteCatId) => {
+    // console.log(deleteCatId);
+
     // [1] 새로운 값 설정
-    // setCats(cats.filter((cat) => !cat.birthday.includes('1974')));
+    // setCats(cats.filter((cat) => cat.id !== deleteCatId));
 
     // [2] 콜백 함수: 이전 값을 연산해서 반환한 값 설정
-    setCats((cats) => cats.filter((cat) => !cat.birthday.includes('1974')));
+    setCats((cats) => cats.filter((cat) => cat.id !== deleteCatId));
   };
 
   return (
@@ -36,7 +51,8 @@ function CatsList() {
             type="button"
             aria-label="삭제"
             title="삭제"
-            onClick={handleDeleteCat}
+            // onClick={handleDeleteCat(cat.id)}
+            onClick={() => handleDeleteCat(cat.id)}
           >
             ⅹ
           </button>
