@@ -4,6 +4,12 @@ import catsData from '../data/cats.json';
 import { getStaticImage } from '../utils';
 
 function CatsList() {
+  const handleDeleteCat = () => {
+    // console.log('delete cat');
+    catsData.pop();
+    console.log(catsData.length, catsData);
+  };
+
   return (
     <ul
       style={{
@@ -19,6 +25,14 @@ function CatsList() {
             src={getStaticImage(cat.imageSrc)}
             alt={cat.imageAlt}
           />
+          <button
+            type="button"
+            aria-label="삭제"
+            title="삭제"
+            onClick={handleDeleteCat}
+          >
+            ⅹ
+          </button>
         </li>
       ))}
     </ul>
