@@ -24,6 +24,32 @@ function CatsList() {
     setCats([{ ...newCat, id: newCatId }, ...cats]);
   };
 
+  const handleIncreaseAge = (updateCatId) => {
+    // console.log(`${updateCatId} age +1`);
+    setCats((/* previous cats */ cats) =>
+      cats.map((cat) => {
+        if (cat.id === updateCatId) {
+          return { ...cat, age: cat.age + 1 };
+        } else {
+          return cat;
+        }
+      })
+    );
+  };
+
+  const handleDecreaseAge = (updateCatId) => {
+    // console.log(`${updateCatId} age -1`);
+    setCats((cats) =>
+      cats.map((cat) => {
+        if (cat.id === updateCatId) {
+          return { ...cat, age: cat.age - 1 };
+        } else {
+          return cat;
+        }
+      })
+    );
+  };
+
   return (
     <>
       <button type="button" onClick={handleAddCat} style={{ marginBlock: 20 }}>
@@ -51,10 +77,18 @@ function CatsList() {
                 marginBlockEnd: 16,
               }}
             >
-              <button type="button" aria-label="고양이 나이 1 증가">
+              <button
+                type="button"
+                aria-label="고양이 나이 1 증가"
+                onClick={() => handleIncreaseAge(cat.id)}
+              >
                 +
               </button>
-              <button type="button" aria-label="고양이 나이 1 감소">
+              <button
+                type="button"
+                aria-label="고양이 나이 1 감소"
+                onClick={() => handleDecreaseAge(cat.id)}
+              >
                 -
               </button>
               <button
