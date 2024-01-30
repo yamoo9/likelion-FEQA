@@ -22,15 +22,19 @@ function CatsList() {
   // 고양이 집합(catsData) : Array
   const [cats, setCats] = useState(catsData);
 
-  const handleDeleteCat = (deleteCatId) => {
-    // console.log(deleteCatId);
+  const handleDeleteCat = 
+    /* 함수 컴포넌트 실행 시 바로 실행되는 래퍼 함수 */
+    (deleteCatId) => 
+      /* 이벤트 핸들러 */ 
+        (/* e */) => {
+        // console.log(deleteCatId);
 
-    // [1] 새로운 값 설정
-    // setCats(cats.filter((cat) => cat.id !== deleteCatId));
+        // [1] 새로운 값 설정
+        // setCats(cats.filter((cat) => cat.id !== deleteCatId));
 
-    // [2] 콜백 함수: 이전 값을 연산해서 반환한 값 설정
-    setCats((cats) => cats.filter((cat) => cat.id !== deleteCatId));
-  };
+        // [2] 콜백 함수: 이전 값을 연산해서 반환한 값 설정
+        setCats((cats) => cats.filter((cat) => cat.id !== deleteCatId));
+      };
 
   return (
     <ul
@@ -51,8 +55,10 @@ function CatsList() {
             type="button"
             aria-label="삭제"
             title="삭제"
-            // onClick={handleDeleteCat(cat.id)}
-            onClick={() => handleDeleteCat(cat.id)}
+            // 일반적으로 리액트 사용 시, 개발자가 주로 하는 방식
+            // onClick={() => handleDeleteCat(cat.id)}
+            // JS 클로저 활용 시
+            onClick={handleDeleteCat(cat.id)}
           >
             ⅹ
           </button>
