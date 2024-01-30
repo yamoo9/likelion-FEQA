@@ -17,7 +17,7 @@ import { getStaticImage } from '../utils';
 
 // run();
 
-const newCat = catsData[2];
+const newCat = catsData[2]; // [cat {}, cat {}, cat {}]
 
 function CatsList() {
   // 어떤 상태 ?
@@ -43,10 +43,17 @@ function CatsList() {
   };
 
   const handleAddCat = () => {
-    newCat.id = crypto.randomUUID();
-    console.log(newCat);
+    const newCatId = crypto.randomUUID();
 
-    setCats([newCat, ...cats]);
+    // setCats([newCat, ...cats]);
+    setCats(
+      /* 배열 합성 패턴 */
+      [
+        /* 객체 합성 패턴 */
+        { ...newCat, id: newCatId },
+        ...cats,
+      ]
+    );
   };
 
   return (
