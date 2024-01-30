@@ -1,5 +1,5 @@
 import './App.css';
-import Exercise from '../lecture/33-avoid-bomb';
+import Exercise from '../lecture/34-object-array-state-manage.jsx';
 
 function App() {
   return (
