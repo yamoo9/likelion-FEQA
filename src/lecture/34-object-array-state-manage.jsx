@@ -9,45 +9,42 @@ const createCatsList = () =>
     return { ...cat, age };
   });
 
-const newCat = createCatsList()[1];
+// dummy data
+const newCat = createCatsList()[1]; // [cat, cat, cat]
 
 function CatsList() {
-  const [cats, setCats] = useState(/* 초기화 함수 참조 */ createCatsList);
+  const [
+    /* 상태 = 현재 컴포넌트에서 데이터 스냅샷 (수정 불가능) */
+    cats,
+    /* 상태 업데이트 함수 실행 (트리거 -> 렌더 -> 커밋) */
+    setCats,
+  ] = useState(createCatsList);
 
   const handleDeleteCat = (deleteCatId) => {
     setCats(cats.filter((cat) => cat.id !== deleteCatId));
   };
 
   const handleAddCat = () => {
-    const newCatId = crypto.randomUUID();
-
-    setCats([{ ...newCat, id: newCatId }, ...cats]);
+    setCats([{ ...newCat, id: crypto.randomUUID() }, ...cats]);
   };
 
-  const handleIncreaseAge = (updateCatId) => {
-    // console.log(`${updateCatId} age +1`);
-    setCats((/* previous cats */ cats) =>
-      cats.map((cat) => {
-        if (cat.id === updateCatId) {
-          return { ...cat, age: cat.age + 1 };
-        } else {
-          return cat;
-        }
-      })
+  const handleIncreaseAge = (updateCatId) =>
+    setCats(
+      cats.map((cat) =>
+        cat.id === updateCatId ? { ...cat, age: cat.age + 1 } : cat
+      )
     );
-  };
 
   const handleDecreaseAge = (updateCatId) => {
-    // console.log(`${updateCatId} age -1`);
-    setCats((cats) =>
-      cats.map((cat) => {
-        if (cat.id === updateCatId) {
-          return { ...cat, age: cat.age - 1 };
-        } else {
-          return cat;
-        }
-      })
-    );
+    const nextCats = cats.map((cat) => {
+      if (cat.id === updateCatId) {
+        return { ...cat, age: cat.age - 1 };
+      } else {
+        return cat;
+      }
+    });
+
+    setCats(nextCats);
   };
 
   return (
