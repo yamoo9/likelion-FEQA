@@ -78,9 +78,9 @@ export default function Exercise() {
       <p>{message}</p>
       <button
         type="button"
-        // onClick={() => handleChangeMessage(getRamdomMessage())}
+        onClick={() => handleChangeMessage(getRamdomMessage())}
         // 리액트 개발자들이 잘 사용 안함
-        onClick={handleChangeMessage.bind(null, getRamdomMessage())}
+        // onClick={handleChangeMessage.bind(null, getRamdomMessage())}
       >
         change message
       </button>
