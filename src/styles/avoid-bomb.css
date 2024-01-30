@@ -1,0 +1,15 @@
+body {
+  background-color: #181717;
+}
+
+#root {
+  --size: 300px;
+
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  padding: 0;
+  width: var(--size);
+  height: var(--size);
+  outline: 2px solid #ffffff80;
+}

@@ -1,4 +1,5 @@
-import './styles/main.css'; // global CSS
+import './styles/main.css';
+import './styles/avoid-bomb.css';
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
