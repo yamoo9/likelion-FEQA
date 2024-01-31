@@ -16,4 +16,5 @@
 1. [조건부 렌더링](./summary/06.md)
 1. [이벤트 핸들링 & 상태 관리 I](./summary/07.md)
 1. [상태 관리 II](./summary/08.md)
-1. [폼 컨트롤](./summary/09.md)
+1. [폼 컨트롤 I](./summary/09.md)
+1. [폼 컨트롤 II & 사이드 이펙트](./summary/10.md)
