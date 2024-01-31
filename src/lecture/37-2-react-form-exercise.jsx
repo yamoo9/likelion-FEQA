@@ -62,10 +62,15 @@ function FormExample() {
     console.log(formData);
   };
 
+  const handleReset = () => {
+    setFormData(INITIAL_FORM_DATA);
+  };
+
   return (
     <>
       <form
         onSubmit={handleSubmit}
+        onReset={handleReset}
         style={{ display: 'flex', flexFlow: 'column', gap: 20 }}
       >
         <FormInput
@@ -139,7 +144,7 @@ function FormExample() {
           }}
         >
           <button type="submit">보내기</button>
-          <button type="reset">초기화</button>
+          <button type="reset">취소</button>
         </div>
       </form>
     </>
