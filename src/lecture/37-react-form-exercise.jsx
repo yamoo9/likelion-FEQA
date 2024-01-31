@@ -7,9 +7,10 @@
 // 리액트의 방식
 // 어떤 방법 ??? 선언형 프로그래밍
 // 무엇을(WHAT)
-// 상태를 선언해야 한다.
+// 제어할 상태를 선언해야 한다.
 
 import { useState } from 'react';
+import { A11yHidden } from '../components';
 
 const INITIAL_FEEL_MESSAGE = '공부하기 좋은 날이네~';
 
@@ -96,9 +97,15 @@ function Exercise() {
         {/* 
           Warning: Use the `defaultValue` or `value` props instead of setting children on <textarea>.
         */}
+        <A11yHidden as="label" htmlFor="feel-today-textarea">
+          오늘 기분
+        </A11yHidden>
         {/* JSX에서 마크업할 때는 value 또는 defaultValue를 사용해야 해! */}
-        <textarea value={feelMessage} onChange={handleChange} />
-
+        <textarea
+          id="feel-today-textarea"
+          value={feelMessage}
+          onChange={handleChange}
+        />
         {/* 리액트에서 JSX를 사용해 마크업할 때 HTML 처럼 안됨!!! */}
         {/* <textarea>{feelMessage}</textarea> */}
       </div>
