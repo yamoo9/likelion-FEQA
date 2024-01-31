@@ -12,4 +12,10 @@ export default defineConfig({
   resolve: {
     alias: { '@': path.resolve(__dirname, './src') },
   },
+  css: {
+    devSourcemap: true,
+    modules: {
+      // generateScopedName: '[name]__[local]--[hash:base64:12]',
+    },
+  },
 });
