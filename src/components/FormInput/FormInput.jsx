@@ -3,6 +3,7 @@ import { A11yHidden } from '..';
 
 function FormInput({
   as: ComponentName = 'div',
+  name,
   type = 'text',
   label,
   placeholder,
@@ -38,6 +39,7 @@ function FormInput({
       <input
         id={id}
         type={type}
+        name={name}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
