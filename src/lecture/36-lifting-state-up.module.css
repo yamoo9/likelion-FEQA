@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  inline-size: 400px;
+  inline-size: 480px;
   margin-inline: auto;
 
   .AccordionPanel {
-    flex: 1;
+    flex: 1 0 240px;
   }
 }

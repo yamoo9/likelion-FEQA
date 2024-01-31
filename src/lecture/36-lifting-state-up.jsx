@@ -16,8 +16,8 @@ function Accordion() {
 
   const [openedPanelIndex, setOpenedPanelIndex] = useState(0);
 
-  const handleOpenPannel = () => {
-    setOpenedPanelIndex();
+  const handleOpenPannel = (panelIndex) => {
+    setOpenedPanelIndex(panelIndex);
   };
 
   return (
@@ -25,10 +25,18 @@ function Accordion() {
       <A11yHidden as="h2" id={headlineId}>
         아코디언을 사용해 컴포넌트 간 상태 공유
       </A11yHidden>
-      <AccordionPanel data-index={0} isOpen={openedPanelIndex === 0}>
+      <AccordionPanel
+        index={0}
+        isOpen={openedPanelIndex === 0}
+        onToggle={handleOpenPannel}
+      >
         <p>아코디언 컴포넌트는 ..... 1</p>
       </AccordionPanel>
-      <AccordionPanel data-index={1} isOpen={openedPanelIndex === 1}>
+      <AccordionPanel
+        index={1}
+        isOpen={openedPanelIndex === 1}
+        onToggle={handleOpenPannel}
+      >
         <p>아코디언 컴포넌트는 ..... 2</p>
       </AccordionPanel>
     </article>
@@ -36,10 +44,16 @@ function Accordion() {
 }
 
 // props → Stateless component (presentation)
-function AccordionPanel({ isOpen = false, onToggle, children, ...restProps }) {
+function AccordionPanel({
+  isOpen = false,
+  index,
+  onToggle,
+  children,
+  ...restProps
+}) {
   return (
     <div className={classes.AccordionPanel} {...restProps}>
-      <button type="button" onClick={onToggle}>
+      <button type="button" onClick={() => onToggle(index)}>
         {isOpen ? '닫음' : '열림'}
       </button>
       <div hidden={!isOpen}>{children}</div>
