@@ -11,11 +11,17 @@
 
 import { useState } from 'react';
 
+const INITIAL_FEEL_MESSAGE = '공부하기 좋은 날이네~';
+
 function Exercise() {
-  const [feelMessage, setFeelMessage] = useState(); // undefined
+  const [feelMessage, setFeelMessage] = useState(INITIAL_FEEL_MESSAGE);
 
   const handleUpdateFeelMessage = (nextMessage) => {
     setFeelMessage(nextMessage);
+  };
+
+  const handleChange = (e) => {
+    setFeelMessage(e.target.value);
   };
 
   return (
@@ -28,16 +34,27 @@ function Exercise() {
             gap: 4,
           }}
         >
+          {/* 
+            Warning: You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.
+          */}
           <label htmlFor="feel-today">오늘 기분</label>
           <input
             id="feel-today"
             type="text"
-            placeholder="공부하기 좋은 날이네~"
+            placeholder={INITIAL_FEEL_MESSAGE}
+            // 컨트롤 컴포넌트
+            // value 속성에 리액트가 제어하는 상태가 연결
+            // 리액트가 제어하는 인풋
+            value={feelMessage}
+            // defaultValue={feelMessage}
+            onChange={handleChange}
+            // readOnly={true}
+            // readOnly
           />
         </div>
       </form>
 
-      <div style={{ marginBlockStart: 12 }}>
+      <div style={{ marginBlockStart: 12, display: 'felx', gap: 4 }}>
         <button
           type="button"
           onClick={() => {
@@ -49,7 +66,7 @@ function Exercise() {
         <button
           type="button"
           onClick={() => {
-            handleUpdateFeelMessage('');
+            handleUpdateFeelMessage(INITIAL_FEEL_MESSAGE);
           }}
         >
           초기화
@@ -66,6 +83,24 @@ function Exercise() {
       >
         {/* <output>폼 입력 내용 출력</output> */}
         <output>{feelMessage}</output>
+      </div>
+      <div
+        style={{
+          border: '1px solid',
+          marginBlock: 12,
+          borderRadius: 6,
+          padding: 20,
+          backgroundColor: '#fff',
+        }}
+      >
+        {/* 
+          Warning: Use the `defaultValue` or `value` props instead of setting children on <textarea>.
+        */}
+        {/* JSX에서 마크업할 때는 value 또는 defaultValue를 사용해야 해! */}
+        <textarea value={feelMessage} onChange={handleChange} />
+
+        {/* 리액트에서 JSX를 사용해 마크업할 때 HTML 처럼 안됨!!! */}
+        {/* <textarea>{feelMessage}</textarea> */}
       </div>
     </div>
   );
