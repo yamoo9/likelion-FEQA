@@ -1,5 +1,5 @@
 import './App.css';
-import Exercise from '../lecture/36-lifting-state-up.jsx';
+import Exercise from '../lecture/36-2-lifting-state-up.jsx';
 
 function App() {
   return (
