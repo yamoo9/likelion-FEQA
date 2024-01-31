@@ -10,31 +10,36 @@ import { A11yHidden } from '../components';
 // - 컴포넌트 사이에 상태를 공유하려면?
 //   공유하려는 컴포넌트 들의 가장 가까운 상위 컴포넌트로 상태를 끌어올려야 한다.
 
+// states → Stateful component (container)
 function Accordion() {
   const headlineId = crypto.randomUUID();
+
+  const [openedPanelIndex, setOpenedPanelIndex] = useState(0);
+
+  const handleOpenPannel = () => {
+    setOpenedPanelIndex();
+  };
 
   return (
     <article className={classes.Accordion} aria-labelledby={headlineId}>
       <A11yHidden as="h2" id={headlineId}>
         아코디언을 사용해 컴포넌트 간 상태 공유
       </A11yHidden>
-      <AccordionPanel>
+      <AccordionPanel data-index={0} isOpen={openedPanelIndex === 0}>
         <p>아코디언 컴포넌트는 ..... 1</p>
       </AccordionPanel>
-      <AccordionPanel>
+      <AccordionPanel data-index={1} isOpen={openedPanelIndex === 1}>
         <p>아코디언 컴포넌트는 ..... 2</p>
       </AccordionPanel>
     </article>
   );
 }
 
-function AccordionPanel({ children }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleTogglePanel = () => setIsOpen(!isOpen);
-
+// props → Stateless component (presentation)
+function AccordionPanel({ isOpen = false, onToggle, children, ...restProps }) {
   return (
-    <div className="">
-      <button type="button" onClick={handleTogglePanel}>
+    <div className={classes.AccordionPanel} {...restProps}>
+      <button type="button" onClick={onToggle}>
         {isOpen ? '닫음' : '열림'}
       </button>
       <div hidden={!isOpen}>{children}</div>
