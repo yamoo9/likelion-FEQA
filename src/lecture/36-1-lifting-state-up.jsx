@@ -1,6 +1,6 @@
 import classes from './36-lifting-state-up.module.css';
 import { useState } from 'react';
-import { A11yHidden } from '../components';
+import { A11yHidden } from '@/components';
 
 // [학습 주제]
 // 컴포넌트 사이에 상태를 공유해요!

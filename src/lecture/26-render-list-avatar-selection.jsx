@@ -1,6 +1,6 @@
 import './26-render-list-avatar-selection.css';
-import Avatar from '../components/Avatar/Avatar';
-import contactData from '../data/contacts.json';
+import { Avatar } from '@/components';
+import contactData from '@/data/contacts.json';
 
 function Exercise() {
   // contactData.items [{ id, gender, name, face, ... }, ]

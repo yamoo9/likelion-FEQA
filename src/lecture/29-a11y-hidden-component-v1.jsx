@@ -1,4 +1,3 @@
-import { A11yHidden } from '../components';
 // src 안에 있는 자산(에셋, assets)을 번들러를 사용해서 화면에 표시하고,
 // 빌드했을 때 정상적으로 이미지를 빌드하려면 import로 호출해서 사용해야 한다.
 import bannerImage from '../assets/banner.png';

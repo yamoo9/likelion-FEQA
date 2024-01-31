@@ -10,7 +10,7 @@
 // 제어할 상태를 선언해야 한다.
 
 import { useState } from 'react';
-import { A11yHidden, FormInput } from '../components';
+import { A11yHidden, FormInput } from '@/components';
 
 function Exercise() {
   return (
@@ -35,15 +35,59 @@ function FormExample() {
     setFeelMessage(e.target.value);
   };
 
+  // email 상태 관리
+  const [email, setEmail] = useState('');
+
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  // agree 상태 관리
+  const [agree, setAgree] = useState('네' /* '아니오' */);
+  const handleChangeAgree = (e) => {
+    setAgree(e.target.value);
+  };
+
   return (
     <>
-      <form>
+      <form style={{ display: 'flex', flexFlow: 'column', gap: 20 }}>
         <FormInput
           label="오늘 기분"
           placeholder={INITIAL_FEEL_MESSAGE}
           value={feelMessage}
           onChange={handleChange}
         />
+        <FormInput
+          label="이메일"
+          type="email"
+          placeholder="user@company.dev"
+          value={email}
+          onChange={handleChangeEmail}
+        />
+
+        <div>
+          <label>
+            <input
+              type="radio"
+              name="agree"
+              value="네"
+              checked={agree === '네'}
+              onChange={handleChangeAgree}
+            />
+            동의하오!
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="agree"
+              value="아니오"
+              checked={agree === '아니오'}
+              onChange={handleChangeAgree}
+            />
+            이의있소!
+          </label>
+        </div>
+
         <ButtonGroup
           onUpdate={handleUpdateFeelMessage}
           resetMessage={INITIAL_FEEL_MESSAGE}

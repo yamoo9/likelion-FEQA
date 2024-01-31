@@ -1,5 +1,5 @@
-import bannerImage from '../assets/banner.png';
-import { A11yHidden } from '../components';
+import bannerImage from '@/assets/banner.png';
+import { A11yHidden } from '@/components';
 import classes from './29-a11y-hidden-component.module.css';
 
 const bannerInfo =

@@ -1,9 +1,12 @@
-import './styles/main.css';
-// import './styles/avoid-bomb.css';
+// Vite(Rollup) - @ 기호 사용하면 src 폴더 말하는 거다!!!
+// VS Code - @ 기호 사용하면 src 폴더 말하는 거다!!!
+
+import '@/styles/main.css';
+// import '@/styles/avoid-bomb.css';
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './app/App';
+import App from '@/app/App';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

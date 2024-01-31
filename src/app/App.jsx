@@ -1,5 +1,5 @@
 import './App.css';
-import Exercise from '../lecture/37-react-form-exercise.jsx';
+import Exercise from '@/lecture/37-react-form-exercise.jsx';
 
 function App() {
   return (

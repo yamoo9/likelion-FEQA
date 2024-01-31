@@ -1,4 +1,4 @@
-import { A11yHidden, CatCardList } from '../components';
+import { A11yHidden, CatCardList } from '@/components';
 
 function Exercise() {
   return (

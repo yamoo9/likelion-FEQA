@@ -1,4 +1,4 @@
-import { CountUp } from '../components';
+import { CountUp } from '@/components';
 
 function Exercise() {
   return (
