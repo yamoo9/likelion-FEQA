@@ -25,6 +25,7 @@ const INITIAL_FEEL_MESSAGE = '공부하기 좋은 날이네~';
 
 // 컴포넌트 추출
 function FormExample() {
+  // [1] 오늘 기분
   const [feelMessage, setFeelMessage] = useState(INITIAL_FEEL_MESSAGE);
 
   const handleUpdateFeelMessage = (nextMessage) => {
@@ -35,14 +36,14 @@ function FormExample() {
     setFeelMessage(e.target.value);
   };
 
-  // email 상태 관리
+  // [2] email 상태 관리
   const [email, setEmail] = useState('');
 
   const handleChangeEmail = (e) => {
     setEmail(e.target.value);
   };
 
-  // agree 상태 관리
+  // [3] agree 상태 관리
   const [agree, setAgree] = useState('네' /* '아니오' */);
   const handleChangeAgree = (e) => {
     setAgree(e.target.value);
