@@ -9,8 +9,8 @@
 // 무엇을(WHAT)
 // 제어할 상태를 선언해야 한다.
 
-import { useId, useState } from 'react';
-import { A11yHidden } from '../components';
+import { useState } from 'react';
+import { A11yHidden, FormInput } from '../components';
 
 function Exercise() {
   return (
@@ -41,96 +41,79 @@ function FormExample() {
         <FormInput
           label="오늘 기분"
           placeholder={INITIAL_FEEL_MESSAGE}
-          gap={6}
           value={feelMessage}
           onChange={handleChange}
         />
+        <ButtonGroup
+          onUpdate={handleUpdateFeelMessage}
+          resetMessage={INITIAL_FEEL_MESSAGE}
+        />
+        <FormOutput outputValue={feelMessage} />
+        <FormTextarea value={feelMessage} onChange={handleChange} />
       </form>
-
-      <div style={{ marginBlockStart: 12, display: 'flex', gap: 4 }}>
-        <button
-          type="button"
-          onClick={() => {
-            handleUpdateFeelMessage('맑음');
-          }}
-        >
-          표시
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            handleUpdateFeelMessage(INITIAL_FEEL_MESSAGE);
-          }}
-        >
-          초기화
-        </button>
-      </div>
-
-      <div
-        style={{
-          border: '1px solid',
-          marginBlock: 12,
-          borderRadius: 6,
-          padding: 20,
-          backgroundColor: '#fff',
-        }}
-      >
-        <output>{feelMessage}</output>
-      </div>
-
-      <div
-        style={{
-          border: '1px solid',
-          marginBlock: 12,
-          borderRadius: 6,
-          padding: 20,
-          backgroundColor: '#fff',
-        }}
-      >
-        <A11yHidden as="label" htmlFor="feel-today-textarea">
-          오늘 기분
-        </A11yHidden>
-        <textarea
-          id="feel-today-textarea"
-          value={feelMessage}
-          onChange={handleChange}
-        />
-      </div>
     </>
   );
 }
 
-function FormInput({
-  as: ComponentName = 'div',
-  type = 'text',
-  label,
-  placeholder,
-  value,
-  onChange,
-  gap = 4,
-  style: customStyle,
-  ...restProps
-}) {
-  const id = useId();
-
+function FormTextarea({ value, onChange }) {
   return (
-    <ComponentName
+    <div
       style={{
-        display: 'flex',
-        gap,
-        ...customStyle,
+        border: '1px solid',
+        marginBlock: 12,
+        borderRadius: 6,
+        padding: 20,
+        backgroundColor: '#fff',
       }}
-      {...restProps}
     >
-      <label htmlFor={id}>{label}</label>
-      <input
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-      />
-    </ComponentName>
+      <A11yHidden as="label" htmlFor="feel-today-textarea">
+        오늘 기분
+      </A11yHidden>
+      <textarea id="feel-today-textarea" value={value} onChange={onChange} />
+    </div>
+  );
+}
+
+function ButtonGroup({
+  onUpdate,
+  displayMessage = '맑음',
+  resetMessage = '날씨 모름',
+}) {
+  return (
+    <div style={{ marginBlockStart: 12, display: 'flex', gap: 4 }}>
+      <button
+        type="button"
+        onClick={() => {
+          onUpdate?.(displayMessage);
+        }}
+      >
+        표시
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          onUpdate?.(resetMessage);
+        }}
+      >
+        초기화
+      </button>
+    </div>
+  );
+}
+
+function FormOutput({ outputValue }) {
+  return (
+    <div
+      style={{
+        border: '1px solid',
+        marginBlock: 12,
+        borderRadius: 6,
+        padding: 20,
+        backgroundColor: '#fff',
+      }}
+    >
+      <output>{outputValue}</output>
+    </div>
   );
 }
 
