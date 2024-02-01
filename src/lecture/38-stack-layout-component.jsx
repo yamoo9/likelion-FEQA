@@ -26,7 +26,7 @@ const PIZZA = {
 };
 
 const INITIAL_ORDER = {
-  type: PIZZA.types[PIZZA.types.length - 1],
+  type: PIZZA.types[0],
   toppings: [],
   isAllToppings: false,
 };
@@ -55,8 +55,18 @@ function Form() {
     });
   };
 
+  const handleOrder = (e) => {
+    e.preventDefault();
+    console.log(orderState);
+  };
+
+  const handleCancel = () => {
+    // 주문 초기화
+    setOrderState(INITIAL_ORDER);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleOrder} onReset={handleCancel}>
       <h3>피자 타입을 선택하세요.</h3>
       {PIZZA.types.map((pizzaType) => (
         <FormChecker
