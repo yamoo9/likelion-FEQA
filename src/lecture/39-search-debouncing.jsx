@@ -1,4 +1,5 @@
 import { FormInput, Stack } from '@/components';
+import { debounce } from '@/utils';
 import { useState } from 'react';
 
 const KEYWORDS = [
@@ -33,6 +34,7 @@ function SearchForm() {
   const [query, setQuery] = useState('');
 
   const handleQuery = (e) => {
+    // 리-렌더링 요청
     setQuery(e.target.value);
   };
 
@@ -48,7 +50,20 @@ function SearchForm() {
     <Stack vertical gap={20}>
       <form>
         <FormInput
-          value={query}
+          // [2]
+          // 리액트에 의해서 제어되는 상황
+          // 사용자가 입력해도 화면은 바뀌지 않는다.
+          // value={query}
+          //
+          // [3]
+          // 입력이 안되는 문제 해결을 위해서 사용자가 직접 수정할 수 있게 조치한다.
+          // value -> defaultValue
+          defaultValue={query}
+          //
+          // [1]
+          // 디바운싱 적용 이전: 사용자가가 입력할 때마다 상태를 업데이트 시도합니다.
+          // 디바운싱 적용 이후: 사용자 입력이 끝난 후, 0.4초가 지나면 그 때 상태 업데이트를 시도합니다.
+          // onChange={debounce(handleQuery)}
           onChange={handleQuery}
           type="search"
           label="학습 주제"
