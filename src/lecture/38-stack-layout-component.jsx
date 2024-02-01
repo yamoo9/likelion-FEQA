@@ -60,8 +60,6 @@ function Form() {
   const handleChangePizzaToppings = (e) => {
     const { value: topping, checked: isChecked } = e.target;
 
-    console.log('이전 토핑 목록: ', orderState.toppings);
-
     let nextToppings = [];
 
     // 사용자가 눌렀을 때 체크되었다
@@ -80,8 +78,6 @@ function Form() {
       toppings: nextToppings,
       isAllToppings: hasFullFilledToppings,
     };
-
-    console.log('다음 토핑 목록: ', nextToppings, hasFullFilledToppings);
 
     setOrderState(nextOrderState);
   };
