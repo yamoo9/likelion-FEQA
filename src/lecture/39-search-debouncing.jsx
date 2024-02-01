@@ -63,8 +63,8 @@ function SearchForm() {
           // [1]
           // 디바운싱 적용 이전: 사용자가가 입력할 때마다 상태를 업데이트 시도합니다.
           // 디바운싱 적용 이후: 사용자 입력이 끝난 후, 0.4초가 지나면 그 때 상태 업데이트를 시도합니다.
-          // onChange={debounce(handleQuery)}
-          onChange={handleQuery}
+          onChange={debounce(handleQuery)}
+          // onChange={handleQuery}
           type="search"
           label="학습 주제"
           placeholder="학습 주제 입력"
