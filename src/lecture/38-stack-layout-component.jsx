@@ -19,7 +19,10 @@ const PIZZA = {
     '밀라노 스폰티니 피자, 시찰리아 칼초네 피자, 시카고 피자, 페페로니 피자, 하와이안 피자'.split(
       ', '
     ),
-  toppings: '새우, 고구마, 감자, 올리브, 페페로니'.split(', '),
+  toppings:
+    '새우, 고구마, 감자, 올리브, 페페로니, 치즈, 파인애플, 가지, 불고기'.split(
+      ', '
+    ),
 };
 
 const INITIAL_ORDER = {
@@ -45,6 +48,13 @@ function Form() {
     setOrderState(nextOrderState);
   };
 
+  const handleChangeAllToppings = (e) => {
+    setOrderState({
+      ...orderState,
+      isAllToppings: e.target.checked,
+    });
+  };
+
   return (
     <form>
       <h3>피자 타입을 선택하세요.</h3>
@@ -61,22 +71,23 @@ function Form() {
       ))}
 
       <h3>피자 토핑을 추가합니다.</h3>
-      <FormChecker checkbox>전체 선택</FormChecker>
-      <FormChecker checkbox name="topping">
-        새우
+      <FormChecker
+        checkbox
+        checked={orderState.isAllToppings}
+        onChange={handleChangeAllToppings}
+      >
+        전체 선택
       </FormChecker>
-      <FormChecker checkbox name="topping">
-        고구마
-      </FormChecker>
-      <FormChecker checkbox name="topping">
-        감자
-      </FormChecker>
-      <FormChecker checkbox name="topping">
-        올리브
-      </FormChecker>
-      <FormChecker checkbox name="topping">
-        페페로니
-      </FormChecker>
+      {PIZZA.toppings.map((topping) => (
+        <FormChecker key={topping} checkbox name="topping" value={topping}>
+          {topping}
+        </FormChecker>
+      ))}
+
+      <Stack gap={4} my={16}>
+        <button type="submit">주문</button>
+        <button type="reset">취소</button>
+      </Stack>
     </form>
   );
 }
