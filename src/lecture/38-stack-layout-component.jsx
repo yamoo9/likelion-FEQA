@@ -46,20 +46,29 @@ function Form() {
   };
 
   const handleChangeAllToppings = (e) => {
-    setOrderState((orderState) => ({
-      ...orderState,
-      isAllToppings: e.target.checked,
-    }));
-    setOrderState((orderState) => ({
-      ...orderState,
-      toppings: orderState.isAllToppings ? PIZZA.toppings : [],
-    }));
+    setOrderState(
+      /* nextOrderState step 1 */
+      // [1] isAllToppings 상태 업데이트
+      (orderState /* { isAllToppings: false } */) => ({
+        ...orderState,
+        isAllToppings: e.target.checked, // false => true
+      })
+    );
+
+    setOrderState(
+      /* nextOrderState step 2 */
+      // [2] toppings 상태 조건부 업데이트
+      (orderState /* { isAllToppings: true } */) => ({
+        ...orderState,
+        toppings: orderState.isAllToppings /* true */ ? PIZZA.toppings : [],
+      })
+    );
   };
 
   const handleChangePizzaToppings = (e) => {
     const { value: topping, checked: isChecked } = e.target;
 
-    // console.log('이전 토핑 목록: ', orderState.toppings);
+    console.log('이전 토핑 목록: ', orderState.toppings);
 
     let nextToppings = [];
 
@@ -123,6 +132,7 @@ function Form() {
           key={topping}
           name="topping"
           value={topping}
+          checked={orderState.toppings.includes(topping)}
           onChange={handleChangePizzaToppings}
         >
           {topping}
