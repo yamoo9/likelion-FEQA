@@ -27,8 +27,8 @@ const PIZZA = {
 
 const INITIAL_ORDER = {
   type: PIZZA.types[0],
-  toppings: [],
   isAllToppings: false,
+  toppings: [],
 };
 
 // Design is All. All is Design.
@@ -55,13 +55,16 @@ function Form() {
     });
   };
 
+  const handleChangePizzaToppings = (e) => {
+    console.log(e.target.value);
+  };
+
   const handleOrder = (e) => {
     e.preventDefault();
     console.log(orderState);
   };
 
   const handleCancel = () => {
-    // 주문 초기화
     setOrderState(INITIAL_ORDER);
   };
 
@@ -89,7 +92,13 @@ function Form() {
         전체 선택
       </FormChecker>
       {PIZZA.toppings.map((topping) => (
-        <FormChecker key={topping} checkbox name="topping" value={topping}>
+        <FormChecker
+          checkbox
+          key={topping}
+          name="topping"
+          value={topping}
+          onChange={handleChangePizzaToppings}
+        >
           {topping}
         </FormChecker>
       ))}
