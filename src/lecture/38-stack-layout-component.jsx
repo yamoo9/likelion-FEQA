@@ -4,6 +4,16 @@ import { useId, useState } from 'react';
 
 function Exercise() {
   return (
+    <>
+      <FormControlExample />
+    </>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+
+function FormControlExample() {
+  return (
     <Stack vertical gap={16} my={20}>
       <Stack vertical gap={4}>
         <h2>폼 컨트롤 II</h2>
