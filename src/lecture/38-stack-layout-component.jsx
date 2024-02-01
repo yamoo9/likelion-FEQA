@@ -56,7 +56,29 @@ function Form() {
   };
 
   const handleChangePizzaToppings = (e) => {
-    console.log(e.target.value);
+    const { value: topping, checked: isChecked } = e.target;
+
+    // console.log('이전 토핑 목록: ', orderState.toppings);
+
+    let nextToppings = [];
+
+    // 사용자가 눌렀을 때 체크되었다
+    if (isChecked) {
+      // 토핑 추가
+      nextToppings = [...orderState.toppings, topping];
+    } else {
+      // 토핑 삭제
+      nextToppings = orderState.toppings.filter((t) => t !== topping);
+    }
+
+    // console.log('다음 토핑 목록: ', nextToppings);
+
+    const nextOrderState = {
+      ...orderState,
+      toppings: nextToppings,
+    };
+
+    setOrderState(nextOrderState);
   };
 
   const handleOrder = (e) => {
