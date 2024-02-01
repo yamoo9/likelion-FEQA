@@ -37,8 +37,6 @@ export default function Stack({
     ...컴포넌트_사용자의_커스텀스타일,
   };
 
-  console.log(컴포넌트_스타일_옵션)
-
   return (
     <Component
       className={컴포넌트_클래스이름}
