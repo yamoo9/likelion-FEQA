@@ -22,12 +22,12 @@ function Exercise() {
   // const [uname] = useState(username);
 
   // ✅
-  const [username] = useState(() => {
-    const username = localStorage.getItem('username');
-    return username;
-  });
+  // const [username] = useState(() => {
+  //   const username = localStorage.getItem('username');
+  //   return username;
+  // });
 
-  console.log(username);
+  // console.log(username);
 
   // 관심사의 분리
   // 상태
@@ -96,7 +96,7 @@ function Exercise() {
   return (
     <Stack vertical className="mx-6">
       <h2 className="text-2xl mt-4">부수 효과(Side Effects)</h2>
-      <Button
+      {/* <Button
         className="button"
         count={productsCount}
         onClick={handleEffectDomAccess}
@@ -105,7 +105,7 @@ function Exercise() {
       </Button>
       <Button className="button" count={productsCount}>
         부수 효과
-      </Button>
+      </Button> */}
       <ul>
         <li>
           리액트의 컴포넌트는 [ <strong>순수</strong> ] 해야 한다.
@@ -148,29 +148,96 @@ function Exercise() {
 }
 
 function Message({ message }) {
-  useEffect(() => {
-    const handleMove = (e) => {
-      console.log({ x: e.clientX, y: e.clientY });
-    };
+  // 이펙트 사용 결정
+  // componentDidMount
+  // componentDidUpdate? (조건 처리)
+  // componentWillUnmount?
+  useEffect(
+    // [1] 설정 함수
+    // - DOM 커밋 이후 실행되는 콜백 함수
+    () => {
+      const handleMove = (e) => {
+        console.log({ x: e.clientX, y: e.clientY });
+      };
 
-    // 이벤트 청취(구독)
-    globalThis.addEventListener('mousemove', handleMove);
+      // 이벤트 청취(구독)
+      globalThis.addEventListener('mousemove', handleMove);
 
-    // 이벤트 청취 해제(구독 취소)
-    return function cleanup() {
-      globalThis.removeEventListener('mousemove', handleMove);
-    };
-  }, []);
+      // 이벤트 청취 해제(구독 취소)
+      // [3] 클린업 함수
+      // - 필요한 경우, 정리 수행
+      return () => {
+        globalThis.removeEventListener('mousemove', handleMove);
+      };
+    },
+    // [2] 종속성 배열
+    // - 종속성 배열을 설정하지 않을 경우, 매 렌더링 마다 실행
+    // - 종속성 배열에는 무엇을 채우나? 추가된 값이 변경될 때마다, 설정 함수 실행
+    []
+  );
 
   return <p>{message}</p>;
 }
 
-function Button({ renderCount = 0, children, ...restProps }) {
+function Button({ count = 0, children, ...restProps }) {
+  // 그 어떤 것에도 의존하지 않는 이펙트 설정 함수
+  // componentDidMount
+  // componentDidUpdate
+  useEffect(
+    () => {
+      console.log('매번 실행');
+    } /* , [] */
+  );
+
+  // DOM 커밋 이후 1회 실행하는 이펙트 설정 함수
+  // componentDidMount
+  useEffect(() => {
+    console.log('DOM 커밋 이후, 최초 1회 실행');
+  }, []);
+
+  // props에 의존하는 이펙트 설정 함수
+  // - count 속성이 변경되면 그 때마다 이펙트 함수가 실행
+  // componentDidMount
+  // componentDidUpdate (조건 처리)
+  useEffect(
+    () => {
+      console.log(`count = ${count}`);
+    },
+    [count] /* props */
+  );
+
+  const [emoji, setEmoji] = useState(getRandomEmoji);
+
+  // states에 의존하는 이펙트 설정 함수
+  // componentDidMount
+  // componentDidUpdate (조건 처리)
+  useEffect(
+    () => {
+      console.log(`emoji = ${emoji}`);
+    },
+    [emoji /* states */, count /* props */] /* states */
+  );
+
+  console.log('-------------------------------------');
+
   return (
-    <button type="button" {...restProps}>
-      {children} ({renderCount})
+    <button
+      type="button"
+      onMouseEnter={() => {
+        setEmoji(getRandomEmoji());
+      }}
+      {...restProps}
+    >
+      {emoji} {children} ({count})
     </button>
   );
 }
+
+const getRandomEmoji = () => {
+  const { emojies } = getRandomEmoji;
+  return emojies[Math.floor(Math.random() * emojies.length - 1) + 1];
+};
+
+getRandomEmoji.emojies = ['😊', '✅', '🎩', '✨', '👊🏻', '🎻', '❤️'];
 
 export default Exercise;
