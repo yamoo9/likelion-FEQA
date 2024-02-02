@@ -8,6 +8,7 @@
 
   display: var(--display);
   flex-flow: var(--direction) var(--wrap);
+  align-items: flex-start;
   gap: var(--gap);
   margin: var(--marginBlock) var(--marginInline);
 

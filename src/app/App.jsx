@@ -1,5 +1,5 @@
 import { app as appClasName } from './App.module.css';
-import Exercise from '@/lecture/38-stack-layout-component';
+import Exercise from '@/lecture/40-side-effects';
 
 function App() {
   return (
