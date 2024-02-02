@@ -17,6 +17,14 @@ class Stack extends HTMLElement {
           </div>
       `;
   }
+
+  // vue : mounted
+  // react : DOM committed
+  // web standard : connectedCallback
+
+  connectedCallback() {
+    console.log('웹 컴포넌트가 생성 -> DOM에 반영된 이후 실행');
+  }
 }
 
 if ('customElements' in globalThis) {
