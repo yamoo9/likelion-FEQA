@@ -5,9 +5,6 @@ import {
 } from 'react';
 
 function Exercise() {
-  // 리액트의 방식
-  useEffect(() => {}, []);
-
   // 리액트의 방식이 아님
   useEffect(() => {
     // DOM API
@@ -15,7 +12,7 @@ function Exercise() {
     // containers[1].classList.add('super-container');
   }, []);
 
-  // 리액트의 방식
+  // 리액트의 방식 1
   // ref 콜백 함수
   // 함수의 매개변수로 해당 DOM 객체가 전달된다.
   const accessDomElement = (domElement) => {
@@ -29,15 +26,45 @@ function Exercise() {
     });
   };
 
+  console.log(typeof accessDomElement);
+
+  // 리액트의 방식 2
+
+  // React.useRef 훅을 실행한다.
+  // 수정 가능한(mutable) 객체가 반환. 이 객체는 current 속성을 가짐. { current: mutableValue }
+  // null => JSX <div ref={elementRef}></div> => DOM Element (DOM 커밋 -> 브라우저 페인팅 -> 이후에 접근)
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    let count = 10;
+
+    const { current: element } = elementRef;
+
+    // 명령형 프로그래밍 수행 === 접근성
+
+    console.log(elementRef); // { current: <div> }
+    const handleClicker = () => {
+      console.log((count += 10));
+    };
+
+    element.addEventListener('click', handleClicker);
+
+    return /* cleanup function */ () => {
+      element.removeEventListener('click', handleClicker);
+    };
+  }, []);
+
+  console.log(elementRef); // { current: null }
+
   return (
     <>
-      <div ref={accessDomElement} className="container">
+      <div className="container">
         <h2 className="text-2xl text-indigo-500 mt-7">DOM 요소 접근/조작 1</h2>
       </div>
-      <div ref={accessDomElement} className="container">
+      <div className="container">
         <h2 className="text-2xl text-indigo-500 mt-7">DOM 요소 접근/조작 2</h2>
       </div>
-      <div className="container">
+      <div ref={elementRef} className="container">
         <h2 className="text-2xl text-indigo-500 mt-7">DOM 요소 접근/조작 3</h2>
       </div>
     </>
