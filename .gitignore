@@ -1,8 +1,10 @@
+.env
 .vscode
 .DS_Store
 .exercises
 .utils
 node_modules
+pocketbase
 NOTICE.md
 template.md
 dist
