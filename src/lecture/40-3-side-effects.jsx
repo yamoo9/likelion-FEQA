@@ -19,15 +19,17 @@ async function fetchProducts(options) {
 }
 
 function Exercise() {
+  const [isLoading, setIsLoading] = useState(true);
   const [tableContents, setTableContents] = useState([]);
 
   // 1번만 요청
   useEffect(() => {
     const controller = new AbortController();
 
-    fetchProducts({ signal: controller.signal }).then((data) =>
-      setTableContents(data?.items)
-    );
+    fetchProducts({ signal: controller.signal }).then((data) => {
+      setTableContents(data?.items);
+      setIsLoading(false);
+    });
 
     // 신호를 통해 중복된 요청일 경우 웹 요청을 취소(abort)
     // 클린업
@@ -38,6 +40,10 @@ function Exercise() {
   }, []);
 
   const tableContentsLegnth = tableContents?.length;
+
+  if (isLoading) {
+    return <div role="alert">데이터 로딩 중...</div>;
+  }
 
   return (
     <div>
@@ -56,6 +62,9 @@ function DataTable({ contents }) {
   return (
     <table className={tableStyle}>
       <A11yHidden as="caption">표 제목</A11yHidden>
+      <col width="160" />
+      <col width="240" />
+      <col width="100" />
       <thead>
         <tr>
           <th scope="col" className={borderStyle}>
@@ -70,14 +79,13 @@ function DataTable({ contents }) {
         </tr>
       </thead>
       <tbody>
-        {contents &&
-          contents.map((content) => (
-            <tr key={content.id}>
-              <td className={borderStyle}>{content.id}</td>
-              <td className={borderStyle}>{content.title}</td>
-              <td className={borderStyle}>{content.color}</td>
-            </tr>
-          ))}
+        {contents?.map((content) => (
+          <tr key={content.id}>
+            <td className={borderStyle}>{content.id}</td>
+            <td className={borderStyle}>{content.title}</td>
+            <td className={borderStyle}>{content.color}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
