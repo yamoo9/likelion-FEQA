@@ -1,106 +1,29 @@
-import { A11yHidden, Stack } from '@/components';
-import { useEffect, useState } from 'react';
+import { A11yHidden } from '@/components';
+import { useFetch } from '@/hooks';
 
-const API = import.meta.env.VITE_PB_API;
-
-async function fetchProducts(options) {
-  try {
-    const response = await fetch(
-      `${API}/api/collections/products/records?page=1&perPage=5`,
-      options
-    );
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    if (!(error instanceof DOMException)) {
-      throw new Error(error);
-    }
-  }
-}
+// const API = import.meta.env.VITE_PB_API;
+// const ENDPOINT = `${API}/api/collections/products/records?page=1&perPage=5`;
 
 function Exercise() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [tableContents, setTableContents] = useState([]);
+  const { data } = useFetch(
+    `${
+      import.meta.env.VITE_PB_API
+    }/api/collections/products/records?page=1&perPage=5`
+  );
 
-  // 1번만 요청
-  useEffect(() => {
-    const controller = new AbortController();
-
-    fetchProducts({ signal: controller.signal }).then((data) => {
-      setTableContents(data?.items);
-      setIsLoading(false);
-    });
-
-    // 신호를 통해 중복된 요청일 경우 웹 요청을 취소(abort)
-    // 클린업
-    return () => {
-      // 네트워크 요청 취소
-      controller.abort();
-    };
-  }, []);
-
-  const tableContentsLegnth = tableContents?.length;
-
-  if (isLoading) {
+  if (!data) {
     return <div role="alert">데이터 로딩 중...</div>;
   }
+
+  const tableContents = data.items;
+  const tableContentsLegnth = tableContents.length;
 
   return (
     <div>
       <h2 className="text-2xl text-indigo-500 mt-7">Exercise</h2>
-      <CountUpDown />
       <DataTable contents={tableContents} />
       <DataTableItemCount count={tableContentsLegnth} />
     </div>
-  );
-}
-
-const COUNT_KEY = 'count';
-
-// persist local storage
-
-const getLocalStorageCount = () => {
-  const count = JSON.parse(localStorage.getItem(COUNT_KEY));
-  return count ?? 0;
-};
-
-function CountUpDown() {
-  const [count, setCount] = useState(getLocalStorageCount);
-
-  const handleInc = () => {
-    const nextCount = count + 1;
-    localStorage.setItem(COUNT_KEY, JSON.stringify(nextCount));
-    setCount(nextCount);
-  };
-
-  const handleDec = () => {
-    const nextCount = count - 1;
-    localStorage.setItem(COUNT_KEY, JSON.stringify(nextCount));
-    setCount(nextCount);
-  };
-
-  const buttonStyle = 'px-4 py-1 bg-sky-800 text-white rounded-md';
-
-  return (
-    <Stack gap={6}>
-      <button
-        className={buttonStyle}
-        type="button"
-        onClick={handleDec}
-        aria-label="1 감소"
-      >
-        -
-      </button>
-      <output className="text-2xl font-bold">{count}</output>
-      <button
-        className={buttonStyle}
-        type="button"
-        onClick={handleInc}
-        aria-label="1 증가"
-      >
-        +
-      </button>
-    </Stack>
   );
 }
 
