@@ -13,13 +13,11 @@ function Exercise() {
 function StopWatch() {
   // 로직 분리
   // 커스텀 훅 사용 API
-  const [time, start, pause, stop] = useTime();
-
-  const displayTimer = time === 0 ? 0 : time.toFixed(3);
+  const [time, start, pause, stop, display] = useTime();
 
   return (
     <div>
-      <h2>Stop Watch: {displayTimer}초</h2>
+      <h2>Stop Watch: {display(time)}초</h2>
       <div className="flex gap-2 my-4">
         <button type="button" onClick={start}>
           시작
@@ -36,18 +34,17 @@ function StopWatch() {
 }
 
 function Timer() {
-  const [time, begin, , end] = useTime();
-  const displayTime = time === 0 ? 0 : time.toFixed(3);
+  const [time, begin, , , output] = useTime();
+
+  const printTime = output(time, 2);
 
   return (
     <div>
       <button type="button" onClick={begin}>
         BEGIN
       </button>
-      <h2>타이머: {displayTime}s</h2>
-      <button type="button" onClick={end}>
-        END
-      </button>
+      <h2>타이머: {printTime}s</h2>
+      <button type="button">END</button>
     </div>
   );
 }
