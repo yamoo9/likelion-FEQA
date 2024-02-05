@@ -1,10 +1,10 @@
 import { A11yHidden } from '@/components';
+import { useToggle } from '@/hooks';
 import { useState } from 'react';
 
-// 커스텀 훅 함수
-function useToggle() {}
-
 function Exercise() {
+  const [toggle, setToggle] = useToggle(true);
+
   const [theme, setTheme] = useState('dark');
 
   const handleChangeTheme = () => {
@@ -19,12 +19,19 @@ function Exercise() {
   const classNames = `${backgroundColor} ${forgroundColor} p-6 rounded border border-solid border-stone-400`;
 
   return (
-    <div className={classNames}>
-      <button type="button" onClick={handleChangeTheme}>
-        {theme === 'dark' ? '라이트' : '다크'} 테마{' '}
-        <A11yHidden>전환</A11yHidden>
-      </button>
-    </div>
+    <>
+      <div className={classNames}>
+        <button type="button" onClick={handleChangeTheme}>
+          {theme === 'dark' ? '라이트' : '다크'} 테마{' '}
+          <A11yHidden>전환</A11yHidden>
+        </button>
+      </div>
+      <div>
+        <button type="button" onClick={setToggle}>
+          {toggle ? 'true' : 'false'}
+        </button>
+      </div>
+    </>
   );
 }
 
