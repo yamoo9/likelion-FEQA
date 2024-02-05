@@ -13,7 +13,7 @@ function useKey(key, callback, eventType = 'keydown') {
     return () => {
       globalThis.removeEventListener(eventType, handler);
     };
-  }, [key, callback, eventType]);
+  }, [callback, eventType, key]);
 
   // return undefined;
 }

@@ -1,5 +1,5 @@
 import { A11yHidden } from '@/components';
-import { useToggle, useKey } from '@/hooks';
+import { useToggle, useKey, useMousePosition } from '@/hooks';
 import { useState } from 'react';
 
 function Exercise() {
@@ -7,6 +7,7 @@ function Exercise() {
     <>
       <ThemeButtonPlayground />
       <ToggleButtonPlayground />
+      <MousePositionPlayground />
     </>
   );
 }
@@ -56,6 +57,16 @@ function ToggleButtonPlayground() {
           </button>
         </>
       )}
+    </div>
+  );
+}
+
+function MousePositionPlayground() {
+  const [x, y] = useMousePosition();
+
+  return (
+    <div>
+      x: {x} / y: {y}
     </div>
   );
 }
