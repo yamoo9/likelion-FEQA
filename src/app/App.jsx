@@ -1,5 +1,5 @@
 import { app as appClasName } from './App.module.css';
-import Exercise from '@/lecture/40-4-side-effects';
+import Exercise from '@/lecture/41-custom-hook';
 
 function App() {
   return (
