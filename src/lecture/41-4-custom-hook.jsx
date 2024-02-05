@@ -1,5 +1,5 @@
 import { A11yHidden } from '@/components';
-import { useToggle } from '@/hooks';
+import { useToggle, useKey } from '@/hooks';
 import { useState } from 'react';
 
 function Exercise() {
@@ -38,6 +38,8 @@ function ThemeButtonPlayground() {
 function ToggleButtonPlayground() {
   // const [isVisible, setToggle] = useToggle();
   const { value: isVisible, on, off } = useToggle();
+
+  useKey('escape', off);
 
   return (
     <div>
