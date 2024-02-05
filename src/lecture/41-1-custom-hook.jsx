@@ -24,7 +24,7 @@ function StopWatch() {
     const start = current;
     let now = current;
 
-    // 인터벌 타이머 작동
+    // 인터벌 타이머 작동 (리액트 렌더링 관련 ❌)
     timerRef.current = setInterval(() => {
       now = Date.now();
       const nextTime = (now - start) / 1000;
