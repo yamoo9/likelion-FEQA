@@ -1,5 +1,5 @@
 import { app as appClasName } from './App.module.css';
-import Exercise from '@/lecture/44-3-forward-ref-prop';
+import Exercise from '@/lecture/44-4-imperative-handle-hook';
 
 function App() {
   return (
