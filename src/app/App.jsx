@@ -1,5 +1,5 @@
 import { app as appClasName } from './App.module.css';
-import Exercise from '@/lecture/43-1-forward-ref';
+import Exercise from '@/lecture/43-2-forward-ref';
 
 function App() {
   return (
