@@ -1,59 +1,8 @@
 import { Stack } from '@/components';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useInOnScreen } from '@/hooks';
 
 function Exercise() {
-  const [isOnScreen, setIsOnScreen] = useState(false);
-
-  const elementRef = useRef(null);
-
-  // DOM 커밋 이후 (브라우저 페인팅 이전) 실행
-  useLayoutEffect(() => {
-    console.log('useLayoutEffect');
-
-    // 관측할 대상
-    // target elment : elementRef.current
-    const target = elementRef.current;
-
-    // 관측될 경우 실행되는 콜백 함수
-    const observerCallback = (entries) => {
-      const [entry] = entries;
-      setIsOnScreen(entry.isIntersecting);
-    };
-
-    // 관측 옵저버 옵션
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.2,
-    };
-
-    // 옵저버 생성
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
-
-    // 옵저버 관측 (대상 요소)
-    // console.log(target);
-    observer.observe(target);
-
-    // 클린업
-    return () => {
-      console.log('cleanup useLayoutEffect');
-      // 관측 행위 중단
-      observer.disconnect();
-    };
-  }, []);
-
-  // 브라우저 페인팅 이후 실행
-  // useEffect 훅
-  useEffect(() => {
-    console.log('useEffect');
-
-    return () => {
-      console.log('cleanup useEffect');
-    };
-  }, []);
+  const [isOnScreen, elementRef] = useInOnScreen();
 
   return (
     <section className="w-full my-5">
