@@ -1,9 +1,20 @@
+import { setRangeControl } from '@/utils/storybook';
 import Graph from './Graph';
 
 const metaConfig = {
   title: 'components/Graph',
   component: Graph,
   tags: ['autodocs'],
+  args: {
+    start: 0,
+    end: 10,
+    step: 1,
+  },
+  argTypes: {
+    start: setRangeControl({ max: 10 }),
+    end: setRangeControl({ min: 10, max: 100 }),
+    step: setRangeControl({ min: 1, max: 5 }),
+  },
 };
 
 export default metaConfig;
@@ -11,7 +22,6 @@ export default metaConfig;
 // Storybook 도구 사용 방법
 export const Base = {
   args: {
-    start: 0,
     end: 5,
   },
 };
