@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import { func } from 'prop-types';
 
 function CounterDecButton(props) {
@@ -30,4 +30,4 @@ CounterDecButton.propTypes = {
   onUpdate: func,
 };
 
-export default CounterDecButton;
+export default memo(CounterDecButton);

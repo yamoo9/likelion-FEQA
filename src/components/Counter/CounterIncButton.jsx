@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import CounterDecButton from './CounterDecButton';
 
 function CounterIncButton({ onUpdate }) {
@@ -15,4 +16,4 @@ function CounterIncButton({ onUpdate }) {
 
 CounterIncButton.propTypes = CounterDecButton.propTypes;
 
-export default CounterIncButton;
+export default memo(CounterIncButton);
