@@ -11,7 +11,7 @@
     "moduleResolution": "node",
     "allowUmdGlobalAccess": true,
     "resolveJsonModule": true,
-    "allowJs": true,
+    "allowJs": false,
     "noEmit": true,
     "esModuleInterop": false,
     "isolatedModules": true,
