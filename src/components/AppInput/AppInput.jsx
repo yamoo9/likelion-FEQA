@@ -1,5 +1,6 @@
 import { useId } from 'react';
 import { A11yHidden } from '@/components';
+import { oneOf, oneOfType, exact, any } from 'prop-types';
 
 function AppInput(
   /* props */
@@ -55,5 +56,9 @@ function AppInput(
     </ComponentName>
   );
 }
+
+AppInput.propTypes = {
+  forwardRef: oneOfType([oneOf([null]), exact({ current: any })]),
+};
 
 export default AppInput;
