@@ -69,7 +69,12 @@ function Counter({ min = 0, count = 0, step = 1, max = 50 }) {
         max={max}
         onUpdate={handleChange}
       />
-      <CounterIncButton onUpdate={handleCountUp} />
+      {useMemo(
+        () => (
+          <CounterIncButton onUpdate={handleCountUp} />
+        ),
+        [handleCountUp]
+      )}
     </div>
   );
 }
