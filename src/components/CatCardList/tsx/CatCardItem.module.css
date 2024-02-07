@@ -1,0 +1,79 @@
+.CatCard {
+  position: relative;
+  width: 280px;
+  border-radius: 100px 100px 16px 16px;
+  background: white;
+  padding: 16px;
+
+  box-shadow: 0 8px 12px #4545431f;
+
+  &::before {
+    content: '🐈‍⬛';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% calc(-50% - 8px);
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    img {
+      width: 200px;
+      border-radius: 32px 32px 64px 64px;
+      border: 4px solid white;
+      translate: 0 -40px;
+    }
+
+    h2 {
+      margin-block-start: 12px;
+      margin-block-end: 0;
+      color: #635147;
+    }
+
+    p {
+      margin-block: 4px;
+      font-size: 14px;
+    }
+
+    .birthday {
+      color: #76716e;
+    }
+
+  }
+
+  .badgeList {
+    width: 80%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style-type: none;
+    padding: 8px;
+    border: 2px dashed #cccccc;
+    margin-top: 24px;
+    border-radius: 8px;
+
+    li {
+      padding: 4px 8px;
+      background: #ebebeb;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    &.golden {
+      border-color: #ffd500;
+
+      li {
+        background: #fff5d1;
+      }
+
+    }
+
+  }
+
+}
