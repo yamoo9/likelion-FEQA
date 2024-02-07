@@ -12,3 +12,4 @@ export { default as Avatar } from './Avatar/Avatar';
 export { default as Button } from './Button/Button';
 export { default as Widget } from './Widget/Widget';
 export { default as Stack } from './Stack/Stack';
+export { default as Graph } from './Graph/Graph';
