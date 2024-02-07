@@ -1,5 +1,6 @@
 import { useId, forwardRef } from 'react';
 import { A11yHidden } from '@/components';
+// import AppInput from '../AppInput/AppInput';
 
 function FormInput(
   /* props */
@@ -55,6 +56,8 @@ function FormInput(
     </ComponentName>
   );
 }
+
+// FormInput.propTypes = AppInput.propTypes;
 
 // forwardRef 고차 함수 -> 고차 컴포넌트 내보내기
 // 상위 컴포넌트가 ref 속성을 전달해서

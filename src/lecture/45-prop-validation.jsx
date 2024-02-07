@@ -1,4 +1,4 @@
-import { A11yHidden, Avatar, Graph } from '@/components';
+import { CatCardList, A11yHidden, Avatar, Graph } from '@/components';
 
 function Exercise() {
   return (
@@ -7,6 +7,8 @@ function Exercise() {
       <A11yHidden>hey</A11yHidden>
       {/* <Avatar /> */}
       <Graph />
+      <CatCardList />
+      {/* <CatCardList catList={[{ id: 'any', value: 'unknown' }]} /> */}
     </div>
   );
 }

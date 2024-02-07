@@ -1,6 +1,7 @@
 import classes from './CatCardItem.module.css';
 import { getStaticImage } from '../../utils/getStaticAsset';
 import convertDayFormat from '../../utils/convertDayFormat';
+import { CatType } from './type';
 
 function CatCardItem({ cat: { imageAlt, imageSrc, name, badges, birthday } }) {
   let renderBadges = null;
@@ -42,5 +43,9 @@ function CatCardItem({ cat: { imageAlt, imageSrc, name, badges, birthday } }) {
     </article>
   );
 }
+
+CatCardItem.propTypes = {
+  cat: CatType.isRequired,
+};
 
 export default CatCardItem;
