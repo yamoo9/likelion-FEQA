@@ -73,6 +73,9 @@ devDependencies:
   postcss-import:
     specifier: 16.0.0
     version: 16.0.0(postcss@8.4.33)
+  prop-types:
+    specifier: 15.8.1
+    version: 15.8.1
   storybook:
     specifier: 7.6.10
     version: 7.6.10
