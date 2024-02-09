@@ -21,4 +21,4 @@
 1. [사이드 이펙트 II](./summary/11.md)
 1. [커스텀 훅](./summary/12.md)
 1. [ref 참조 및 전달, 고차 컴포넌트](./summary/13.md)
-1. [속성 검사, 성능 최적화, CSR](./summary/14.md)
+1. [속성 검사, 성능 최적화](./summary/14.md)
