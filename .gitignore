@@ -1,0 +1,12 @@
+.DS_Store
+.github/*
+.next
+.env
+
+node_modules
+tutorials
+dist
+
+summary/17.md
+summary/18-*.md
+summary/template.md
