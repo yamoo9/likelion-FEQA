@@ -1,12 +1,21 @@
 import { func } from 'prop-types';
+import { useRef } from 'react';
 
 function MessageInput({ onSend }) {
+  const inputRef = useRef(null);
+
   const handleSendMessage = (e) => {
     e.preventDefault();
+    const inputElement = inputRef.current;
     const formData = new FormData(e.target);
     const message = formData.get('message');
+
     if (message.trim().length > 0) {
       onSend?.(message);
+      inputElement.value = '';
+    } else {
+      inputElement.value = '';
+      inputElement.focus();
     }
   };
 
@@ -15,6 +24,7 @@ function MessageInput({ onSend }) {
       <h3>MessageInput</h3>
       <form onSubmit={handleSendMessage} className="flex gap-1">
         <input
+          ref={inputRef}
           type="text"
           name="message"
           aria-label="채팅 메시지"
