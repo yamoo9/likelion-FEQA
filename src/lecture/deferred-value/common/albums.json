@@ -1,0 +1,67 @@
+[
+  {
+    "id": 13,
+    "title": "렛잇비 (Let It Be)",
+    "year": 1970
+  },
+  {
+    "id": 12,
+    "title": "애비 로드 (Abbey Road)",
+    "year": 1969
+  },
+  {
+    "id": 11,
+    "title": "노란 잠수함 (Yellow Submarine)",
+    "year": 1969
+  },
+  {
+    "id": 10,
+    "title": "비틀즈 (The Beatles)",
+    "year": 1968
+  },
+  {
+    "id": 9,
+    "title": "마법의 미스터리 투어 (Magical Mystery Tour)",
+    "year": 1967
+  },
+  {
+    "id": 8,
+    "title": "하사 페퍼스의 론리 하트 클럽 밴드 (Sgt. Pepper's Lonely Hearts Club Band)",
+    "year": 1967
+  },
+  {
+    "id": 7,
+    "title": "리볼버 (Revolver)",
+    "year": 1966
+  },
+  {
+    "id": 6,
+    "title": "러버 소울 (Rubber Soul)",
+    "year": 1965
+  },
+  {
+    "id": 5,
+    "title": "헬프! (Help!)",
+    "year": 1965
+  },
+  {
+    "id": 4,
+    "title": "비틀즈 매물 (Beatles For Sale)",
+    "year": 1964
+  },
+  {
+    "id": 3,
+    "title": "힘든 하루의 밤 (A Hard Day's Night)",
+    "year": 1964
+  },
+  {
+    "id": 2,
+    "title": "비틀즈와 함께 (With The Beatles)",
+    "year": 1963
+  },
+  {
+    "id": 1,
+    "title": "제발 나를 기쁘게 해주세요 (Please Please Me)",
+    "year": 1963
+  }
+]
