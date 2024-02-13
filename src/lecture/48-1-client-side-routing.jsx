@@ -2,7 +2,7 @@ import React from 'react';
 
 // [학습 순서]
 // 1. React Router 라이브러리 소개
-// 2. React Router 라이브러리 설치 (https://bit.ly/3SABrdf
+// 2. React Router 라이브러리 설치 (https://bit.ly/3SABrdf)
 //
 // 3. 브라우저 라우터(Browser Router) 구성
 // 3-1. 라우터 생성 ← createBrowserRouter (https://bit.ly/3w6XS27)
@@ -57,9 +57,11 @@ import React from 'react';
 
 function Exercise() {
   return (
-    <div>
-      <h2>클라이언트 사이드 라우팅(CSR)</h2>
-      <p>클라이언트 환경에서 라우팅되는 싱글 페이지 애플리케이션(SPA) 구성</p>
+    <div className="flex flex-col space-y-1">
+      <h2 className="text-2xl">클라이언트 사이드 라우팅(CSR)</h2>
+      <p className="text-xs">
+        클라이언트 환경에서 라우팅되는 싱글 페이지 애플리케이션(SPA) 구성
+      </p>
     </div>
   );
 }
