@@ -21,7 +21,7 @@ import router from '@/routes';
 // 5-4. 레이아웃 루트 (https://bit.ly/49u3vpB)
 //
 // 6. 앱 내비게이션 (App Navigation)
-// 6-1. URL 세그먼트(segments)
+// 6-1. URL 세그먼트(segments) [`/`, `/admin`, `/products/vegetable`]
 // 6-2. Link 컴포넌트를 사용해 페이지 내비게이션 (https://bit.ly/48dEy0z)
 // 6-3. NavLink 컴포넌트를 활용해 내비게이션 (https://bit.ly/4bBuqBz)
 // 6-4. NavLink 활성 상태 클래스 핸들링 (https://bit.ly/3UFbFaC)

@@ -1,5 +1,9 @@
 function Footer() {
-  return <footer>푸터 영역</footer>;
+  return (
+    <footer>
+      <small>copyright &copy; EUID</small>
+    </footer>
+  );
 }
 
 export default Footer;
