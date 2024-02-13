@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ChatContext } from './ChatPage';
+import { ChatContext } from '@/contexts/Chat';
 
 function SpeechBubble() {
   const { messages } = useContext(ChatContext);

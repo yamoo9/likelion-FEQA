@@ -1,5 +1,5 @@
 import { useContext, useRef } from 'react';
-import { ChatContext } from './ChatPage';
+import { ChatContext } from '@/contexts/Chat';
 
 function MessageInput() {
   // 상태가 아닌데??

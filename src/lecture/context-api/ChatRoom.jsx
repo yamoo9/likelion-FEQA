@@ -2,7 +2,7 @@ import { memo, useContext } from 'react';
 import ChatRoomInfo from './ChatRoomInfo';
 import MessageInput from './MessageInput';
 import SpeechBubble from './SpeechBubble';
-import { ChatContext } from './ChatPage';
+import { ChatContext } from '@/contexts/Chat';
 
 function ChatRoom() {
   const { users } = useContext(ChatContext);
