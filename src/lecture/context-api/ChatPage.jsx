@@ -62,9 +62,11 @@ function ChatPage() {
   // 3-2-2. 컨텍스트 프로바이더 컴포넌트로 컨텍스트 값 공급
   return (
     <ChatContext.Provider value={chatValue}>
-      <h3>ChatPage</h3>
-      <NavBar />
-      <ChatRoomList />
+      <div className="flex flex-col space-y-5 bg-slate-100 text-slate-800 p-5 shadow-sm">
+        <h3 className="text-xl font-extralight">ChatPage</h3>
+        <NavBar />
+        <ChatRoomList />
+      </div>
     </ChatContext.Provider>
   );
 }
