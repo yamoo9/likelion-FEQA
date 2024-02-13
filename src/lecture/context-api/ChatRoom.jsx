@@ -7,11 +7,13 @@ import { CHAT_MESSAGE_TYPE, CHAT_USER_TYPE } from './types';
 
 function ChatRoom({ users, messages = [], onUpdate }) {
   return (
-    <div>
+    <div className="flex flex-col gap-5 bg-slate-200 p-5">
       <h3>ChatRoom {users.name}</h3>
-      <ChatRoomInfo userRole={users.role} />
-      <SpeechBubble messages={messages} />
-      <MessageInput onSend={onUpdate} />
+      <div className="flex flex-col gap-5 bg-slate-300 p-5">
+        <ChatRoomInfo userRole={users.role} />
+        <SpeechBubble messages={messages} />
+        <MessageInput onSend={onUpdate} />
+      </div>
     </div>
   );
 }

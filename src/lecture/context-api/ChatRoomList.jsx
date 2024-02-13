@@ -24,10 +24,12 @@ function ChatRoomList() {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col gap-5 bg-white p-5 my-5">
       <h3>ChatRoomList</h3>
-      <ChatSummary onUpdate={updateUsers} />
-      <ChatRoom users={users} messages={messages} onUpdate={updateMessages} />
+      <div className="flex flex-col gap-5 bg-slate-100 p-5">
+        <ChatSummary onUpdate={updateUsers} />
+        <ChatRoom users={users} messages={messages} onUpdate={updateMessages} />
+      </div>
     </div>
   );
 }

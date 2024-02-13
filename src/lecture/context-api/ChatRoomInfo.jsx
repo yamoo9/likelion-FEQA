@@ -2,7 +2,7 @@ import { CHAT_ROLE_TYPES } from './types';
 
 function ChatRoomInfo({ userRole }) {
   return (
-    <div>
+    <div className="flex flex-col gap-5 bg-slate-400 text-slate-50 p-5">
       <h3>ChatRoomInfo {userRole}</h3>
     </div>
   );

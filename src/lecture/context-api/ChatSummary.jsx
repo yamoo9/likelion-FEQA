@@ -3,11 +3,11 @@ import { memo } from 'react';
 
 function ChatSummary({ onUpdate }) {
   return (
-    <div>
+    <div className="flex flex-col gap-5 bg-slate-200 p-5">
       <h3>ChatSummary</h3>
       <button
         type="button"
-        className="p-2 border-2 border-slate-700 rounded-md"
+        className="p-2 border border-slate-400 text-slate-700 rounded-md text-sm"
         onClick={onUpdate}
       >
         사용자 정보 변경
