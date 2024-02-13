@@ -27,69 +27,71 @@
   --shadow--200: 0px 0px 2px rgba(114, 119, 124, 0.2);
 }
 
-body {
-  margin: 0;
-  padding: 20px;
-  font: 1rem / 1.5 "SUIT Variable", "Helvetica Neue", Arial, sans-serif;
-  background: var(--secondary, #f4f5f9);
-  color: var(--primary, #2731f4);
-}
+@layer base {
+  body {
+    margin: 0;
+    padding: 20px;
+    font: 1rem / 1.5 "SUIT Variable", "Helvetica Neue", Arial, sans-serif;
+    background: var(--secondary, #f4f5f9);
+    color: var(--primary, #2731f4);
+  }
 
-#app {
-  strong {
-    text-transform: uppercase;
-    font-size: 12px;
+  input {
+    position: relative;
+  }
+
+  input[type='number']::-webkit-inner-spin-button {
+    position: absolute;
+    width: 12.5%;
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
   }
 }
 
-.sr-only {
-  overflow: hidden;
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  clip-path: circle(0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  white-space: nowrap;
+@layer components {
+  .sr-only {
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    clip-path: circle(0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+  }
+
+  .group {
+    position: relative;
+    overflow: auto;
+    width: initial;
+    height: initial;
+    clip: auto;
+    clip-path: none;
+    white-space: wrap;
+    margin: 20px;
+    display: flex;
+    border: 10px solid currentColor;
+    padding: 20px;
+    background: red;
+  }
 }
 
-body .group {
-  position: relative;
-  overflow: auto;
-  width: initial;
-  height: initial;
-  clip: auto;
-  clip-path: none;
-  white-space: wrap;
-  margin: 20px;
-  display: flex;
-  border: 10px solid currentColor;
-  padding: 20px;
-  background: red;
-}
-
-input {
-  position: relative;
-}
-
-input[type='number']::-webkit-inner-spin-button {
-  position: absolute;
-  width: 12.5%;
-  height: 100%;
-  top: 0;
-  right: 0;
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
+/* 
+.active {
+  @apply bg-slate-100 text-slate-700 p-4;
+} */
