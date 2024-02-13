@@ -1,6 +1,6 @@
 // 페이지(Pages)
 import HomePage from '@/pages/Home';
-import IntroPage from '@/pages/Intro';
+import IntroContextPage from '@/pages/IntroContext';
 import NonBlockUIPage from '@/pages/NonBlockUI';
 import DeferredValuePage from '@/pages/DeferredValue';
 
@@ -13,10 +13,10 @@ const navigationItems = [
     element: <HomePage />,
   },
   {
-    id: 'intro',
-    path: '/intro',
-    text: '소개',
-    element: <IntroPage />,
+    id: 'context-intro',
+    path: '/context-intro',
+    text: '컨텍스트 API 소개',
+    element: <IntroContextPage />,
   },
   {
     id: 'deferred-value',
