@@ -4,6 +4,7 @@
 .exercises
 .utils
 .next
+.typescript-config
 next-env.d.ts
 
 node_modules
