@@ -11,6 +11,9 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
+  react-router-dom:
+    specifier: 6.22.0
+    version: 6.22.0(react-dom@18.2.0)(react@18.2.0)
   react-tilt:
     specifier: 1.0.2
     version: 1.0.2(@types/react-dom@18.2.18)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
@@ -2663,6 +2666,11 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.9
     dev: true
+
+  /@remix-run/router@1.15.0:
+    resolution: {integrity: sha512-HOil5aFtme37dVQTB6M34G95kPM3MMuqSmIRVCC52eKV+Y/tGSqw9P3rWhlAx6A+mz+MoX+XxsGsNJbaI5qCgQ==}
+    engines: {node: '>=14.0.0'}
+    dev: false
 
   /@rollup/pluginutils@5.1.0:
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
@@ -7852,6 +7860,29 @@ packages:
       use-callback-ref: 1.3.1(@types/react@18.2.48)(react@18.2.0)
       use-sidecar: 1.1.2(@types/react@18.2.48)(react@18.2.0)
     dev: true
+
+  /react-router-dom@6.22.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-z2w+M4tH5wlcLmH3BMMOMdrtrJ9T3oJJNsAlBJbwk+8Syxd5WFJ7J5dxMEW0/GEXD1BBis4uXRrNIz3mORr0ag==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.15.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-router: 6.22.0(react@18.2.0)
+    dev: false
+
+  /react-router@6.22.0(react@18.2.0):
+    resolution: {integrity: sha512-q2yemJeg6gw/YixRlRnVx6IRJWZD6fonnfZhN1JIOhV2iJCPeRNSH3V1ISwHf+JWcESzLC3BOLD1T07tmO5dmg==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.15.0
+      react: 18.2.0
+    dev: false
 
   /react-style-singleton@2.2.1(@types/react@18.2.48)(react@18.2.0):
     resolution: {integrity: sha512-ZWj0fHEMyWkHzKYUr2Bs/4zU6XLmq9HsgBURm7g5pAVfyn49DgUiNgY2d4lXRlYSiCif9YBGpQleewkcqddc7g==}

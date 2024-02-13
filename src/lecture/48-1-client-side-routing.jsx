@@ -1,10 +1,12 @@
-import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import router from '@/routes';
 
 // [학습 순서]
-// 1. React Router 라이브러리 소개
-// 2. React Router 라이브러리 설치 (https://bit.ly/3SABrdf)
+// 1. React Router 라이브러리 소개 ✅
+// 2. React Router 라이브러리 설치 (https://bit.ly/3SABrdf) ✅
+//    pnpm add react-router-dom
 //
-// 3. 브라우저 라우터(Browser Router) 구성
+// 3. 브라우저 라우터(Browser Router) 구성 ✅
 // 3-1. 라우터 생성 ← createBrowserRouter (https://bit.ly/3w6XS27)
 // 3-2. 라우터 공급 ← RouterProvider (https://bit.ly/42K41xG)
 // 3-3. JSX 루트(routes) ← createRoutesFromElements (https://bit.ly/3SD7QA7)
@@ -57,12 +59,15 @@ import React from 'react';
 
 function Exercise() {
   return (
-    <div className="flex flex-col space-y-1">
-      <h2 className="text-2xl">클라이언트 사이드 라우팅(CSR)</h2>
-      <p className="text-xs">
-        클라이언트 환경에서 라우팅되는 싱글 페이지 애플리케이션(SPA) 구성
-      </p>
-    </div>
+    <>
+      <div className="flex flex-col space-y-1">
+        <h2 className="text-2xl">클라이언트 사이드 라우팅(CSR)</h2>
+        <p className="text-xs">
+          클라이언트 환경에서 라우팅되는 싱글 페이지 애플리케이션(SPA) 구성
+        </p>
+      </div>
+      <RouterProvider router={router} />
+    </>
   );
 }
 
