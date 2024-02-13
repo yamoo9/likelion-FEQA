@@ -1,5 +1,5 @@
 import { app as appClasName } from './App.module.css';
-import Exercise from '@/lecture/46-2-use-callback-vs-use-memo';
+import Exercise from '@/lecture/47-1-context-api';
 
 function App() {
   return (

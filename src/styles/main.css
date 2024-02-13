@@ -1,5 +1,5 @@
 @import url('./tailwind.css');
-@import url("./exercies.css");
+/* @import url("./exercies.css"); */
 
 :root {
   --primary: #2731f4;
@@ -29,6 +29,7 @@
 
 body {
   margin: 0;
+  padding: 20px;
   font: 1rem / 1.5 "SUIT Variable", "Helvetica Neue", Arial, sans-serif;
   background: var(--secondary, #f4f5f9);
   color: var(--primary, #2731f4);
