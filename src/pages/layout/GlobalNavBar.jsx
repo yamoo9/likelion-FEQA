@@ -1,7 +1,7 @@
-import { A11yHidden } from '@/components';
+import { memo } from 'react';
 import { NavLink } from 'react-router-dom';
 import S from './GlobalNavBar.module.css';
-import { memo } from 'react';
+import { A11yHidden } from '@/components';
 
 const navigationItems = [
   {
