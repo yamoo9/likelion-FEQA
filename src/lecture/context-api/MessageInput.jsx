@@ -1,7 +1,9 @@
-import { func } from 'prop-types';
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
+import { ChatContext } from './ChatPage';
 
-function MessageInput({ onSend }) {
+function MessageInput() {
+  const { updateMessages: onSend } = useContext(ChatContext);
+
   const inputRef = useRef(null);
 
   const handleSendMessage = (e) => {
@@ -38,9 +40,5 @@ function MessageInput({ onSend }) {
     </div>
   );
 }
-
-MessageInput.propTypes = {
-  onSend: func,
-};
 
 export default MessageInput;

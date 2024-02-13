@@ -1,6 +1,9 @@
-import { CHAT_MESSAGE_TYPE } from './types';
+import { useContext } from 'react';
+import { ChatContext } from './ChatPage';
 
-function SpeechBubble({ messages }) {
+function SpeechBubble() {
+  const { messages } = useContext(ChatContext);
+
   return (
     <div className="flex flex-col gap-5 bg-slate-400 text-slate-50 p-5">
       <h3 className="text-slate-600">SpeechBubble</h3>
@@ -14,9 +17,5 @@ function SpeechBubble({ messages }) {
     </div>
   );
 }
-
-SpeechBubble.propTypes = {
-  messages: CHAT_MESSAGE_TYPE.isRequired,
-};
 
 export default SpeechBubble;
