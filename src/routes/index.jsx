@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import HomePage from '@/pages/Home';
 import IntroPage from '@/pages/Intro';
+import RootLayout from '@/pages/RootLayout';
 
 // 루트 구성(routes configuration)
 const routes = [
@@ -29,7 +30,12 @@ const options = {
 
 // JSX 라우터 구성 + 라우터 인스턴스 생성
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<HomePage />} />)
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route path="" element={<HomePage />} />
+      <Route path="intro" element={<IntroPage />} />
+    </Route>
+  )
 );
 
 // 라우터 인스턴스 기본 내보내기

@@ -11,7 +11,7 @@ import router from '@/routes';
 // 3-2. 라우터 공급 ← RouterProvider (https://bit.ly/42K41xG)
 // 3-3. JSX 루트(routes) ← createRoutesFromElements (https://bit.ly/3SD7QA7)
 //
-// 4. 루트(Routes) 구성
+// 4. 루트(Routes) 구성 ✅
 // 4-1. 루트 레이아웃(Root Layout) 컴포넌트
 // 4-2. 루트 레이아웃(Root Layout)에 포함할 컴포넌트 추가 (예: Header, Footer, Sidebar 등)
 //
