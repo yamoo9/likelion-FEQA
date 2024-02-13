@@ -1,7 +1,7 @@
-import { useChat } from '@/contexts/Chat';
+import { useChatStates } from '@/contexts/Chat';
 
 function NavBar() {
-  const { users, messages } = useChat();
+  const { users, messages } = useChatStates();
 
   return (
     <div className="flex flex-col gap-5 bg-white text-slate-700 p-5 shadow-sm">

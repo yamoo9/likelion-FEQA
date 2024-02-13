@@ -1,8 +1,8 @@
-import { useChat } from '@/contexts/Chat';
 import { memo, useRef } from 'react';
+import { useChatUpdaters } from '@/contexts/Chat';
 
 function MessageInput() {
-  const { updateMessages: onSend } = useChat();
+  const { updateMessages: onSend } = useChatUpdaters();
 
   const inputRef = useRef(null);
 

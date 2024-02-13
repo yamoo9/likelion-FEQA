@@ -1,9 +1,9 @@
-import { useChat } from '@/contexts/Chat';
+import { useChatUpdaters } from '@/contexts/Chat';
 import { func } from 'prop-types';
 import { memo } from 'react';
 
 function ChatSummary() {
-  const { updateUsers: onUpdate } = useChat();
+  const { updateUsers: onUpdate } = useChatUpdaters();
 
   return (
     <div className="flex flex-col gap-5 bg-slate-200 p-5">

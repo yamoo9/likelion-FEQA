@@ -1,11 +1,11 @@
 import { memo } from 'react';
-import { useChat } from '@/contexts/Chat';
+import { useChatStates } from '@/contexts/Chat';
 import ChatRoomInfo from './ChatRoomInfo';
 import MessageInput from './MessageInput';
 import SpeechBubble from './SpeechBubble';
 
 function ChatRoom() {
-  const { users } = useChat();
+  const { users } = useChatStates();
 
   return (
     <div className="flex flex-col gap-5 bg-slate-200 p-5">

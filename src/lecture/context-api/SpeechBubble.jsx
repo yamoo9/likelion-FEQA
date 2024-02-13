@@ -1,7 +1,7 @@
-import { useChat } from '@/contexts/Chat';
+import { useChatStates } from '@/contexts/Chat';
 
 function SpeechBubble() {
-  const { messages } = useChat();
+  const { messages } = useChatStates();
 
   return (
     <div className="flex flex-col gap-5 bg-slate-400 text-slate-50 p-5">
