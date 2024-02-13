@@ -23,7 +23,7 @@ function MessageInput() {
 
   return (
     <div className="flex flex-col gap-5 bg-slate-400 text-slate-800 p-5">
-      <h3>MessageInput</h3>
+      <h3 className="text-slate-600">MessageInput</h3>
       <form onSubmit={handleSendMessage} className="flex gap-1">
         <input
           ref={inputRef}
@@ -31,7 +31,7 @@ function MessageInput() {
           name="message"
           aria-label="채팅 메시지"
           placeholder="친구야 보고싶다!"
-          className="p-2 border border-slate-300"
+          className="p-2 border border-slate-300 text-xs"
         />
         <button type="submit" className="p-2 bg-slate-800 text-slate-50">
           보내기
