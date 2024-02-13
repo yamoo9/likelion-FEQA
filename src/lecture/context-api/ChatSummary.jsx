@@ -1,21 +1,14 @@
-import { useState } from 'react';
+import { func } from 'prop-types';
+import { memo } from 'react';
 
-function ChatSummary() {
-  const [users, setUsers] = useState(null);
-
+function ChatSummary({ onUpdate }) {
   return (
     <div>
       <h3>ChatSummary</h3>
       <button
         type="button"
         className="p-2 border-2 border-slate-700 rounded-md"
-        onClick={() =>
-          setUsers({
-            id: 'Gby5LfLcaLXoqBSMP9aubbynNdnOem26DTiCETf0Gt8=',
-            name: '박하늘',
-            role: 'GUEST',
-          })
-        }
+        onClick={onUpdate}
       >
         사용자 정보 변경
       </button>
@@ -23,4 +16,8 @@ function ChatSummary() {
   );
 }
 
-export default ChatSummary;
+ChatSummary.propTypes = {
+  onUpdate: func,
+};
+
+export default memo(ChatSummary);
