@@ -2,7 +2,10 @@ import { useContext, useRef } from 'react';
 import { ChatContext } from './ChatPage';
 
 function MessageInput() {
-  const { updateMessages: onSend } = useContext(ChatContext);
+  // 상태가 아닌데??
+  // 화면을 변경하는게 아닌데???
+  // 동일 참조 (어떤 데이터 타입? 객체형 타입: function, array, object)
+  const { updateMessages: onSend } = useContext(ChatContext); // (memoized) object
 
   const inputRef = useRef(null);
 

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import ChatRoom from './ChatRoom';
 import ChatSummary from './ChatSummary';
 
@@ -13,4 +14,4 @@ function ChatRoomList() {
   );
 }
 
-export default ChatRoomList;
+export default memo(ChatRoomList);
