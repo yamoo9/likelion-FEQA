@@ -1,5 +1,5 @@
 import { useChat } from '@/contexts/Chat';
-import { useRef } from 'react';
+import { memo, useRef } from 'react';
 
 function MessageInput() {
   const { updateMessages: onSend } = useChat();
@@ -41,4 +41,4 @@ function MessageInput() {
   );
 }
 
-export default MessageInput;
+export default memo(MessageInput);
