@@ -1,10 +1,10 @@
 import { node, bool } from 'prop-types';
 import { Outlet } from 'react-router-dom';
 
-import Header from './layout/Header';
-import Footer from './layout/Footer';
-import SideBar from './layout/SideBar';
-import GlobalNavBar from './layout/GlobalNavBar';
+import Header from './Header';
+import Footer from './Footer';
+import SideBar from './SideBar';
+import GlobalNavBar from './GlobalNavBar';
 
 function RootLayout({ /* children, */ sidebar = false }) {
   return (
@@ -12,7 +12,7 @@ function RootLayout({ /* children, */ sidebar = false }) {
       <Header />
       <GlobalNavBar />
       {/* <main>{children}</main> */}
-      <main className="">
+      <main className="w-full">
         <Outlet />
       </main>
       {sidebar && <SideBar />}

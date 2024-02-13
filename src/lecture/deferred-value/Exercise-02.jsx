@@ -23,7 +23,7 @@ function Exercise() {
   // 사용자가 입력을 시작하자마자, 새로운 결과가 로드될 때까지 오래된 결과가 약간 흐리게 표시되도록 합니다.
 
   return (
-    <div className="p-5 w-full">
+    <div className="px-4 py-4 w-full bg-white rounded shadow-md">
       <div className="flex space-y-2.5 flex-col mb-5">
         <label htmlFor={id} className="text-sm">
           앨범 검색

@@ -37,7 +37,7 @@ function Exercise() {
   // useDeferredValue 훅을 사용해 성능을 최적화하여, 사용자 경험을 개선해보세요. 👏🏻
 
   return (
-    <div className="p-5 w-full">
+    <div className="px-4 py-4 w-full bg-white rounded shadow-md">
       <div className="flex space-y-2.5 flex-col mb-5">
         <label htmlFor={nameId} className="text-sm">
           지금 생각나는 사람 이름

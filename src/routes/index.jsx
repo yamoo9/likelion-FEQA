@@ -1,34 +1,19 @@
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
-// Layouts
-import RootLayout from '@/pages/RootLayout';
-import AdminLayout from '@/pages/AdminLayout';
+// 레이아웃(Layouts)
+import RootLayout from '@/pages/layouts/RootLayout';
 
-// Pages
-import HomePage from '@/pages/Home';
-import IntroPage from '@/pages/Intro';
+// 페이지(Pages)
+
+// 내비게이션(Navigation)
+import navigationItems from './navigation';
 
 // 루트 구성(routes configuration)
 const routes = [
-  // route config object
-  // { path, element, ... }
   {
     path: '/',
     element: <RootLayout />,
-    children: [
-      {
-        path: '',
-        element: <HomePage />,
-      },
-      {
-        path: '/intro',
-        element: <IntroPage />,
-      },
-    ],
+    children: navigationItems,
   },
 ];
 
@@ -40,17 +25,21 @@ const options = {
 let router = createBrowserRouter(routes, options);
 
 // JSX 라우터 구성 + 라우터 인스턴스 생성
-router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route path="" element={<HomePage />} />
-      <Route path="intro" element={<IntroPage />} />
-      <Route path="/admin" element={<AdminLayout />}>
-        {/* .... */}
-      </Route>
-    </Route>
-  )
-);
+// router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route path="/" element={<RootLayout />}>
+//       <Route path="" element={<HomePage />} />
+//       <Route path="intro" element={<IntroPage />} />
+//       <Route
+//         path="non-block-ui-with-updating-state"
+//         element={<NonBlockUIPage />}
+//       />
+//       <Route path="/admin" element={<AdminLayout />}>
+//         {/* .... */}
+//       </Route>
+//     </Route>
+//   )
+// );
 
 // 라우터 인스턴스 기본 내보내기
 export default router;

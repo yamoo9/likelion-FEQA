@@ -1,0 +1,7 @@
+.link {
+  @apply inline-block p-4;
+
+  &.active {
+    @apply bg-indigo-600 text-indigo-50;
+  }
+}

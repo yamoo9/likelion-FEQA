@@ -1,7 +1,7 @@
 function IntroPage() {
   return (
     <>
-      <h2>소개 페이지</h2>
+      <h2 className="my-5">소개 페이지</h2>
     </>
   );
 }

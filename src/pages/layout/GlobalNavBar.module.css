@@ -1,7 +1,0 @@
-.link {
-  @apply p-4;
-
-  &.active {
-    @apply bg-slate-950 text-slate-50;
-  }
-}

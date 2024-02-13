@@ -16,7 +16,7 @@ function Exercise() {
   // useDeferredValue 빌트인 훅을 사용해 query를 지연시킬 수 있습니다.
 
   return (
-    <div className="p-5 w-full">
+    <div className="px-4 py-4 w-full bg-white rounded shadow-md">
       <div className="flex space-y-2.5 flex-col mb-5">
         <label htmlFor={id} className="text-sm">
           앨범 검색
