@@ -1,8 +1,7 @@
-import { useContext } from 'react';
-import { ChatContext } from '@/contexts/Chat';
+import { useChat } from '@/contexts/Chat';
 
 function SpeechBubble() {
-  const { messages } = useContext(ChatContext);
+  const { messages } = useChat();
 
   return (
     <div className="flex flex-col gap-5 bg-slate-400 text-slate-50 p-5">
