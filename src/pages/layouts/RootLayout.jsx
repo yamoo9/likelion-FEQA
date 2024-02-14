@@ -1,18 +1,22 @@
-import { node, bool } from 'prop-types';
-import { Outlet, ScrollRestoration } from 'react-router-dom';
+import { bool, node } from 'prop-types';
+import { Outlet, ScrollRestoration, useNavigation } from 'react-router-dom';
+import { Loading } from '@/components';
 
-import Header from './Header';
-import Footer from './Footer';
-import SideBar from './SideBar';
 import GlobalNavBar from './GlobalNavBar';
+import SideBar from './SideBar';
+import Footer from './Footer';
+import Header from './Header';
 
 function RootLayout({ sidebar = false }) {
+  const { state } = useNavigation();
+  // console.log(state); // 'idle' | 'loading'
+
   return (
     <>
       <Header />
       <GlobalNavBar />
       <main className="w-full">
-        <Outlet />
+        {state === 'loading' ? <Loading /> : <Outlet />}
       </main>
       {sidebar && <SideBar />}
       <Footer />

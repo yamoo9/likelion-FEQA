@@ -30,7 +30,7 @@ function FetchingDataPage() {
         />
       </Helmet>
       <h2 className="my-5">데이터 가져오기</h2>
-      <ul className="flex flex-col gap-2">
+      <ul className="flex flex-col gap-2 items-center my-5">
         {productsData.items?.map((product) => {
           return (
             <ProductCard
@@ -94,12 +94,12 @@ function ProductCard({ product, options }) {
     <li className="shadow-lg flex flex-col space-y-1 p-2 border border-stone-200 bg-white">
       {/* <Link to={`/product/${slug}`}> */}
       <Link to={`/product/${product.id}`}>
-        <h4 className=" order-1">
+        <h4 className="order-1 mt-1 mb-3">
           {product.title} ({product.color})
         </h4>
         <img
           src={product.photo}
-          className="w-full h-auto aspect-auto"
+          className="w-[600px] h-auto aspect-auto border border-slate-200"
           style={styles}
           alt=""
         />
