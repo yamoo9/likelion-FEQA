@@ -25,7 +25,7 @@ import router from '@/routes';
 // 6-2. Link 컴포넌트를 사용해 페이지 내비게이션 (https://bit.ly/48dEy0z)
 // 6-3. NavLink 컴포넌트를 활용해 내비게이션 (https://bit.ly/4bBuqBz)
 // 6-4. NavLink 활성 상태 클래스 핸들링 (https://bit.ly/3UFbFaC)
-// 6-5. 콘텐츠로 바로가기(Skip to content) 링크 (https://bit.ly/49aRkOQ)
+// 6-5. 콘텐츠로 바로가기(Skip to content) 링크 (https://bit.ly/49aRkOQ) 😳
 // 6-6. 프로그래밍 방식 내비게이션
 // 6-6-1. Navigate 컴포넌트 (https://bit.ly/3SVkfk1)
 // 6-6-2. useNavigate 훅 (https://bit.ly/3OGex3a)

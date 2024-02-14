@@ -2,12 +2,10 @@ import { Link, useLocation } from 'react-router-dom';
 import { node, string, oneOfType, exact } from 'prop-types';
 
 function SkipToContent({ href, children, ...restProps }) {
-  const location = useLocation();
-
-  console.log(location);
+  const { pathname } = useLocation();
 
   return (
-    <Link to={href} {...restProps}>
+    <Link to={`${pathname}${href}`} {...restProps}>
       {children}
     </Link>
   );

@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import RootLayout from '@/pages/layouts/RootLayout';
 
 // 페이지(Pages)
+import NotFound from '@/pages/NotFound';
 
 // 내비게이션(Navigation)
 import navigationItems from './navigation';
@@ -13,6 +14,7 @@ const routes = [
   {
     path: '/',
     element: <RootLayout />,
+    errorElement: <NotFound />,
     children: navigationItems,
   },
 ];
@@ -27,7 +29,7 @@ let router = createBrowserRouter(routes, options);
 // JSX 라우터 구성 + 라우터 인스턴스 생성
 // router = createBrowserRouter(
 //   createRoutesFromElements(
-//     <Route path="/" element={<RootLayout />}>
+//     <Route path="/" element={<RootLayout />} errorElement={<NotFound />}>
 //       <Route path="" element={<HomePage />} />
 //       <Route path="intro" element={<IntroPage />} />
 //       <Route
