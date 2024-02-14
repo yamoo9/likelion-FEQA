@@ -33,6 +33,8 @@ function SkipToContentPage({ goTo }) {
     return <Navigate to={goTo} replace />;
   }
 
+  const ranges = range(100, 900, 100);
+
   return (
     <>
       <Helmet>
@@ -44,7 +46,7 @@ function SkipToContentPage({ goTo }) {
       </Helmet>
       <h2 className="my-5">특정 위치로 바로가기</h2>
       <nav aria-label="특정 영역 이동 링크">
-        {range(100, 900, 100).map((n) => (
+        {ranges.map((n) => (
           <SkipToContent
             key={n}
             className="!fixed top-2 right-4 p-1 bg-indigo-950 text-white text-xs"
@@ -54,19 +56,21 @@ function SkipToContentPage({ goTo }) {
           </SkipToContent>
         ))}
       </nav>
-      <div className="flex flex-col space-y-0.5 border-2 border-slate-300">
-        {range(100, 900, 100)
+      <div className="flex flex-col space-y-0.5 border-2 border-white shadow-md">
+        {ranges
           .map((n) => ({
-            // color: `bg-slate-${n}`,
+            bgColor: `bg-slate-${n}`,
+            textColor: `text-slate-${n >= 500 ? 50 : 950}`,
             id: n,
           }))
-          .map(({ id: n }) => {
+          .map(({ id: n, bgColor, textColor }) => {
             return (
               <Section
                 key={n}
                 id={`section-${n}`}
                 headline={`섹션 헤드라인 #${n}`}
-                // color={color}
+                bgColor={bgColor}
+                textColor={textColor}
               />
             );
           })}
@@ -79,9 +83,15 @@ SkipToContentPage.propTypes = {
   goTo: string,
 };
 
-function Section({ id, headline, color = 'bg-slate-950', children }) {
+function Section({
+  id,
+  headline,
+  bgColor = 'bg-slate-950',
+  textColor = 'text-slate-50',
+  children,
+}) {
   return (
-    <section className={`h-[50vh] ${color} text-slate-300 p-5`}>
+    <section className={`h-[50vh] ${bgColor} ${textColor} p-5`}>
       <h3 id={id}>{headline}</h3>
       {children}
     </section>
@@ -91,7 +101,8 @@ function Section({ id, headline, color = 'bg-slate-950', children }) {
 Section.propTypes = {
   id: string.isRequired,
   headline: string.isRequired,
-  color: string,
+  bgColor: string,
+  textColor: string,
   children: node,
 };
 
