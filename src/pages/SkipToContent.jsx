@@ -43,10 +43,16 @@ function SkipToContentPage({ goTo }) {
         />
       </Helmet>
       <h2 className="my-5">특정 위치로 바로가기</h2>
-      <nav aria-label="특정 영역 이동 링크" className="my-5 text-xs flex gap-5">
-        <SkipToContent href="#section-200">섹션 200으로 이동</SkipToContent>
-        <SkipToContent href="#section-300">섹션 300으로 이동</SkipToContent>
-        <SkipToContent href="#section-900">섹션 900으로 이동</SkipToContent>
+      <nav aria-label="특정 영역 이동 링크">
+        {range(100, 900, 100).map((n) => (
+          <SkipToContent
+            key={n}
+            className="!fixed top-2 right-4 p-1 bg-indigo-950 text-white text-xs"
+            href={`#section-${n}`}
+          >
+            섹션 {n}으로 이동
+          </SkipToContent>
+        ))}
       </nav>
       <div className="flex flex-col space-y-0.5 border-2 border-slate-300">
         {range(100, 900, 100)

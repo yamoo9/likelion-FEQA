@@ -10,9 +10,17 @@ function SkipToContent({ href, onClick, ...restProps }) {
       const targetElement = document.getElementById(href.replace(/#/, ''));
 
       if (targetElement) {
-        targetElement.scrollIntoView({
+        const parentElement = targetElement.parentElement;
+
+        parentElement.scrollIntoView({
           behavior: 'smooth',
+          inline: 'start',
         });
+
+        setTimeout(() => {
+          parentElement.tabIndex = -1;
+          parentElement.focus();
+        }, 600);
 
         onClick?.(e);
       }
