@@ -13,7 +13,10 @@ function GlobalNavBar() {
   const { pathname } = useLocation();
 
   const handleNavigationAndFocusOut = useCallback(() => {
-    document.activeElement = null;
+    const { body } = document;
+    body.tabIndex = -1;
+    body.focus();
+    setTimeout(() => body.removeAttribute('tabIndex'));
   }, []);
 
   return (

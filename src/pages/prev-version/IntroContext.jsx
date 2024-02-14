@@ -2,7 +2,7 @@ import Exercise from '@/lecture/47-2-context-api';
 import { getDocumentTitle } from '@/utils';
 import { Helmet } from 'react-helmet-async';
 
-export function Component() {
+function IntroPage() {
   return (
     <>
       <Helmet>
@@ -20,4 +20,4 @@ export function Component() {
   );
 }
 
-Component.displayName = 'IntroPage';
+export default IntroPage;

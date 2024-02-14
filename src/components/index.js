@@ -1,10 +1,8 @@
-// 다시 내보내기(re-export)
-
 export { default as SkipToContent } from './SkipToContent/SkipToContent';
 export { default as ProtectRoute } from './ProtectRoute/ProtectRoute';
+export { default as ProductCard } from './ProductCard/ProductCard';
 export { default as weatherIcon } from './weatherIcon/weatherIcon';
 export { default as A11yHidden } from './A11yHidden/A11yHidden';
-// export { default as CatCardList } from './CatCardList/tsx/CatCardList';
 export { default as CatCardList } from './CatCardList/CatCardList';
 export { default as SearchBar } from './SearchBar/SearchBar';
 export { default as FormInput } from './FormInput/FormInput';
@@ -14,6 +12,7 @@ export { default as AppInput } from './AppInput/AppInput';
 export { default as CountUp } from './CountUp/CountUp';
 export { default as Loading } from './Loading/Loading';
 export { default as Counter } from './Counter/Counter';
+export { default as Section } from './Section/Section';
 export { default as Avatar } from './Avatar/Avatar';
 export { default as Button } from './Button/Button';
 export { default as Widget } from './Widget/Widget';

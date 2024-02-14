@@ -18,4 +18,16 @@ export default defineConfig({
       // generateScopedName: '[name]__[local]--[hash:base64:12]',
     },
   },
+  build: {
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react'],
+          reactDom: ['react-dom'],
+          reactRouter: ['react-router-dom'],
+        },
+      },
+    },
+  },
 });

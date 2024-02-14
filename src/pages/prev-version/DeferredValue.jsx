@@ -2,9 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import Exercise from '@/lecture/deferred-value/Exercise-01';
 import { getDocumentTitle } from '@/utils';
 
-// React Router v6.4+ 의 새로운 기능인 lazy 속성을 사용해
-// 페이지 컴포넌트를 로딩하려면 아래 처럼 export Component를 사용해야 합니다.
-export function Component() {
+function DeferredValuePage() {
   return (
     <>
       <Helmet>
@@ -20,5 +18,4 @@ export function Component() {
   );
 }
 
-// 개발도구에서 컴포넌트 표시 이름을 설정해야 디버깅 하기 좋습니다.
-Component.displayName = 'DeferredValuePage';
+export default DeferredValuePage;

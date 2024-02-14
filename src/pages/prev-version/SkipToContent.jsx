@@ -1,46 +1,13 @@
 import { useEffect } from 'react';
-import { string } from 'prop-types';
+import { node, string } from 'prop-types';
 import { Helmet } from 'react-helmet-async';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { Section, SkipToContent } from '@/components';
 import { getDocumentTitle, range } from '@/utils';
+import { SkipToContent } from '@/components';
 
 let tryDemo = false;
 
-const colorVariants = {
-  slate: {
-    bg: {
-      50: 'bg-slate-50',
-      100: 'bg-slate-100',
-      200: 'bg-slate-200',
-      300: 'bg-slate-300',
-      400: 'bg-slate-400',
-      500: 'bg-slate-500',
-      600: 'bg-slate-600',
-      700: 'bg-slate-700',
-      800: 'bg-slate-800',
-      900: 'bg-slate-900',
-      950: 'bg-slate-950',
-    },
-    text: {
-      50: 'text-slate-50',
-      100: 'text-slate-100',
-      200: 'text-slate-200',
-      300: 'text-slate-300',
-      400: 'text-slate-400',
-      500: 'text-slate-500',
-      600: 'text-slate-600',
-      700: 'text-slate-700',
-      800: 'text-slate-800',
-      900: 'text-slate-900',
-      950: 'text-slate-950',
-    },
-  },
-};
-
-const ranges = range(100, 900, 100);
-
-export function Component({ goTo }) {
+function SkipToContentPage({ goTo }) {
   // React Router 6.4+ <Redirect /> 사용 못함
 
   // 프로그래밍 방식 1.
@@ -66,6 +33,8 @@ export function Component({ goTo }) {
     return <Navigate to={goTo} replace />;
   }
 
+  const ranges = range(100, 900, 100);
+
   return (
     <>
       <Helmet>
@@ -90,10 +59,8 @@ export function Component({ goTo }) {
       <div className="flex flex-col space-y-0.5 border-2 border-white shadow-md">
         {ranges
           .map((n) => ({
-            // bgColor: `bg-slate-${n}`,
-            bgColor: colorVariants.slate.bg[n],
-            // textColor: `text-slate-${n >= 500 ? 100 : 900}`,
-            textColor: colorVariants.slate.text[n >= 500 ? 100 : 900],
+            bgColor: `bg-slate-${n}`,
+            textColor: `text-slate-${n >= 500 ? 50 : 950}`,
             id: n,
           }))
           .map(({ id: n, bgColor, textColor }) => {
@@ -112,8 +79,31 @@ export function Component({ goTo }) {
   );
 }
 
-Component.propTypes = {
+SkipToContentPage.propTypes = {
   goTo: string,
 };
 
-Component.displayName = 'SkipToContentPage';
+function Section({
+  id,
+  headline,
+  bgColor = 'bg-slate-950',
+  textColor = 'text-slate-50',
+  children,
+}) {
+  return (
+    <section className={`h-[50vh] ${bgColor} ${textColor} p-5`}>
+      <h3 id={id}>{headline}</h3>
+      {children}
+    </section>
+  );
+}
+
+Section.propTypes = {
+  id: string.isRequired,
+  headline: string.isRequired,
+  bgColor: string,
+  textColor: string,
+  children: node,
+};
+
+export default SkipToContentPage;

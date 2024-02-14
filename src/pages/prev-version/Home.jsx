@@ -2,7 +2,7 @@ import { getDocumentTitle } from '@/utils';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
-export function Component() {
+function HomePage() {
   return (
     <>
       <Helmet>
@@ -24,4 +24,4 @@ export function Component() {
   );
 }
 
-Component.displayName = 'HomePage';
+export default HomePage;

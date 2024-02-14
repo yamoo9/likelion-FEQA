@@ -3,7 +3,7 @@ import { getDocumentTitle, getPbImage, numberWithComma } from '@/utils';
 import { Helmet } from 'react-helmet-async';
 import { useLoaderData /* , useParams */ } from 'react-router-dom';
 
-export function Component() {
+function ProductDetailPage() {
   // const { productId } = useParams();
   const { title, color, photo, price } = useLoaderData();
 
@@ -39,7 +39,7 @@ export function Component() {
   );
 }
 
-Component.displayName = 'ProductDetailPage';
+export default ProductDetailPage;
 
 /* -------------------------------------------------------------------------- */
 
