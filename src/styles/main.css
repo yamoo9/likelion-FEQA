@@ -59,6 +59,21 @@
   input[type=number] {
     -moz-appearance: textfield;
   }
+
+  /* 스크롤바를 숨기지만, 스크롤은 허용합니다. */
+  :root {
+    /* IE, Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
+    scrollbar-width: none;
+    overflow-y: scroll;
+  }
+
+  ::-webkit-scrollbar {
+    /* Chrome, Safari, Opera */
+    display: none;
+  }
+
 }
 
 @layer components {
