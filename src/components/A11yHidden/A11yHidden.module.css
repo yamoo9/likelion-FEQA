@@ -1,14 +1,25 @@
-/* CSS Modules <- Vite / PostHTML + PostCSS */
-
-.group {
+.a11yHidden {
   overflow: hidden;
   position: absolute;
-  clip: rect(0, 0, 0, 0);
+  clip: rect(1px, 1px, 1px, 1px);
   clip-path: circle(0);
   width: 1px;
   height: 1px;
   margin: -1px;
-  padding: 0;
-  border: 0;
   white-space: nowrap;
+}
+
+caption.a11yHidden {
+  position: static;
+}
+
+.a11yHidden.focusable:focus {
+  visibility: initial;
+  position: static;
+  clip: auto;
+  clip-path: unset;
+  width: initial;
+  height: initial;
+  margin: initial;
+  white-space: initial;
 }

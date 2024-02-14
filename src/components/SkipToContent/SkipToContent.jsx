@@ -23,6 +23,7 @@ function SkipToContent({ href, onClick, ...restProps }) {
   return (
     <A11yHidden
       as="a"
+      focusable
       href={href}
       onClick={handleSmoothScroll}
       {...restProps}
