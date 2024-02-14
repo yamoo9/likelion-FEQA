@@ -1,12 +1,23 @@
 import pb from '@/api/pocketbase';
 import { getDocumentTitle, getPbImage } from '@/utils';
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useSearchParams } from 'react-router-dom';
 import { shape, string, number } from 'prop-types';
 
 function FetchingDataPage() {
   const productsData = useLoaderData();
   // console.log(productsData);
+
+  const [searchParams] = useSearchParams();
+
+  // URLSearchParams 객체 순환
+  // for (const [key, value] of searchParams) {
+  //   console.log(key, typeof value)
+  // }
+  
+  const productOptions = {
+    size: searchParams.get('size'), filter: searchParams.get('filter')
+  };
 
   return (
     <>
@@ -20,7 +31,7 @@ function FetchingDataPage() {
       <h2 className="my-5">데이터 가져오기</h2>
       <ul>
         {productsData.items?.map((product) => {
-          return <ProductCard key={product.id} product={product} />;
+          return <ProductCard key={product.id} product={product} options={productOptions} />;
         })}
       </ul>
     </>
@@ -48,13 +59,19 @@ export async function loader() {
 
 /* -------------------------------------------------------------------------- */
 
-function ProductCard({ product }) {
+function ProductCard({ product, options }) {
+
+  console.log(options)
+
   return (
     <li>
       <h4>
         {product.title} ({product.color})
       </h4>
-      <img src={product.photo} className="w-full h-auto aspect-auto" alt="" />
+      <img src={product.photo} className="w-full h-auto aspect-auto" style={{
+        width: options.size,
+        filter: options.filter
+      }} alt="" />
     </li>
   );
 }
@@ -68,4 +85,8 @@ ProductCard.propTypes = {
     photo: string,
     price: number,
   }),
+  options: shape({
+    size: string,
+    filter: string,
+  })
 };
