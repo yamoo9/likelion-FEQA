@@ -4,9 +4,7 @@ import IntroContextPage from '@/pages/IntroContext';
 import NonBlockUIPage from '@/pages/NonBlockUI';
 import DeferredValuePage from '@/pages/DeferredValue';
 import SkipToContentPage from '@/pages/SkipToContent';
-import FetchingDataPage, {
-  loader as fetchingDataLoader,
-} from '@/pages/FetchingData';
+import FetchingDataPage, { loader as fetchingDataLoader, } from '@/pages/FetchingData';
 
 // 내비게이션 구성(navigation configuration)
 const navigationItems = [

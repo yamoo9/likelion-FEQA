@@ -33,6 +33,7 @@ export default FetchingDataPage;
 export async function loader() {
   const products = await pb.collection('products').getList();
 
+  // 뮤테이션(mutation)
   const productItems = products.items.map((product) => {
     const photoURL = getPbImage(product);
     product.photo = photoURL;
