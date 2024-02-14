@@ -6,12 +6,11 @@ import Footer from './Footer';
 import SideBar from './SideBar';
 import GlobalNavBar from './GlobalNavBar';
 
-function RootLayout({ /* children, */ sidebar = false }) {
+function RootLayout({ sidebar = false }) {
   return (
     <>
       <Header />
       <GlobalNavBar />
-      {/* <main>{children}</main> */}
       <main className="w-full">
         <Outlet />
       </main>
