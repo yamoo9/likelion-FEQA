@@ -1,7 +1,9 @@
+import { useDocumentTitle } from '@/hooks';
 import { useRouteError, Link } from 'react-router-dom';
 
 function NotFound() {
   const error = useRouteError();
+  useDocumentTitle('요청한 페이지를 찾을 수 없어요! 🥹');
 
   const errorMessage = `
     당신이 찾고 있는 페이지는 이름이 바뀌거나, 제거되었거나, 이 행성에

@@ -1,12 +1,15 @@
-import { range } from '@/utils';
-import { string, node } from 'prop-types';
-import { SkipToContent } from '@/components';
-import { Navigate, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { string, node } from 'prop-types';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { SkipToContent } from '@/components';
+import { useDocumentTitle } from '@/hooks';
+import { range } from '@/utils';
 
 let tryDemo = false;
 
 function SkipToContentPage({ goTo }) {
+  useDocumentTitle('특정 위치로 바로가기');
+
   // React Router 6.4+ <Redirect /> 사용 못함
 
   // 프로그래밍 방식 1.

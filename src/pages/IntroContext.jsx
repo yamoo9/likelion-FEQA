@@ -1,6 +1,9 @@
+import { useDocumentTitle } from '@/hooks';
 import Exercise from '@/lecture/47-2-context-api';
 
 function IntroPage() {
+  useDocumentTitle('컨텍스트 API 소개');
+
   return (
     <>
       <h2 className="my-5">

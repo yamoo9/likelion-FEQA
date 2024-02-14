@@ -15,4 +15,5 @@ export { default as useTooltip } from './useTooltip';
 export { default as useStorage } from './useStorage';
 export { default as useReference } from './useReference';
 export { default as useInOnScreen } from './useInOnScreen';
+export { default as useDocumentTitle } from './useDocumentTitle';
 export { default as useMousePosition } from './useMousePosition';
