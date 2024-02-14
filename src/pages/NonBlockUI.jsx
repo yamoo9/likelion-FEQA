@@ -1,4 +1,4 @@
-import Exercise from '@/lecture/non-blocking-ui-update-state/Expercise-01';
+import Exercise from '@/lecture/non-blocking-ui-update-state/Expercise-05-finished';
 import { getDocumentTitle } from '@/utils';
 import { Helmet } from 'react-helmet-async';
 

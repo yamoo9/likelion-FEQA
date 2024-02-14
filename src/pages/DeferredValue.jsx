@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import Exercise from '@/lecture/deferred-value/Exercise-01';
+import Exercise from '@/lecture/deferred-value/Exercise-05-finished';
 import { getDocumentTitle } from '@/utils';
 
 // React Router v6.4+ 의 새로운 기능인 lazy 속성을 사용해

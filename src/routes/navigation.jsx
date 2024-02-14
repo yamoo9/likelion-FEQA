@@ -39,6 +39,8 @@ const navigationItems = [
     // element: <FetchingDataPage />,
     async lazy() {
       const { loader, Component } = await import('@/pages/FetchingData');
+      console.log(loader);
+
       return {
         loader,
         Component,
@@ -52,7 +54,7 @@ const navigationItems = [
     // element: <ProductDetailPage />,
     // loader: productDetailLoader,
     async lazy() {
-      const { loader, Component } = await import('@/pages/DeferredValue');
+      const { loader, Component } = await import('@/pages/ProductDetail');
       return {
         loader,
         Component,
