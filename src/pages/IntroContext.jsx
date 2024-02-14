@@ -7,8 +7,10 @@ function IntroPage() {
     <>
       <Helmet>
         <title>{getDocumentTitle('컨텍스트 API 소개')}</title>
-        {/* meta, link */}
-        <meta name="description" content="최강 컨텍스트 API!!!! ....." />
+        <meta
+          name="description"
+          content="리액트에서 컴포넌트 사이 데이터를 손쉽게 공유하려면 컨텍스트 API를 활용합니다."
+        />
       </Helmet>
       <h2 className="my-5">
         컨텍스트 <abbr title="Application Programming Interface">API</abbr> 소개
