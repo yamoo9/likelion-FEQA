@@ -1,8 +1,8 @@
-import pb from '@/api/pocketbase';
-import { getDocumentTitle, getPbImage } from '@/utils';
 import { Helmet } from 'react-helmet-async';
-import { Link, useLoaderData, useSearchParams } from 'react-router-dom';
 import { shape, string, number } from 'prop-types';
+import { Link, useLoaderData, useSearchParams } from 'react-router-dom';
+import { getDocumentTitle, getPbImage, getSlug } from '@/utils';
+import pb from '@/api/pocketbase';
 
 function FetchingDataPage() {
   const productsData = useLoaderData();
@@ -72,9 +72,11 @@ function ProductCard({ product, options }) {
     filter: options.filter,
   };
 
+  const slug = `${getSlug(product.title)}/color/${getSlug(product.color)}`;
+
   return (
     <li className="shadow-lg flex flex-col space-y-1 p-2 border border-stone-200 bg-white">
-      <Link to={`product/${product.id}`}>
+      <Link to={`/product/${slug}`}>
         <h4 className=" order-1">
           {product.title} ({product.color})
         </h4>
