@@ -1,21 +1,51 @@
-import { getDocumentTitle } from '@/utils';
+import pb from '@/api/pocketbase';
+import { getDocumentTitle, getPbImage, numberWithComma } from '@/utils';
 import { Helmet } from 'react-helmet-async';
-import { useParams } from 'react-router-dom';
+import { useLoaderData /* , useParams */ } from 'react-router-dom';
 
 function ProductDetailPage() {
-  const { slug, color } = useParams();
+  // const { productId } = useParams();
+  const { title, color, photo, price } = useLoaderData();
+
+  // useState
+  // useEffect
+  // useRef
+
+  // vs.
+
+  // react router v6.4+ ✅
+  // loader async function
+
+  const productTitle = `${title} (${color})`;
+  const productDescription = `${productTitle} 상품은 .....`;
 
   return (
     <>
       <Helmet>
-        <title>{getDocumentTitle('상품 이름')}</title>
-        <meta name="description" content="상품 정보" />
+        <title>{getDocumentTitle(productTitle)}</title>
+        <meta name="description" content={productDescription} />
       </Helmet>
 
-      <h2 className="my-5">{'상품 이름' + ' ' + slug + `(${color})`}</h2>
+      <h2 className="my-5">{productTitle}</h2>
       {/* 상품 상세 정보 */}
+      <figure>
+        <img src={photo} alt="" />
+        <figcaption>
+          <p>{productTitle}</p>
+          <span className="price">{numberWithComma(price)}원</span>
+        </figcaption>
+      </figure>
     </>
   );
 }
 
 export default ProductDetailPage;
+
+/* -------------------------------------------------------------------------- */
+
+export async function loader({ params }) {
+  const { productId } = params;
+  const product = await pb.collection('products').getOne(productId);
+  product.photo = getPbImage(product);
+  return product;
+}

@@ -7,7 +7,9 @@ import SkipToContentPage from '@/pages/SkipToContent';
 import FetchingDataPage, {
   loader as fetchingDataLoader,
 } from '@/pages/FetchingData';
-import ProductDetailPage from '@/pages/ProductDetail';
+import ProductDetailPage, {
+  loader as productDetailLoader,
+} from '@/pages/ProductDetail';
 
 // 내비게이션 구성(navigation configuration)
 const navigationItems = [
@@ -45,8 +47,10 @@ const navigationItems = [
   },
   {
     id: 'data-product',
-    path: '/product/:slug/color/:color',
+    // path: '/product/:slug/color/:color',
+    path: '/product/:productId',
     element: <ProductDetailPage />,
+    loader: productDetailLoader,
   },
   {
     id: 'deferred-value',

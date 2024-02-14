@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { shape, string, number } from 'prop-types';
 import { Link, useLoaderData, useSearchParams } from 'react-router-dom';
-import { getDocumentTitle, getPbImage, getSlug } from '@/utils';
+import { getDocumentTitle, getPbImage } from '@/utils';
 import pb from '@/api/pocketbase';
 
 function FetchingDataPage() {
@@ -72,11 +72,12 @@ function ProductCard({ product, options }) {
     filter: options.filter,
   };
 
-  const slug = `${getSlug(product.title)}/color/${getSlug(product.color)}`;
+  // const slug = `${getSlug(product.title)}/color/${getSlug(product.color)}`;
 
   return (
     <li className="shadow-lg flex flex-col space-y-1 p-2 border border-stone-200 bg-white">
-      <Link to={`/product/${slug}`}>
+      {/* <Link to={`/product/${slug}`}> */}
+      <Link to={`/product/${product.id}`}>
         <h4 className=" order-1">
           {product.title} ({product.color})
         </h4>
