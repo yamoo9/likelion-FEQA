@@ -1,8 +1,8 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import navigationItems from '@/routes/navigation';
 import S from './GlobalNavBar.module.css';
 import { A11yHidden } from '@/components';
-import navigationItems from '@/routes/navigation';
 
 const assignActiveClassNames = ({ isActive }) => {
   const activeClassName = isActive ? S.active : '';
@@ -11,6 +11,10 @@ const assignActiveClassNames = ({ isActive }) => {
 
 function GlobalNavBar() {
   const { pathname } = useLocation();
+
+  const handleNavigationAndFocusOut = useCallback(() => {
+    document.activeElement = null;
+  }, []);
 
   return (
     <nav className="bg-white text-slate-800 w-full shadow-md">
@@ -29,6 +33,7 @@ function GlobalNavBar() {
                   to={item.path}
                   tabIndex={isActive ? -1 : null}
                   className={assignActiveClassNames}
+                  onClick={handleNavigationAndFocusOut}
                 >
                   {item.text}
                 </NavLink>
