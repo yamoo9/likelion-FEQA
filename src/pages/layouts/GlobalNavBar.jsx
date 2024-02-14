@@ -15,7 +15,9 @@ function GlobalNavBar() {
       <A11yHidden as="h2">학습 주제</A11yHidden>
       <ul className="text-xs flex">
         {navigationItems
-          .filter((route) => !route.path.includes(':'))
+          .filter((route) => {
+            return !route.path || !route.path.includes(':');
+          })
           .map((item) => (
             <li key={item.id}>
               <NavLink to={item.path} className={assignActiveClassNames}>

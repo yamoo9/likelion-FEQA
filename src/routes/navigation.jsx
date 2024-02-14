@@ -15,7 +15,8 @@ import ProductDetailPage, {
 const navigationItems = [
   {
     id: 'home',
-    path: '/',
+    index: true,
+    path: '',
     text: '홈',
     element: <HomePage />,
   },
@@ -38,12 +39,16 @@ const navigationItems = [
     element: <FetchingDataPage />,
     loader: fetchingDataLoader,
     // 인라인 예시
+    // GET
     // loader: /* loader async function */ async () => {
     //   // 비동기 호출 코드 여기에 작성
     //   return await pb.collection('products').getList();
     // },
     // children: []
     // <Outlet />
+    //
+    // POST, PUT, DELETE
+    // action: async () => {},
   },
   {
     id: 'data-product',

@@ -47,7 +47,7 @@ function FetchingDataPage() {
 
 export default FetchingDataPage;
 
-// 비동기 호출 (GET)
+// 비동기 요청 (GET)
 export async function loader() {
   const products = await pb.collection('products').getList();
 
@@ -62,6 +62,22 @@ export async function loader() {
     ...products,
     items: productItems,
   };
+}
+
+// 비동기 요청 (POST, PUT(PATCH), DELETE)
+// React Router's <Form></Form>
+export async function action({ request }) {
+  switch (request.method) {
+    case 'POST':
+      // PocketBase : Create Record
+      break;
+    case 'PUT':
+      // PocketBase : Edit Record
+      break;
+    case 'DELETE':
+      // PocketBase : Delete Record
+      break;
+  }
 }
 
 /* -------------------------------------------------------------------------- */

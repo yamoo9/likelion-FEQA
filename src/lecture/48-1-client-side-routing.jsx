@@ -45,17 +45,17 @@ import router from '@/routes';
 // https://www.google.com/search?q=gemini&newwindow=1&sca_esv=sca_esv_fallback&sxsrf=ACQVn0-fAoONNmgPvbdYGQ-dGX7d5xvOMw%3A1707886223439&source=hp&ei=j0bMZZ-uBrbg2roPl4OR0Ag&iflsig=ANes7DEAAAAAZcxUn7EdFE9E43gPteQjRrqfBDNPvoMz&udm=&oq=gemin&gs_lp=Egdnd3Mtd2l6IgVnZW1pbioCCAAyCxAAGIAEGLEDGIMBMgQQABgDMgsQABiABBixAxiDATILEAAYgAQYsQMYgwEyCxAAGIAEGLEDGIMBMgQQABgDMgsQABiABBixAxiDATILEAAYgAQYsQMYgwEyBBAAGAMyBBAAGANI7hJQAFiLBnAAeACQAQCYAYABoAHVBKoBAzAuNbgBA8gBAPgBAcICERAuGIAEGLEDGIMBGMcBGNEDwgIOEC4YgAQYsQMYgwEY1ALCAggQABiABBixA8ICCxAuGIAEGMcBGNED&sclient=gws-wiz
 // ?q=gemini&newwindow=1&sca_esv=sca_esv_fallback&sxsrf=ACQVn0-fAoONNmgPvbdYGQ-dGX7d5xvOMw%3A1707886223439&source=hp&ei=j0bMZZ-uBrbg2roPl4OR0Ag&iflsig=ANes7DEAAAAAZcxUn7EdFE9E43gPteQjRrqfBDNPvoMz&udm=&oq=gemin&gs_lp=Egdnd3Mtd2l6IgVnZW1pbioCCAAyCxAAGIAEGLEDGIMBMgQQABgDMgsQABiABBixAxiDATILEAAYgAQYsQMYgwEyCxAAGIAEGLEDGIMBMgQQABgDMgsQABiABBixAxiDATILEAAYgAQYsQMYgwEyBBAAGAMyBBAAGANI7hJQAFiLBnAAeACQAQCYAYABoAHVBKoBAzAuNbgBA8gBAPgBAcICERAuGIAEGLEDGIMBGMcBGNEDwgIOEC4YgAQYsQMYgwEY1ALCAggQABiABBixA8ICCxAuGIAEGMcBGNED&sclient=gws-wiz
 //
-// 9. 다이내믹 루트(Dynamic Routes) 구성
+// 9. 다이내믹 루트(Dynamic Routes) 구성 ✅
 // 9-1. 다이내믹 세그먼트 `:` (https://bit.ly/49y9wl7)
 // 9-2. useParams 훅 (https://bit.ly/3HYKsbq)
 // 9-3. 인덱스 루트 (https://bit.ly/3UB7NHu)
 //
-// 10. 데이터 뮤테이션(Data Mutations)
+// 10. 데이터 뮤테이션(Data Mutations) ✅
 // 10-1. Form 컴포넌트 (https://bit.ly/3OJlYXo)
 // 10-2. 뮤테이션 서브미션 (https://bit.ly/3wgh8KM)
 // 10-3. 폼 액션 핸들링 (https://bit.ly/3wfeMMl)
 // 10-4. 폼 액션 ← 리퀘스트 (https://bit.ly/3w70RHR)
-// 10-4. 폼 상태 접근 (https://bit.ly/4bxAsmX)
+// 10-5. 폼 상태 접근 (https://bit.ly/4bxAsmX)
 //
 // 11. 루트 보호 (Protected Routes)
 // 11-1. 인증된 사용자만 이용 가능하도록 루트 보호
