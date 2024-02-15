@@ -52,6 +52,7 @@
     "react-helmet-async": "2.0.4",
     "react-router-dom": "6.22.0",
     "react-tilt": "1.0.2",
-    "vanilla-tilt": "1.8.1"
+    "vanilla-tilt": "1.8.1",
+    "zustand": "4.5.0"
   }
 }

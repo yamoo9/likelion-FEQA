@@ -1,7 +1,7 @@
 import { getDocumentTitle } from '@/utils';
 import { Helmet } from 'react-helmet-async';
 import { FormInput } from '@/components';
-import { useRef, useReducer } from 'react';
+import { useRef, useReducer, lazy, Suspense } from 'react';
 import {
   // action creators
   createMessage,
@@ -13,6 +13,8 @@ import {
   // reducer
   manageMessages,
 } from '@/store/messages';
+
+const Counter = lazy(() => import('@/pages/components/counter/Counter'));
 
 export function Component() {
   const addInputRef = useRef(null);
@@ -89,6 +91,15 @@ export function Component() {
           content="리듀서를 사용해 복잡한 상태를 관리할 수 있습니다."
         />
       </Helmet>
+
+      <Suspense fallback={<p>로딩 중...</p>}>
+        <div className="mt-2 mb-5">
+          <Counter />
+        </div>
+      </Suspense>
+
+      <hr />
+
       <h2 className="my-5">리듀서 함수를 활용해 복잡한 상태 관리</h2>
 
       <div className="flex flex-col space-y-2">

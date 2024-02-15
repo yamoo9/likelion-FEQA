@@ -75,6 +75,12 @@ const navigationItems = [
     text: '리듀서 함수 활용',
     lazy: () => import('@/pages/LearnReducer'),
   },
+  {
+    id: 'learn-zustand',
+    path: '/learn-zustand',
+    text: '앱 상태 관리 (with 츄스탄트)',
+    lazy: () => import('@/pages/LearnZustand'),
+  },
 ];
 
 export default navigationItems;
