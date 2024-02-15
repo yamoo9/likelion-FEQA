@@ -3,16 +3,17 @@ export const INIT_MESSAGES_INFO = {
   messages: [
     {
       id: crypto.randomUUID(),
-      text: '리듀서 함수를 작성해봐요~ 😉',
+      text: '리듀서 함수를 작성해봐요~',
     },
   ],
+  editMessage: null,
 };
 
 // 리듀서(상태 관리 함수)
 export const manageMessages = (state, action /* { type, payload? } */) => {
   // 메시지/추가
   switch (action.type) {
-    case '메시지/추가':
+    case CREATE_MESSAGE:
       // 새로운 상태가 반환
       return {
         ...state,
@@ -25,7 +26,8 @@ export const manageMessages = (state, action /* { type, payload? } */) => {
         ],
       };
 
-    case '메시지/삭제':
+    case DELETE_MESSAGE:
+      // 새로운 상태가 반환
       return {
         ...state,
         messages: state.messages.filter(
@@ -33,13 +35,29 @@ export const manageMessages = (state, action /* { type, payload? } */) => {
         ),
       };
 
-    case '메시지/수정':
+    case SELECT_EDIT_MESSAGE:
+      // 새로운 상태가 반환
       return {
         ...state,
+        editMessage: action.payload,
       };
 
-    case '메시지/읽기':
+    case EDIT_MESSAGE:
+      // 새로운 상태가 반환
+      return {
+        ...state,
+        messages: state.messages.map((m) => {
+          if (m.id === action.payload.id) {
+            return action.payload;
+          }
+          return m;
+        }),
+        editMessage: null,
+      };
+
+    // case '메시지/읽기':
     default:
+      // 기존 상태 반환
       return state;
   }
 };
@@ -48,3 +66,4 @@ export const manageMessages = (state, action /* { type, payload? } */) => {
 export const CREATE_MESSAGE = '메시지/추가';
 export const DELETE_MESSAGE = '메시지/삭제';
 export const EDIT_MESSAGE = '메시지/수정';
+export const SELECT_EDIT_MESSAGE = '메시지/수정/선택';
