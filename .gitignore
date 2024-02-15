@@ -11,12 +11,5 @@ node_modules
 pocketbase
 dist
 
-template.md
-NOTICE.md
-
-17-*.md
-18.md
-18-*.md
-
 14-deferred-value
 15-non-blocking-ui-update-state
