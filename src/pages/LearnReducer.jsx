@@ -3,19 +3,22 @@ import { Helmet } from 'react-helmet-async';
 import { FormInput } from '@/components';
 import { useRef, useReducer } from 'react';
 import {
-  CREATE_MESSAGE,
-  DELETE_MESSAGE,
-  EDIT_MESSAGE,
-  SELECT_EDIT_MESSAGE,
-  INIT_MESSAGES_INFO as initialMessages,
-  manageMessages as messageReducer,
+  // action creators
+  createMessage,
+  deleteMessage,
+  selectEditMessage,
+  editMessage,
+  // initial state
+  initialMessages,
+  // reducer
+  manageMessages,
 } from '@/store/messages';
 
 export function Component() {
   const addInputRef = useRef(null);
   const editInputRef = useRef(null);
 
-  const [messageState, dispatch] = useReducer(messageReducer, initialMessages);
+  const [messageState, dispatch] = useReducer(manageMessages, initialMessages);
 
   const handleAddMessage = (e) => {
     e.preventDefault();
@@ -31,12 +34,7 @@ export function Component() {
       return;
     }
 
-    const addAction = {
-      type: CREATE_MESSAGE,
-      payload: newMessage,
-    };
-
-    dispatch(addAction);
+    dispatch(createMessage(newMessage));
 
     const input = addInputRef.current;
     input.value = '';
@@ -44,12 +42,7 @@ export function Component() {
   };
 
   const handleDeleteMessage = (deleteId) => () => {
-    const deleteAction = {
-      type: DELETE_MESSAGE,
-      payload: deleteId,
-    };
-
-    dispatch(deleteAction);
+    dispatch(deleteMessage(deleteId));
   };
 
   const handleEditMessage = (e) => {
@@ -57,9 +50,9 @@ export function Component() {
 
     const formData = new FormData(e.target);
 
-    const editMessage = formData.get('edit-message');
+    const willEditMessage = formData.get('edit-message');
 
-    if (editMessage.trim().length === 0) {
+    if (willEditMessage.trim().length === 0) {
       alert('수정할 메시지를 올바르게 입력하세요');
       editInputRef.current.value = '';
       editInputRef.current.focus();
@@ -68,13 +61,10 @@ export function Component() {
 
     const editedMessage = {
       ...messageState.editMessage,
-      text: editMessage,
+      text: willEditMessage,
     };
 
-    dispatch({
-      type: EDIT_MESSAGE,
-      payload: editedMessage,
-    });
+    dispatch(editMessage(editedMessage));
 
     editInputRef.current.value = '';
   };
@@ -84,10 +74,7 @@ export function Component() {
       (m) => m.id === selectId
     );
 
-    dispatch({
-      type: SELECT_EDIT_MESSAGE,
-      payload: selectedMessage,
-    });
+    dispatch(selectEditMessage(selectedMessage));
 
     editInputRef.current.value = selectedMessage.text;
     editInputRef.current.focus();
