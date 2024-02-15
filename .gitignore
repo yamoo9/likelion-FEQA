@@ -2,11 +2,9 @@
 .github/*
 .next
 .env
+.typescript-config
 
 node_modules
 tutorials
 dist
-
-summary/17.md
-summary/18-*.md
-summary/template.md
+src
