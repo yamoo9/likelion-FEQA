@@ -74,6 +74,12 @@ const navigationItems = [
     // element: <NonBlockUIPage />,
     lazy: () => import('@/pages/NonBlockUI'),
   },
+  {
+    id: 'like-redux-using-use-reducer',
+    path: '/like-redux-using-use-reducer',
+    text: '리듀서 함수 활용',
+    lazy: () => import('@/pages/LearnReducer'),
+  },
 ];
 
 export default navigationItems;
