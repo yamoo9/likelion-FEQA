@@ -39,7 +39,6 @@ const navigationItems = [
     // element: <FetchingDataPage />,
     async lazy() {
       const { loader, Component } = await import('@/pages/FetchingData');
-      console.log(loader);
 
       return {
         loader,
