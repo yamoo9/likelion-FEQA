@@ -1,11 +1,20 @@
-import pb from '@/api/pocketbase';
-import { getDocumentTitle, getPbImage, numberWithComma } from '@/utils';
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData /* , useParams */ } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
+import { getDocumentTitle, getPbImage, numberWithComma } from '@/utils';
+import { useQuery } from '@tanstack/react-query';
+import pb from '@/api/pocketbase';
 
 export function Component() {
-  // const { productId } = useParams();
-  const { title, color, photo, price } = useLoaderData();
+  const { productId } = useParams();
+  const product = useLoaderData();
+
+  const {
+    data: { title, color, photo, price },
+  } = useQuery({
+    queryKey: ['product', productId],
+    queryFn: fetchSingleProduct,
+    initialData: product,
+  });
 
   // useState
   // useEffect
@@ -43,9 +52,19 @@ Component.displayName = 'ProductDetailPage';
 
 /* -------------------------------------------------------------------------- */
 
-export async function loader({ params }) {
-  const { productId } = params;
+async function fetchSingleProduct(productId) {
   const product = await pb.collection('products').getOne(productId);
   product.photo = getPbImage(product);
   return product;
 }
+
+export const loader =
+  (queryClient) =>
+  async ({ params }) => {
+    const { productId } = params;
+    return await queryClient.ensureQueryData({
+      queryKey: ['product', productId],
+      queryFn: () => fetchSingleProduct(productId),
+      staleTime: 1000 * 10, // 10s
+    });
+  };

@@ -1,11 +1,4 @@
-// 페이지(Pages)
-// import HomePage from '@/pages/Home';
-// import IntroContextPage from '@/pages/IntroContext';
-// import NonBlockUIPage from '@/pages/NonBlockUI';
-// import DeferredValuePage from '@/pages/DeferredValue';
-// import SkipToContentPage from '@/pages/SkipToContent';
-// import FetchingDataPage, { loader as fetchingDataLoader, } from '@/pages/FetchingData';
-// import ProductDetailPage, { loader as productDetailLoader, } from '@/pages/ProductDetail';
+import { queryClient } from '@/lecture/48-1-client-side-routing';
 
 // 내비게이션 구성(navigation configuration)
 const navigationItems = [
@@ -38,10 +31,12 @@ const navigationItems = [
     // loader: fetchingDataLoader,
     // element: <FetchingDataPage />,
     async lazy() {
-      const { loader, Component } = await import('@/pages/FetchingData');
+      const { loader /* closure */, Component } = await import(
+        '@/pages/FetchingData'
+      );
 
       return {
-        loader,
+        loader: loader(queryClient),
         Component,
       };
     },
@@ -55,7 +50,7 @@ const navigationItems = [
     async lazy() {
       const { loader, Component } = await import('@/pages/ProductDetail');
       return {
-        loader,
+        loader: loader(queryClient),
         Component,
       };
     },

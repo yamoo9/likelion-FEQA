@@ -18,6 +18,7 @@
     "@storybook/react": "7.6.10",
     "@storybook/react-vite": "7.6.10",
     "@storybook/test": "7.6.10",
+    "@tanstack/react-query-devtools": "5.20.5",
     "@types/node": "20.11.16",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
@@ -44,6 +45,7 @@
     "vite": "5.0.11"
   },
   "dependencies": {
+    "@tanstack/react-query": "5",
     "pocketbase": "0.21.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
