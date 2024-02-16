@@ -1,10 +1,46 @@
 import { A11yHidden } from '@/components';
-import { Suspense, lazy, useCallback, useState } from 'react';
+import { Component, Suspense, lazy, useCallback, useState } from 'react';
+import useCountStore from '@/store/useCountStore';
 
 const CountButton = lazy(() => import('./CountButton'));
 const CountDisplay = lazy(() => import('./CountDisplay'));
 
+export class CompareWithFunctionComponent extends Component {
+  state = {
+    a: 1,
+    b: 1,
+  };
+
+  render() {
+    return (
+      <button type="button" onClick={this.update.bind(this)}>
+        update state
+      </button>
+    );
+  }
+
+  update() {
+    this.setState({
+      b: this.state.b + 2,
+    });
+  }
+}
+
 function Counter() {
+  useCountStore();
+
+  // const [state, setState] = useState({
+  //   a: 1,
+  //   b: 1,
+  // });
+
+  // const handler = () => {
+  //   setState({
+  //     //...state, // { a, b }
+  //     b: state.b + 2,
+  //   });
+  // };
+
   const [count, setCount] = useState(0);
 
   const handleDecrementCount = useCallback(() => setCount((c) => c - 1), []);
