@@ -2,8 +2,11 @@ import { Suspense, lazy, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { getDocumentTitle } from '@/utils';
 import { FormInput } from '@/components';
+import { useMessageStore } from '@/store/useMessageStore';
 
 const Counter = lazy(() => import('@/pages/components/counter/Counter'));
+
+const messageSelector = (state) => state;
 
 export function Component() {
   const addInputRef = useRef(null);
@@ -12,13 +15,14 @@ export function Component() {
   // [실습]
   // Zustand 라이브러리 create 메서드로 생성한
   // useMessageStore 훅을 사용해 상태를 관리합니다.
-  const selectedMessage = null;
-  const messages = [
-    {
-      id: crypto.randomUUID(),
-      text: 'Zustand 라이브러리로 앱 상태 관리하기',
-    },
-  ];
+  const {
+    messages,
+    selectedMessage,
+    add,
+    select,
+    edit,
+    delete: deleteMessage,
+  } = useMessageStore(messageSelector);
 
   const handleAddMessage = (e) => {
     e.preventDefault();
@@ -33,6 +37,7 @@ export function Component() {
     }
 
     // [상태 업데이트 요청] 메시지 추가
+    add(addInput.value);
 
     addInput.value = '';
     addInput.focus();
@@ -89,7 +94,7 @@ export function Component() {
       <h2 className="my-5">Zustand 라이브러리 활용</h2>
 
       <div className="flex flex-col space-y-2">
-        <div className="flex gap-1">
+        <form className="flex gap-1" onSubmit={handleAddMessage}>
           <FormInput
             ref={addInputRef}
             name="add-message"
@@ -103,35 +108,33 @@ export function Component() {
             메시지 추가
           </FormInput>
           <button
-            type="button"
+            type="submit"
             className="bg-indigo-100 py-1 px-3 rounded text-xs hover:bg-indigo-200"
-            onClick={handleAddMessage}
           >
             추가
           </button>
-        </div>
-        <div className="flex gap-1">
+        </form>
+        <form className="flex gap-1" onSubmit={handleEditMessage}>
           <FormInput
             ref={editInputRef}
             name="edit-message"
             placeholder="수정할 메시지"
             label="메시지 수정"
             hiddenLabel
-            disabled={!selectedMessage}
             inputProps={{
               className: 'p-2 text-xs rounded',
+              disabled: !selectedMessage,
             }}
           >
             메시지 수정
           </FormInput>
           <button
-            type="button"
+            type="submit"
             className="bg-indigo-100 py-1 px-3 rounded text-xs hover:bg-indigo-200"
-            onClick={handleEditMessage}
           >
             수정
           </button>
-        </div>
+        </form>
       </div>
 
       <ul className="my-5 text-xs w-[260px]">
