@@ -1,4 +1,4 @@
-import { Suspense, lazy, useRef } from 'react';
+import { Suspense, lazy, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { getDocumentTitle } from '@/utils';
 import { FormInput } from '@/components';
@@ -43,8 +43,9 @@ export function Component() {
     addInput.focus();
   };
 
-  const handleDeleteMessage = () => () => {
+  const handleDeleteMessage = (deleteId) => () => {
     // [상태 업데이트 요청] 메시지 삭제
+    deleteMessage(deleteId);
   };
 
   const handleEditMessage = (e) => {
@@ -60,18 +61,27 @@ export function Component() {
     }
 
     // [상태 업데이트 요청] 메시지 수정
+    edit({
+      ...selectedMessage,
+      text: editInput.value,
+    });
 
-    editInputRef.current.value = '';
+    editInput.value = '';
   };
 
-  const handleSelectMessage = () => () => {
+  const handleSelectMessage = (selectId) => () => {
     // [상태 업데이트 요청] 메시지 선택
-
-    const editInput = editInputRef.current;
-
-    editInput.value = selectedMessage?.text;
-    editInput.focus();
+    select(selectId);
   };
+
+  useEffect(() => {
+    if (selectedMessage) {
+      const editInput = editInputRef.current;
+
+      editInput.value = selectedMessage.text;
+      editInput.select();
+    }
+  }, [selectedMessage]);
 
   return (
     <>
@@ -130,7 +140,8 @@ export function Component() {
           </FormInput>
           <button
             type="submit"
-            className="bg-indigo-100 py-1 px-3 rounded text-xs hover:bg-indigo-200"
+            className="bg-indigo-100 py-1 px-3 rounded text-xs enable:hover:bg-indigo-200 disabled:cursor-not-allowed disabled:text-indigo-400"
+            disabled={!selectedMessage}
           >
             수정
           </button>
