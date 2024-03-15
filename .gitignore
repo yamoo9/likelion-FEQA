@@ -1,10 +1,7 @@
 .DS_Store
-.github/*
 .next
-.env
-.typescript-config
+.env.local
 
-node_modules
-tutorials
 dist
-src
+build
+node_modules

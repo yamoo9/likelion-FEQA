@@ -1,0 +1,10 @@
+@layer base {
+  button {
+    @apply cursor-pointer;
+    @apply disabled:cursor-not-allowed;
+  }
+
+  abbr[title] {
+    @apply cursor-help no-underline;
+  }
+}
